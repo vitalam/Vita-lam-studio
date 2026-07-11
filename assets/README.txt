@@ -1,0 +1,1 @@
+Screenshot assets go here. See docs/vitalam-build-spec.md 2.1 for the exact 12 filenames and source URLs. The page works without them (live-screenshot fallback), but local files load faster and never expire.

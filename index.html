@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vita Lam｜形神兼備 — 香港 AI 及全平台開發與文藝設計</title>
+<meta name="description" content="香港 AI 及全平台開發與文藝設計：標準網站、商業系統（現成/訂製）、AI 功能植入。視覺設計、程式開發、商業策略、保安、軟件、AI 一手包辦，收費全公開。成品完全屬於你，永遠屬於你。Fullstack web development & design in Hong Kong — honest published pricing.">
+<link rel="canonical" href="https://vitalam.org/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vitalam.org/">
+<meta property="og:title" content="Vita Lam｜形神兼備。生意今非昔比。">
+<meta property="og:description" content="視覺設計。程式開發。商業策略。保安。軟件。AI。一個人，由頭跟到尾 —<br>完成之後，一切屬於你。永遠。">
+<!-- Replace with a real 1200x630 image at /og.png before launch -->
+<meta property="og:image" content="https://vitalam.org/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Vita Lam — Web Development & Design",
+  "url": "https://vitalam.org",
+  "email": "vita.lam@icloud.com",
+  "telephone": "+852 6603 3707",
+  "areaServed": ["Hong Kong", "Worldwide"],
+  "description": "Fullstack web development and design: standard websites, integrated web apps with role-based logins and admin dashboards, and AI features built into customer websites.",
+  "founder": {"@type": "Person", "name": "Vita Lam"},
+  "priceRange": "HK$12,800 - HK$150,000+"
+}
+</script>
+<style>
+/* ============================================================
+   Hierarchy > Harmony > Consistency · Liquid Glass · 繁中預設
+   ============================================================ */
+:root{
+  --bg:#0A0A09;
+  --ink:#F2F2EE;
+  --ink-2:#B9B9B2;
+  --ink-3:#83837C;
+  --accent:#D9FF3F;
+  --accent-2:#C4EC2D;
+  --violet:#A78BFA;
+  --glass-bg:#101010;
+  --glass-line:#282826;
+  --glass-inner:none;
+  --glass-shadow:none;
+  --r:6px;
+  --max:1120px;
+  --sans:"Inter","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  counter-reset:sec;
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+  radial-gradient(ellipse 40% 30% at 18% 12%,rgba(217,255,63,.06),transparent 65%),
+  radial-gradient(ellipse 35% 30% at 85% 75%,rgba(167,139,250,.05),transparent 65%),
+  repeating-linear-gradient(0deg,transparent,transparent 71px,rgba(242,242,238,.045) 71px,rgba(242,242,238,.045) 72px),
+  repeating-linear-gradient(90deg,transparent,transparent 71px,rgba(242,242,238,.045) 71px,rgba(242,242,238,.045) 72px),
+  var(--bg)}
+.orb{display:none}
+/* ---------- language: 繁中 default, EN via .lang-en ---------- */
+body:not(.lang-en) .en-only{display:none !important}
+body.lang-en .zh-only{display:none !important}
+/* ---------- type hierarchy ---------- */
+h1{font-size:clamp(3.2rem,7.6vw,5.8rem);font-weight:900;letter-spacing:.01em;line-height:.92}
+h2{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:900;letter-spacing:.01em;line-height:1.06}
+h3{font-size:1.16rem;font-weight:700;letter-spacing:0;line-height:1.35}
+body.lang-en h1{font-weight:800;letter-spacing:-.028em;line-height:.98}
+body.lang-en h2{font-weight:700;letter-spacing:-.022em;line-height:1.02}
+body.lang-en h3{font-weight:600;letter-spacing:-.01em}
+p{color:var(--ink-2)}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:1.1rem}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:110px 0;position:relative}
+.sec-head{max-width:720px;margin:0 auto 3.2rem;text-align:center}
+section .sec-head .kicker{justify-content:center}
+section:has(.sec-head) {counter-increment:sec}
+.sec-head .kicker::before{content:"0" counter(sec) " ·";color:var(--ink-3);font-weight:700}
+.sec-head .lede{font-size:1.1rem;color:var(--ink-2);margin-top:1.1rem;max-width:580px;margin-left:auto;margin-right:auto}
+/* ---------- services bg ---------- */
+#services{position:relative;overflow:visible}
+#services::before{content:"";position:absolute;left:0;right:0;bottom:0;height:150%;background:url('public/images/未命名設計_(6).png') center bottom/100% auto no-repeat;opacity:.35;pointer-events:none;z-index:0}
+#services>*{position:relative;z-index:1}
+/* ---------- liquid glass ---------- */
+.glass{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-line);border-radius:var(--r);
+}
+/* ---------- icons ---------- */
+.ico{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ico-chip{
+  width:54px;height:54px;border-radius:4px;padding:13px;color:var(--accent);
+  background:#141412;border:1px solid var(--glass-line);
+  margin-bottom:20px;
+}
+/* ---------- nav ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(10,10,9,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--glass-line);
+}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.logo{font-size:1.05rem;color:var(--ink);font-weight:800}
+.logo em{color:var(--accent);font-style:normal}
+.logo::before{content:"【";color:var(--accent)}
+.logo::after{content:"】";color:var(--accent)}
+.nav-links{display:flex;gap:20px;margin-left:auto;align-items:center}
+.nav-links a{color:var(--ink-2);font-size:.9rem;font-weight:500}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+#langBtn{
+  border:1px solid var(--glass-line);background:transparent;color:var(--ink);
+  font:inherit;font-size:.82rem;font-weight:600;padding:7px 13px;border-radius:3px;cursor:pointer;
+}
+#langBtn:hover{border-color:var(--accent);color:var(--accent)}
+.nav-cta{background:var(--accent);color:#0C0D04 !important;font-weight:700;padding:9px 17px;border-radius:3px;font-size:.88rem !important}
+.nav-cta:hover{text-decoration:none !important;background:var(--accent-2)}
+.dd{position:relative}
+.dd>a{color:var(--ink-2);font-size:.9rem;font-weight:500}
+.dd-menu{position:absolute;top:calc(100% + 10px);left:0;min-width:240px;background:#0E0E0D;border:1px solid var(--glass-line);border-radius:4px;padding:8px;display:none;z-index:60}
+.dd-menu::before{content:"";position:absolute;top:-12px;left:0;right:0;height:12px}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu{display:block}
+.dd-menu a{display:block;padding:10px 12px;font-size:.88rem;color:var(--ink-2);border-radius:3px}
+.dd-menu a:hover{background:rgba(217,255,63,.08);color:var(--accent);text-decoration:none}
+@media(max-width:860px){.nav-links a:not(.nav-cta),.nav-links .dd{display:none}}
+/* ---------- hero ---------- */
+.hero{padding:190px 0 90px;text-align:left;position:relative;overflow:hidden}
+.hero-cover{position:absolute;right:15%;top:50%;transform:translateY(-50%);width:62%;max-width:820px;opacity:.5;pointer-events:none;z-index:0}
+.hero .wrap{position:relative;z-index:1}
+.hero .btn-row,.hero .kicker{justify-content:flex-start}
+.hero .kicker{margin-bottom:1.4rem}
+.hero h1{max-width:840px;margin:0 0 1.6rem}
+.hero h1 .accent{color:var(--accent)}
+.hero-sub{max-width:720px;margin:0 0 2.5rem;font-size:1.15rem;color:var(--ink-2)}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:3px;font-weight:700;font-size:1rem;transition:.18s}
+.btn-primary{background:var(--accent);color:#0C0D04}
+.btn-primary:hover{text-decoration:none;background:var(--accent-2);transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(217,255,63,.28)}
+.btn-glass{
+  color:var(--ink);background:transparent;
+  border:1px solid var(--glass-line);
+}
+.btn-glass:hover{text-decoration:none;border-color:var(--accent);color:var(--accent);transform:translate(-2px,-2px)}
+.btn-wa{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn-wa:hover{text-decoration:none;background:var(--accent);color:#0C0D04;transform:translate(-2px,-2px)}
+.btn .bico{width:20px;height:20px;flex-shrink:0}
+.hero-note{font-size:.88rem;color:var(--ink-3);margin-top:1.4rem;text-align:left}
+/* ---------- chooser ---------- */
+.chooser{padding:26px 0 0}
+.chooser-head{text-align:center;margin-bottom:1.6rem}
+.chooser-head h2{font-size:clamp(1.3rem,2.6vw,1.7rem)}
+.chooser-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:960px){.chooser-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.chooser-grid{grid-template-columns:1fr}}
+.choose-tile{
+  display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;
+  padding:24px 18px;cursor:pointer;color:var(--ink);
+  transition:transform .22s ease,border-color .22s ease;
+}
+.choose-tile:hover{transform:translateY(-4px);border-color:rgba(217,255,63,.5);text-decoration:none}
+.choose-tile .ico-chip{margin-bottom:10px;width:50px;height:50px;padding:12px;border-radius:16px}
+.choose-tile b{font-size:1rem;font-weight:700}
+.choose-tile span{font-size:.82rem;color:var(--ink-3)}
+/* ---------- proof strip ---------- */
+.proof{padding:56px 0 0}
+.proof b{color:var(--ink)}
+.proof .glass{display:flex;gap:12px 34px;flex-wrap:wrap;align-items:center;justify-content:space-between;padding:20px 30px;border-radius:22px}
+.proof span{font-size:.87rem;color:var(--ink-3)}
+.proof b{color:var(--ink-2);font-weight:600}
+/* ---------- marquee ---------- */
+.marquee{overflow:hidden;border-top:1px solid var(--glass-line);border-bottom:1px solid var(--glass-line);padding:16px 0;margin-top:56px;background:#0C0C0B}
+.marquee-track{display:flex;gap:0;white-space:nowrap;animation:marq 40s linear infinite;width:max-content}
+.marquee span{font-size:.85rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);font-weight:600;padding:0 18px}
+.marquee b{color:var(--accent);font-weight:600;padding:0 4px}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}}
+/* ---------- grids & cards ---------- */
+.grid{display:grid;gap:18px}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:960px){.grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
+.card{padding:30px 28px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.card:hover{transform:translate(-3px,-3px);border-color:var(--accent);box-shadow:6px 6px 0 rgba(217,255,63,.16)}
+.card h3{margin-bottom:.5em}
+.card p{font-size:.95rem;color:var(--ink-2)}
+.card>*:last-child{margin-bottom:0}
+a.card{display:block;color:inherit}
+a.card:hover{text-decoration:none}
+a.card h3{color:var(--ink)}
+.card .go{display:inline-block;margin-top:16px;font-size:.9rem;font-weight:600}
+.pulse{animation:pulse-ring 1.1s ease-out 2}
+@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(217,255,63,.55)}100%{box-shadow:0 0 0 22px rgba(217,255,63,0)}}
+/* ---------- statement banner ---------- */
+.banner{margin-top:2.4rem;padding:34px 38px;text-align:center}
+.banner p{color:var(--ink);font-size:clamp(1.25rem,2.6vw,1.65rem);font-weight:800;line-height:1.35}
+.banner p em{font-style:normal;color:var(--accent)}
+.stack-line{font-size:.9rem;color:var(--ink-3);margin-top:1.8rem;max-width:680px;margin-left:auto;margin-right:auto;text-align:center}
+.stack-line b{color:var(--ink-2)}
+/* ---------- work ---------- */
+.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 2rem}
+.chip{
+  font:inherit;font-size:.86rem;font-weight:600;color:var(--ink-2);cursor:pointer;
+  padding:9px 18px;border-radius:3px;border:1px solid var(--glass-line);
+  background:transparent;transition:.18s;
+}
+.chip:hover{color:var(--accent);border-color:var(--accent)}
+.chip.on{background:var(--accent);color:#0C0D04;border-color:var(--accent)}
+.hide{display:none !important}
+.work-card{display:flex;flex-direction:column}
+.work-head{display:flex;align-items:center;gap:15px}
+.work-head .ico-chip{margin:0;width:50px;height:50px;padding:12px;border-radius:15px;flex-shrink:0}
+.work-tag{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;display:block;margin-bottom:3px}
+.work-head h3{margin:0;font-size:1.3rem}
+.wrow{display:grid;grid-template-columns:70px 1fr;gap:14px;padding:12px 0;border-top:1px solid rgba(255,255,255,.08);font-size:.92rem;align-items:baseline}
+.wrow.first{margin-top:20px}
+.wrow b{color:var(--ink-3);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
+.wrow span{color:var(--ink-2)}
+.work-link{margin-top:auto;padding-top:18px;font-size:.92rem;font-weight:600}
+.more-panel{margin-top:2rem;padding:16px 30px}
+.more-panel h3{padding:14px 0 8px}
+.mrow{
+  display:grid;grid-template-columns:auto 1fr auto;gap:8px 18px;align-items:baseline;
+  padding:14px 0;border-top:1px solid rgba(255,255,255,.08);font-size:.93rem;
+}
+.mrow:first-of-type{border-top:none}
+.mrow .mname{color:var(--ink);font-weight:700;white-space:nowrap}
+.mrow .mtag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-left:10px}
+.mrow .mdesc{color:var(--ink-3)}
+.mrow a{white-space:nowrap;font-weight:600;font-size:.88rem}
+@media(max-width:700px){.mrow{grid-template-columns:1fr;gap:4px}}
+.shot-wrap{margin:0 0 18px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9;background:rgba(255,255,255,.04)}
+.shot-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+/* ---------- pricing ---------- */
+.anchor-line{max-width:640px;margin:0 auto 3.2rem;text-align:center;color:var(--ink-2);font-size:1.05rem}
+.anchor-line b{color:var(--ink)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
+@media(max-width:960px){.price-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+.price-card{padding:34px 30px;display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease}
+.price-card:hover{transform:translate(-3px,-3px);border-color:var(--accent);box-shadow:6px 6px 0 rgba(217,255,63,.16)}
+.price-card.featured{
+  border-color:var(--accent);
+  background:linear-gradient(160deg,rgba(217,255,63,.08),#101010 55%);
+}
+.badge{
+  align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:#0C0D04;background:var(--accent);
+  border-radius:3px;padding:6px 13px;margin-bottom:18px;
+}
+.badge.dim{background:transparent;color:var(--ink-3);border:1px solid var(--glass-line)}
+.price-name{font-size:1.5rem;font-weight:800;margin-bottom:6px}
+.price-for{font-size:.92rem;color:var(--ink-2);min-height:2.8em;margin-bottom:20px}
+.price-was{color:var(--ink-3);font-size:.95rem;text-decoration:line-through;min-height:1.5em}
+.price-now{font-size:2.3rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.05;margin:3px 0 2px}
+.price-now small{display:block;font-size:.8rem;color:var(--accent);margin-top:7px;font-weight:600;letter-spacing:.03em}
+.price-usd{font-size:.8rem;color:var(--ink-3);margin:10px 0 20px}
+.price-card ul{list-style:none;display:grid;gap:10px;font-size:.92rem;color:var(--ink-2);margin-bottom:26px}
+.price-card ul li{padding-left:22px;position:relative}
+.price-card ul li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+.price-card .btn{margin-top:auto;text-align:center;justify-content:center}
+.promo-note{max-width:720px;margin:2.4rem auto 0;font-size:.92rem;color:var(--ink-2);padding:22px 28px;text-align:center;border-radius:22px}
+.promo-note b{color:var(--accent)}
+.mini-panel{padding:26px 26px 12px}
+.mini-panel h3{margin-bottom:.5rem;padding:0 12px}
+.mini-panel .sub{font-size:.85rem;color:var(--ink-3);padding:0 12px;margin-bottom:.4rem}
+.mini-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.mini-table th{text-align:left;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.14)}
+.mini-table td{padding:13px 12px;border-bottom:1px solid rgba(255,255,255,.07);color:var(--ink-2);vertical-align:top}
+.mini-table tr:last-child td{border-bottom:none}
+.mini-table td:first-child{color:var(--ink);font-weight:600}
+.mini-table td.pr{color:var(--accent);font-weight:600;white-space:nowrap}
+/* ---------- about ---------- */
+.about-panel{padding:56px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
+@media(max-width:860px){.about-panel{grid-template-columns:1fr;padding:36px 28px}}
+.about-quote{
+  font-size:clamp(1.2rem,2.4vw,1.5rem);font-weight:800;line-height:1.45;color:var(--ink);
+  border-left:3px solid var(--accent);padding-left:22px;margin:1.7rem 0;
+}
+.headline-demo{
+  margin-top:1.8rem;padding:26px 28px;border-radius:20px;text-align:center;
+  background:linear-gradient(160deg,rgba(217,255,63,.09),#101010 60%);
+  border:1px solid rgba(217,255,63,.45);
+}
+.headline-demo .hl{font-size:clamp(1.25rem,2.6vw,1.6rem);font-weight:900;color:var(--ink);line-height:1.5}
+.headline-demo .hn{font-size:.85rem;color:var(--ink-3);margin-top:10px}
+.fact-list{list-style:none;display:grid;gap:14px;font-size:.94rem}
+.fact-list li{padding-left:24px;position:relative;color:var(--ink-2)}
+.fact-list li::before{content:"✦";position:absolute;left:0;color:var(--accent)}
+/* ---------- faq ---------- */
+.faq-panel{max-width:840px;margin:0 auto;padding:14px 34px}
+details{border-bottom:1px solid rgba(255,255,255,.08);padding:21px 0}
+details:last-child{border-bottom:none}
+details summary{
+  cursor:pointer;font-weight:700;color:var(--ink);font-size:1.01rem;list-style:none;
+  display:flex;justify-content:space-between;gap:18px;align-items:baseline;
+}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"+";color:var(--accent);font-size:1.25rem;font-weight:500;flex-shrink:0}
+details[open] summary::after{content:"–"}
+details p{margin-top:11px;max-width:700px;font-size:.95rem}
+/* ---------- contact ---------- */
+.contact-panel{padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:56px}
+@media(max-width:860px){.contact-panel{grid-template-columns:1fr;padding:36px 28px}}
+form{display:grid;gap:14px}
+label{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+input,textarea,select{
+  width:100%;background:#0E0E0D;border:1px solid var(--glass-line);border-radius:4px;
+  color:var(--ink);font:inherit;padding:13px 15px;
+}
+select option{background:#141418;color:var(--ink)}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+form .btn{border:none;cursor:pointer;font-family:inherit;justify-content:center}
+/* ---------- WhatsApp float ---------- */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:56px;height:56px;border-radius:6px;padding:14px;color:#0C0D04;
+  background:var(--accent);box-shadow:0 10px 26px -8px rgba(217,255,63,.5);
+  display:flex;align-items:center;justify-content:center;transition:.18s;
+}
+.wa-float:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(217,255,63,.3);text-decoration:none}
+/* ---------- footer ---------- */
+footer{padding:30px 0 56px;font-size:.87rem;color:var(--ink-3)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+footer a{color:var(--ink-3)}
+footer a:hover{color:var(--accent)}
+/* ---------- DIY builder v2 ---------- */
+.builder-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:start}
+@media(max-width:960px){.builder-grid{grid-template-columns:1fr}}
+.bblock{background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:var(--r);margin-bottom:14px;overflow:hidden}
+.bb-head{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:18px 22px}
+.bb-head input{width:18px;height:18px;accent-color:#D9FF3F;cursor:pointer;transform:translateY(2px)}
+.bb-head label{cursor:pointer}
+.bb-head b{color:var(--ink);font-size:1.02rem;display:block}
+.bb-head .bd{display:block;font-size:.84rem;color:var(--ink-3);margin-top:2px}
+.bb-head .bp{color:var(--accent);font-weight:700;white-space:nowrap;font-size:.95rem}
+.bb-head .bp i{font-style:normal;font-weight:400;color:var(--ink-3);font-size:.78rem}
+.bb-comps{display:none;border-top:1px solid rgba(242,242,238,.07);padding:8px 22px 14px 54px}
+.bblock.on .bb-comps{display:block}
+.bcomp{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed rgba(242,242,238,.06)}
+.bcomp:last-child{border-bottom:none}
+.bcomp input{width:15px;height:15px;accent-color:#D9FF3F;cursor:pointer;transform:translateY(1px)}
+.bcomp label{cursor:pointer;font-size:.9rem;color:var(--ink-2)}
+.bcomp .bp{color:var(--accent);font-weight:600;font-size:.86rem;white-space:nowrap}
+.bcomp .bp i{font-style:normal;font-weight:400;color:var(--ink-3);font-size:.75rem}
+.bcomp.sub{padding-left:26px}
+.bgroup{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:12px 0 4px}
+.breq{font-size:.76rem;color:var(--violet);font-weight:600}
+.blist{padding:22px;position:sticky;top:86px}
+.bl-head{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-bottom:10px}
+#blines{min-height:50px;max-height:320px;overflow-y:auto}
+.bl-line{display:flex;justify-content:space-between;gap:12px;font-size:.86rem;color:var(--ink-2);padding:6px 0;border-bottom:1px dashed rgba(242,242,238,.06)}
+.bl-line span:last-child{color:var(--accent);font-weight:600;white-space:nowrap}
+.bl-empty{font-size:.86rem;color:var(--ink-3);padding:10px 0}
+.bl-total{display:flex;flex-direction:column;gap:4px;padding:14px 0;font-size:.95rem;color:var(--ink-2)}
+.bl-total b{color:var(--ink);font-size:1.3rem;font-weight:800;margin-left:8px}
+.bl-note{font-size:.78rem;color:var(--ink-3);margin-top:12px}
+/* ---------- DIY builder legacy ---------- */
+.blk{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(242,242,238,.07)}
+.blk input{width:18px;height:18px;accent-color:#D9FF3F;cursor:pointer;transform:translateY(2px)}
+.blk label{cursor:pointer}
+.blk label b{display:block;color:var(--ink);font-size:1rem}
+.blk .bd{display:block;font-size:.86rem;color:var(--ink-3);margin-top:2px}
+.blk .bp{color:var(--accent);font-weight:700;white-space:nowrap}
+.blk .bp i{font-style:normal;font-weight:400;color:var(--ink-3);font-size:.8rem}
+.btotal{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:20px 0 10px;font-size:1.02rem;color:var(--ink-2)}
+.btotal b{color:var(--ink);font-size:1.35rem;font-weight:800}
+/* ---------- REVIEW-NOTES-TOOL (delete this block before final launch) ---------- */
+#noteBar{position:fixed;left:20px;bottom:20px;z-index:70;display:flex;gap:8px;align-items:center;flex-wrap:wrap;max-width:70vw}
+#noteBar button{
+  font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;border-radius:3px;
+  padding:10px 14px;border:1px solid var(--accent);background:#0E0E0D;color:var(--accent);
+}
+#noteBar button:hover{background:var(--accent);color:#0C0D04}
+#noteBar #noteToggle.on{background:var(--accent);color:#0C0D04}
+#noteCount{font-size:.78rem;color:var(--ink-3);border:1px solid var(--glass-line);border-radius:3px;padding:9px 10px}
+.note-host{position:relative}
+.note-tab{
+  position:absolute;top:12px;right:12px;z-index:6;display:none;
+  font:inherit;font-size:.75rem;font-weight:700;cursor:pointer;border-radius:3px;
+  padding:6px 10px;border:1px dashed var(--accent);background:rgba(10,10,9,.85);color:var(--accent);
+}
+body.notes-on .note-tab{display:block}
+#top .note-tab{top:84px}
+#top .note-panel{top:118px}
+.note-tab.has{border-style:solid;background:var(--accent);color:#0C0D04}
+.note-panel{
+  position:absolute;top:44px;right:12px;z-index:7;width:min(380px,86vw);display:none;
+  background:#0E0E0D;border:1px solid var(--accent);border-radius:4px;padding:12px;
+  box-shadow:8px 8px 0 rgba(217,255,63,.15);
+}
+.note-panel.open{display:block}
+.note-panel label{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.note-panel textarea{width:100%;min-height:110px;background:#0A0A09;border:1px solid var(--glass-line);border-radius:3px;color:var(--ink);font:inherit;font-size:.9rem;padding:10px;resize:vertical}
+.note-panel textarea:focus{outline:none;border-color:var(--accent)}
+.note-panel .np-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px;font-size:.75rem;color:var(--ink-3)}
+.note-panel .np-close{cursor:pointer;color:var(--accent);font-weight:700;background:none;border:none;font:inherit;font-size:.78rem}
+#noteToast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:80;background:var(--accent);color:#0C0D04;font-weight:700;font-size:.85rem;padding:10px 18px;border-radius:3px;display:none}
+@media print{#noteBar,.note-tab,.note-panel,#noteToast{display:none !important}}
+/* ---------- /REVIEW-NOTES-TOOL ---------- */
+/* ---------- reveal ---------- */
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+html.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html.js .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}.orb{animation:none}.pulse{animation:none}
+}
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+
+<!-- ======== icon sprite ======== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="i-brush" viewBox="0 0 48 48"><path d="M38 8 25 23"/><path d="M25 23c-5 0-9 4-9 9 0 2-1 4-3 5 6 2 12-1 13-7 .4-2.6 0-5-1-7z"/><path d="M36 6c2-1 5 1 4 4"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M30 17l-4 10-10 4 4-10z"/><path d="M24 8v3M24 37v3M8 24h3M37 24h3"/></symbol>
+  <symbol id="i-stack" viewBox="0 0 48 48"><path d="M24 7l16 8-16 8-16-8z"/><path d="M8 24l16 8 16-8"/><path d="M8 32l16 8 16-8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 48 48"><path d="M14 8c-2 0-4 2-4 4 0 14 12 26 26 26 2 0 4-2 4-4v-5l-8-3-3 4c-5-2-9-6-11-11l4-3-3-8z"/><path d="M30 10c4 1 7 4 8 8"/></symbol>
+  <symbol id="i-store" viewBox="0 0 48 48"><path d="M9 19l2-9h26l2 9"/><path d="M9 19c0 3 2 5 5 5s5-2 5-5c0 3 2 5 5 5s5-2 5-5c0 3 2 5 5 5s5-2 5-5"/><path d="M12 24v14h24V24"/><path d="M20 38v-8h8v8"/></symbol>
+  <symbol id="i-key" viewBox="0 0 48 48"><circle cx="15" cy="31" r="8"/><path d="M21 25 38 8"/><path d="M31 15l6 6"/><path d="M26 20l4 4"/></symbol>
+  <symbol id="i-pulse" viewBox="0 0 48 48"><path d="M24 6l14 5v10c0 9-6 15-14 19-8-4-14-10-14-19V11z"/><path d="M15 24h5l3-6 4 11 3-5h3"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 48 48"><path d="M6 24c5-8 11-12 18-12s13 4 18 12c-5 8-11 12-18 12S11 32 6 24z"/><circle cx="24" cy="24" r="5"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 48 48"><path d="M15 20a9 9 0 0118 0c0 7-7 8-7 13a5 5 0 01-10 0"/><path d="M20 20a4 4 0 018 0"/><path d="M37 10l4-3M39 20h5"/></symbol>
+  <symbol id="i-blueprint" viewBox="0 0 48 48"><rect x="7" y="10" width="34" height="28" rx="3"/><path d="M7 18h34"/><path d="M14 26h10M14 32h14"/><circle cx="34" cy="29" r="4"/></symbol>
+  <symbol id="i-hammer" viewBox="0 0 48 48"><path d="M11 15l9-7 7 9-9 7z"/><path d="M23 21l16 17-5 4-15-17"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 48 48"><path d="M24 5c6 4 9 11 9 19l-9 9-9-9c0-8 3-15 9-19z"/><circle cx="24" cy="18" r="4"/><path d="M15 31l-5 9 9-4M33 31l5 9-9-4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 6l14 5v10c0 9-6 15-14 19-8-4-14-10-14-19V11z"/><path d="M17 24l5 5 9-10"/></symbol>
+  <symbol id="i-infinity" viewBox="0 0 48 48"><path d="M9 24c0-4 3-7 7-7 6 0 8 14 15 14 4 0 7-3 7-7s-3-7-7-7c-7 0-9 14-15 14-4 0-7-3-7-7z"/></symbol>
+  <symbol id="i-cube" viewBox="0 0 48 48"><path d="M24 6l14 8v16l-14 8-14-8V14z"/><path d="M10 14l14 8 14-8M24 22v16"/></symbol>
+  <symbol id="i-home" viewBox="0 0 48 48"><path d="M8 22 24 8l16 14"/><path d="M12 20v18h24V20"/><circle cx="24" cy="29" r="4"/><path d="M24 25v-3"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 48 48"><path d="M24 6c8 10 12 16 12 22a12 12 0 11-24 0c0-6 4-12 12-22z"/><path d="M18 30a6 6 0 006 6"/></symbol>
+  <symbol id="i-ink" viewBox="0 0 48 48"><path d="M8 36c7 0 8-17 18-17 8 0 5 11 15 9"/><circle cx="40" cy="15" r="2.5"/><path d="M8 42h32"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 48 48"><path d="M24 6c1.6 8.5 4.5 12.5 13 14-8.5 1.5-11.4 5.5-13 14-1.6-8.5-4.5-12.5-13-14 8.5-1.5 11.4-5.5 13-14z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 48 48"><path d="M24 8v30"/><path d="M14 12h20"/><path d="M14 12 9 24c0 3 2 5 5 5s5-2 5-5zM34 12l-5 12c0 3 2 5 5 5s5-2 5-5z"/><path d="M16 40h16"/></symbol>
+  <symbol id="i-coin" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><path d="M24 15v18M29 19c-1-2-8-3-9 1s9 3 9 7c-1 4-8 3-10 1"/></symbol>
+  <symbol id="i-stamp" viewBox="0 0 48 48"><path d="M18 20c-2-2-3-4-3-6a9 9 0 0118 0c0 2-1 4-3 6l1 6H17z"/><path d="M12 34h24v6H12z"/><path d="M12 34c0-4 3-8 12-8s12 4 12 8"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 48 48"><path d="M24 6a17 17 0 00-14.6 25.6L7 42l10.8-2.3A17 17 0 1024 6z"/><path d="M17 18c0 8 6 13 13 14 2 0 4-1 4-3l-1-3-4 1c-3-1-6-4-7-7l2-3-2-4c-2 0-5 2-5 5z"/></symbol>
+</defs>
+</svg>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top">VITA<em>&nbsp;LAM</em></a>
+    <div class="nav-links">
+      <div class="dd">
+        <a href="#services"><span class="zh-only">服務 ▾</span><span class="en-only">Services ▾</span></a>
+        <div class="dd-menu">
+          <a href="services/web-design.html"><span class="zh-only">01 專業網站設計</span><span class="en-only">01 Website Design</span></a>
+          <a href="services/admin-auth.html"><span class="zh-only">02 商業系統（現成/訂製）</span><span class="en-only">02 Business Systems</span></a>
+          <a href="services/data-integration.html"><span class="zh-only">03 數據整合系統</span><span class="en-only">03 Data Integration</span></a>
+          <a href="services/ai-integration.html"><span class="zh-only">04 AI 整合</span><span class="en-only">04 AI Integration</span></a>
+          <a href="services/visual-editorial.html"><span class="zh-only">05 視覺・編采</span><span class="en-only">05 Visual &amp; Editorial</span></a>
+          <a href="services/subscription.html"><span class="zh-only">06 部署訂閱</span><span class="en-only">06 Deployment Subscription</span></a>
+        </div>
+      </div>
+      <a href="#work"><span class="zh-only">作品</span><span class="en-only">Work</span></a>
+      <a href="#process"><span class="zh-only">流程</span><span class="en-only">Process</span></a>
+      <a href="#deliverables"><span class="zh-only">交付</span><span class="en-only">Handover</span></a>
+      <a href="#pricing"><span class="zh-only">收費</span><span class="en-only">Pricing</span></a>
+      <a href="#about"><span class="zh-only">關於</span><span class="en-only">About</span></a>
+      <a href="#faq">FAQ</a>
+      <button id="langBtn" type="button" aria-label="Switch language">EN</button>
+      <a class="nav-cta" href="#contact"><span class="zh-only">免費業務快檢</span><span class="en-only">Free health-check</span></a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <img class="hero-cover" src="public/images/未命名設計.png" alt="" aria-hidden="true">
+  <div class="wrap">
+    <div class="kicker"><span class="zh-only">Vita Lam · AI及全平台開發與文藝設計 · 香港 / 全球</span><span class="en-only">Vita Lam · AI &amp; full-platform dev &amp; literary design · Hong Kong / worldwide</span></div>
+    <h1>
+      <span class="zh-only">形神兼備。<br><span class="accent">生意今非昔比。</span></span>
+      <span class="en-only">Form meets substance.<br><span class="accent">Reveal your transformation.</span></span>
+    </h1>
+    <p class="hero-sub">
+      <span class="zh-only">視覺設計。程式開發。商業策略。保安。軟件。AI。一個人，由頭跟到尾 —<br>完成之後，<strong>一切屬於你。永遠。</strong></span>
+      <span class="en-only">Visual design. Development. Strategy. Security. Software. AI. One person, end to end —<br>and when it's done, <strong>it's yours. Forever.</strong></span>
+    </p>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#contact"><span class="zh-only">索取免費業務快檢</span><span class="en-only">Get a free business health-check</span></a>
+      <a class="btn btn-wa" href="https://wa.me/85266033707" target="_blank" rel="noopener"><svg class="bico ico"><use href="#i-wa"/></svg> WhatsApp</a>
+    </div>
+    <p class="hero-note">
+      <span class="zh-only">零綑綁。無論合作與否，都能帶走三個鷹眼視覺下的實際建議。</span>
+      <span class="en-only">No strings. You leave with three concrete improvements either way.</span>
+    </p>
+  </div>
+</header>
+
+<!-- ============ CHOOSER ============ -->
+<div class="chooser">
+  <div class="wrap">
+    <div class="chooser-head">
+      <h2><span class="zh-only">你想做啲乜？三秒搵到你要嘅嘢。</span><span class="en-only">What are you here for? Find it in three seconds.</span></h2>
+    </div>
+    <div class="chooser-grid">
+      <a class="choose-tile glass" href="#svc-site" data-choose="site">
+        <div class="ico-chip"><svg class="ico"><use href="#i-store"/></svg></div>
+        <b><span class="zh-only">我要一個好網站</span><span class="en-only">I need a great website</span></b>
+        <span><span class="zh-only">視藝、文案、強大後台配套</span><span class="en-only">Visuals, copy, powerful backend</span></span>
+      </a>
+      <a class="choose-tile glass" href="#svc-app" data-choose="app">
+        <div class="ico-chip"><svg class="ico"><use href="#i-key"/></svg></div>
+        <b><span class="zh-only">商業系統（現成/訂製）</span><span class="en-only">Business systems (off-shelf/custom)</span></b>
+        <span><span class="zh-only">製造業、零售、任何ERP系統</span><span class="en-only">Manufacturing, retail, any ERM</span></span>
+      </a>
+      <a class="choose-tile glass" href="#svc-ai" data-choose="ai">
+        <div class="ico-chip"><svg class="ico"><use href="#i-spark"/></svg></div>
+        <b><span class="zh-only">我要 AI 功能</span><span class="en-only">AI in my site</span></b>
+        <span><span class="zh-only">植入網站，即問即答</span><span class="en-only">Built in, answering live</span></span>
+      </a>
+      <a class="choose-tile glass" href="#work" data-choose="work">
+        <div class="ico-chip"><svg class="ico"><use href="#i-eye"/></svg></div>
+        <b><span class="zh-only">我要軟件訂製</span><span class="en-only">Custom software</span></b>
+        <span><span class="zh-only">獨特功能，創意構思落地</span><span class="en-only">Unique features, ideas made real</span></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="proof">
+  <div class="wrap">
+    <div class="glass">
+      <span class="zh-only"><b>全端開發</b> · <b>大數據・商業顧問</b></span>
+      <span class="en-only"><b>Full-stack dev</b> · <b>Big-data &amp; business consultant</b></span>
+      <span class="zh-only">Carbon Copy®、MatterUs®、ICCC™及沉墨Batjik創辦人</span>
+      <span class="en-only">Hands-on brand building &amp; art practice</span>
+      <span class="zh-only">前<b>SFC持牌代表</b> · 參與數億港元交易</span>
+      <span class="en-only">Former <b>licensed investment banker</b> · helped 100+ industries take off</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>好網站 SITES THAT SELL <b>✳</b> 商業系統 BUSINESS SYSTEMS <b>✳</b> 數據合一 ONE DASHBOARD <b>✳</b> AI 唔亂講 FIREWALLED AI <b>✳</b> 文案有性格 WORDS WITH SPINE <b>✳</b> 保安標準配備 SECURITY AS STANDARD <b>✳</b> 一切屬於你 YOURS FOREVER <b>✳</b> 香港出品 MADE IN HONG KONG <b>✳</b> </span><span>好網站 SITES THAT SELL <b>✳</b> 商業系統 BUSINESS SYSTEMS <b>✳</b> 數據合一 ONE DASHBOARD <b>✳</b> AI 唔亂講 FIREWALLED AI <b>✳</b> 文案有性格 WORDS WITH SPINE <b>✳</b> 保安標準配備 SECURITY AS STANDARD <b>✳</b> 一切屬於你 YOURS FOREVER <b>✳</b> 香港出品 MADE IN HONG KONG <b>✳</b> </span><span>好網站 SITES THAT SELL <b>✳</b> 商業系統 BUSINESS SYSTEMS <b>✳</b> 數據合一 ONE DASHBOARD <b>✳</b> AI 唔亂講 FIREWALLED AI <b>✳</b> 文案有性格 WORDS WITH SPINE <b>✳</b> 保安標準配備 SECURITY AS STANDARD <b>✳</b> 一切屬於你 YOURS FOREVER <b>✳</b> 香港出品 MADE IN HONG KONG <b>✳</b> </span><span>好網站 SITES THAT SELL <b>✳</b> 商業系統 BUSINESS SYSTEMS <b>✳</b> 數據合一 ONE DASHBOARD <b>✳</b> AI 唔亂講 FIREWALLED AI <b>✳</b> 文案有性格 WORDS WITH SPINE <b>✳</b> 保安標準配備 SECURITY AS STANDARD <b>✳</b> 一切屬於你 YOURS FOREVER <b>✳</b> 香港出品 MADE IN HONG KONG <b>✳</b> </span></div></div>
+
+<!-- ============ AI SECTION ============ -->
+<section id="ai">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">你心裡早就在問的問題</span><span class="en-only">The question you're already asking</span></div>
+      <h2>
+        <span class="zh-only">「點解我唔自己搵AI做？」</span>
+        <span class="en-only">Couldn't AI build this?<br>Sure. Then who answers the phone?</span>
+      </h2>
+      <p class="lede">
+        <span class="zh-only">我也用 AI 開發 — 而且樂在其中。AI的能力在不少人眼中近乎萬能，但我的眼中，它至少冇辦法替代以下的工序。</span>
+        <span class="en-only">I build with AI too — happily. It gets anyone to a beautiful screenshot. Four things it won't get you:</span>
+      </p>
+    </div>
+    <div class="grid grid-4 reveal">
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-brush"/></svg></div>
+        <h3><span class="zh-only">美術設計</span><span class="en-only">Taste</span></h3>
+        <p><span class="zh-only">實戰的藝術經驗教曉我為什麼AI永遠冇法取代藝術家及創作者。我的審美不是 prompt，是故事，經歷及情愫。</span><span class="en-only">Years of painting. Zero prompting. I know <strong>why</strong> it looks right.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-compass"/></svg></div>
+        <h3><span class="zh-only">正確判斷</span><span class="en-only">Judgment</span></h3>
+        <p><span class="zh-only">AI 能給你無窮無盡個選項。但你沒有無窮冇盡的機會去試錯，你需要的是經驗及判斷。</span><span class="en-only">AI offers fifty options. Your business needs the one.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-stack"/></svg></div>
+        <h3><span class="zh-only">AI自身本體</span><span class="en-only">The other 80%</span></h3>
+        <p><span class="zh-only">AI本身就是大數據學問，畢生心血押在一個模型，像比武用器一樣，選錯武器，就輸了一半了。</span><span class="en-only">Domain. Security. Logins. Backups. 2am. The demo was the easy part.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-phone"/></svg></div>
+        <h3><span class="zh-only">知錯能改</span><span class="en-only">Accountability</span></h3>
+        <p><span class="zh-only">我們（至少是有責任你心的人）做錯了的事，會承擔，會改進。（而且是你應得的，保養包了在內）</span><span class="en-only">A chat window won't call back. I will. Warranty included.</span></p>
+      </div>
+    </div>
+    <div class="banner glass reveal">
+      <p><span class="zh-only">AI 壓縮的是打字的時間。<em>赦免不了責任。</em></span><span class="en-only">AI compresses the typing. <em>Not the responsibility.</em></span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">服務</span><span class="en-only">Services</span></div>
+      <h2><span class="zh-only">網站開發，連 AI。<br>六件事，逐件講。</span><span class="en-only">Web development, with AI.<br>Six things. One at a time.</span></h2>
+      <p class="lede"><span class="zh-only">每項服務都有自己嘅專頁 — 撳入去，睇三個非佢不可嘅理由。</span><span class="en-only">Every service has its own page — click in for three reasons it has to be me.</span></p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <a class="card glass svc-mini" id="svc-site" href="services/web-design.html">
+        <div class="ico-chip"><svg class="ico"><use href="#i-store"/></svg></div>
+        <h3><span class="zh-only">01 專業網站設計</span><span class="en-only">01 Professional Website Design</span></h3>
+        <p><span class="zh-only">骨幹基建就緒，CMS 在內。快、搵得到、信得過。</span><span class="en-only">Backbone-ready, CMS included. Fast, findable, trusted.</span></p>
+        <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
+      </a>
+      <a class="card glass svc-mini" id="svc-app" href="services/admin-auth.html">
+        <div class="ico-chip"><svg class="ico"><use href="#i-key"/></svg></div>
+        <h3><span class="zh-only">02 商業系統（現成/訂製）</span><span class="en-only">02 Business Systems</span></h3>
+        <p><span class="zh-only">製造業、零售、任何 ERP 系統 — 現成方案或完全訂製。</span><span class="en-only">Manufacturing, retail, any ERM — off-the-shelf or fully bespoke.</span></p>
+        <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
+      </a>
+      <a class="card glass svc-mini" id="svc-data" href="services/data-integration.html">
+        <div class="ico-chip"><svg class="ico"><use href="#i-stack"/></svg></div>
+        <h3><span class="zh-only">03 數據整合系統</span><span class="en-only">03 Data Integration Systems</span></h3>
+        <p><span class="zh-only">多源合一，一個儀表板 — ICCC® 級數據底座。</span><span class="en-only">Many sources, one dashboard — an ICCC®-grade data backbone.</span></p>
+        <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
+      </a>
+      <a class="card glass svc-mini" id="svc-ai" href="services/ai-integration.html">
+        <div class="ico-chip"><svg class="ico"><use href="#i-spark"/></svg></div>
+        <h3><span class="zh-only">04 AI 整合</span><span class="en-only">04 AI Integration</span></h3>
+        <p><span class="zh-only">AI Logic Firewall（專利申請中）— 識答，唔亂講。</span><span class="en-only">AI Logic Firewall (patent pending) — answers, never invents.</span></p>
+        <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
+      </a>
+      <a class="card glass svc-mini" id="svc-copy" href="services/visual-editorial.html">
+        <div class="ico-chip"><svg class="ico"><use href="#i-brush"/></svg></div>
+        <h3><span class="zh-only">05 視覺・編采</span><span class="en-only">05 Visual Arts &amp; Editorial</span></h3>
+        <p><span class="zh-only">命名、標題、視覺語言 — 加埋協作註記介面。</span><span class="en-only">Naming, headlines, visual language — plus a collaborative annotation interface.</span></p>
+        <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
+      </a>
+      <a class="card glass svc-mini" id="svc-care" href="services/subscription.html">
+        <div class="ico-chip"><svg class="ico"><use href="#i-shield"/></svg></div>
+        <h3><span class="zh-only">06 部署訂閱</span><span class="en-only">06 Deployment Subscription</span></h3>
+        <p><span class="zh-only">一個價錢全包看守。保安係標準配備。</span><span class="en-only">One price, all-in care. Security is standard equipment.</span></p>
+        <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">精選作品</span><span class="en-only">Selected work</span></div>
+      <h2><span class="zh-only">我創辦生意。<br>包括我自己的。</span><span class="en-only">I build businesses.<br>Mine included.</span></h2>
+      <p class="lede">
+        <span class="zh-only">以下全部都在營運中。每一個都教會我接案學不到的事 — 做那個真金白銀押上去的老闆。</span>
+        <span class="en-only">Everything below is live. Each one taught me what client work can't — being the owner whose money is on the line.</span>
+      </p>
+    </div>
+    <div class="chips" id="chips">
+      <button class="chip on" data-filter="all"><span class="zh-only">全部</span><span class="en-only">All</span></button>
+      <button class="chip" data-filter="site"><span class="zh-only">網站</span><span class="en-only">Websites</span></button>
+      <button class="chip" data-filter="app"><span class="zh-only">商業系統</span><span class="en-only">Business systems</span></button>
+      <button class="chip" data-filter="ai">AI</button>
+    </div>
+    <div class="grid grid-2 reveal" id="workGrid">
+      <div class="card glass work-card" data-cat="app">
+        <div class="work-head">
+          <div class="ico-chip"><svg class="ico"><use href="#i-cube"/></svg></div>
+          <div><span class="work-tag"><span class="zh-only">全端平台</span><span class="en-only">Fullstack platform</span></span><h3>ICCC®</h3></div>
+        </div>
+        <div class="shot-wrap"><img src="assets/iccc.jpg" alt="iccc website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Ficcc.dev?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
+        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">品牌永遠向 SaaS 租用自己的核心系統。</span><span class="en-only">Brands rent their core systems from SaaS. Forever.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">完整品牌作業系統 — 店面、指揮中心、生產後台。內建合規，以及 AI Logic Firewall（專利申請中）。</span><span class="en-only">A full brand OS — storefront, command centre, production backend. Compliance-ready, with the AI Logic Firewall (patent pending).</span></span></div>
+        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">一次購買永久擁有。14 日交付。100% 退款保證。</span><span class="en-only">Buy once, own forever. 14-day delivery. 100% refund guarantee.</span></span></div>
+        <a class="work-link" href="https://iccc.dev" target="_blank" rel="noopener">iccc.dev ↗</a>
+      </div>
+      <div class="card glass work-card" data-cat="site">
+        <div class="work-head">
+          <div class="ico-chip"><svg class="ico"><use href="#i-home"/></svg></div>
+          <div><span class="work-tag"><span class="zh-only">實體零售</span><span class="en-only">Real-world retail</span></span><h3>MatterUs</h3></div>
+        </div>
+        <div class="shot-wrap"><img src="assets/matterus.jpg" alt="matterus website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fmatterus.com.hk?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
+        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">智能家居零碎混亂，令人卻步。</span><span class="en-only">Smart homes were fragmented and intimidating.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">圍繞 Matter 標準的顧問—銷售—安裝。尖沙咀零售。</span><span class="en-only">Consult–sell–install on the Matter standard. Retail in Tsim Sha Tsui.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">Nanoleaf 授權經銷商。真刀真槍談回來的合約。</span><span class="en-only">Authorized Nanoleaf distributor. A negotiated deal, not a side project.</span></span></div>
+        <a class="work-link" href="https://matterus.com.hk" target="_blank" rel="noopener">matterus.com.hk ↗</a>
+      </div>
+      <div class="card glass work-card" data-cat="site">
+        <div class="work-head">
+          <div class="ico-chip"><svg class="ico"><use href="#i-drop"/></svg></div>
+          <div><span class="work-tag"><span class="zh-only">D2C 品牌 · 電商</span><span class="en-only">D2C brand · E-commerce</span></span><h3>Carbon Copy®</h3></div>
+        </div>
+        <div class="shot-wrap"><img src="assets/carboncopy.jpg" alt="carboncopy website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fcarboncopy.one?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
+        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">在擁擠的類別中，信任難以被看見。</span><span class="en-only">Trust is hard to signal in a crowded category.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">精密工程風格的個人護理品牌。命名、語調、雙語電商。</span><span class="en-only">A precision-engineered personal-care brand. Naming, voice, bilingual e-commerce.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">ISO 測試。GMP 生產。市場有售。</span><span class="en-only">ISO-tested. GMP-manufactured. Live in market.</span></span></div>
+        <a class="work-link" href="https://carboncopy.one" target="_blank" rel="noopener">carboncopy.one ↗</a>
+      </div>
+      <div class="card glass work-card" data-cat="app ai">
+        <div class="work-head">
+          <div class="ico-chip"><svg class="ico"><use href="#i-ink"/></svg></div>
+          <div><span class="work-tag"><span class="zh-only">整合應用 · 廣東話原生</span><span class="en-only">Integrated app · Cantonese-native</span></span><h3>沉墨 Batjik</h3></div>
+        </div>
+        <div class="shot-wrap"><img src="assets/batjik.jpg" alt="batjik website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fbatjik.com?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
+        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">自我探索工具從不說香港人思考的語言。</span><span class="en-only">Self-discovery tools never speak the language Hongkongers think in.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">筆跡 × 名字 × 原生家庭心理。客人與管理員同一入口，分身份登入，一頁管理所有請求。</span><span class="en-only">Handwriting × name × family-of-origin psychology. One entrance for customers and admin, role-based logins, every request managed on one page.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">本地化出於直覺，不是翻譯。</span><span class="en-only">Localization by instinct, not translation.</span></span></div>
+        <a class="work-link" href="https://batjik.com" target="_blank" rel="noopener">batjik.com ↗</a>
+      </div>
+    </div>
+    <div class="glass more-panel reveal">
+      <h3><span class="zh-only">更多作品</span><span class="en-only">More projects</span></h3>
+      <!-- LOGO-PLACEHOLDERS: brand logo files (Carbon Copy / G Entertainment / MatterUs) to be embedded here when provided -->
+      <div class="mrow" data-cat="ai">
+        <span><span class="mname">太極 Taiji Game</span><span class="mtag">AI</span></span>
+        <span class="mdesc"><span class="zh-only">以 AI 互動遊戲傳承道家思想 — 學校項目。</span><span class="en-only">Taoism delivered as an interactive AI game — a school project.</span></span>
+        <a href="https://taiji.game.carboncopy.one" target="_blank" rel="noopener">taiji.game.carboncopy.one ↗</a>
+      </div>
+      <div class="mrow" data-cat="site">
+        <span><span class="mname">GEM</span><span class="mtag"><span class="zh-only">業務革新</span><span class="en-only">Business revamp</span></span></span>
+        <span class="mdesc"><span class="zh-only">由品牌到網站，整個生意的形象革新示範。</span><span class="en-only">A whole-business revamp, brand to website.</span></span>
+        <a href="http://gem.portfolio.demo.carboncopy.one" target="_blank" rel="noopener">gem.portfolio.demo ↗</a>
+      </div>
+      <div class="mrow" data-cat="site">
+        <span><span class="mname">Modern Design</span><span class="mtag"><span class="zh-only">設計示範</span><span class="en-only">Design demo</span></span></span>
+        <span class="mdesc"><span class="zh-only">現代風格設計示範 — 睇下唔同嘅面貌。</span><span class="en-only">A modern-style design demo — a different face, same hands.</span></span>
+        <a href="http://moderndesign.demo.carboncopy.one" target="_blank" rel="noopener">moderndesign.demo ↗</a>
+      </div>
+      <div class="mrow" data-cat="site">
+        <span><span class="mname">humanrights.com.hk</span><span class="mtag"><span class="zh-only">公益</span><span class="en-only">Public interest</span></span></span>
+        <span class="mdesc"><span class="zh-only">推廣人權的公益網站。</span><span class="en-only">A site promoting human rights.</span></span>
+        <a href="https://humanrights.com.hk" target="_blank" rel="noopener">humanrights.com.hk ↗</a>
+      </div>
+      <div class="mrow" data-cat="site">
+        <span><span class="mname">Proxy by MatterUs</span><span class="mtag"><span class="zh-only">商業頁面</span><span class="en-only">Business page</span></span></span>
+        <span class="mdesc"><span class="zh-only">簡潔直接的商業服務頁。</span><span class="en-only">A clean, direct business service page.</span></span>
+        <a href="https://proxy.matterus.com.hk" target="_blank" rel="noopener">proxy.matterus.com.hk ↗</a>
+      </div>
+      <div class="mrow" data-cat="site">
+        <span><span class="mname">HOHO</span><span class="mtag"><span class="zh-only">快速作品集</span><span class="en-only">Rapid portfolio</span></span></span>
+        <span class="mdesc"><span class="zh-only">快速交付的個人作品集 — 標題文案也是我寫的：「苦盡遍體鱗傷，演出塵世甘來。」</span><span class="en-only">A portfolio delivered fast — headline written by me: 「苦盡遍體鱗傷，演出塵世甘來。」</span></span>
+        <a href="https://hoho.portfolio.demo.carboncopy.one" target="_blank" rel="noopener">hoho.portfolio.demo ↗</a>
+      </div>
+      <div class="mrow" data-cat="ai app">
+        <span><span class="mname"><span class="zh-only">手寫分析 App</span><span class="en-only">Handwriting app</span></span><span class="mtag">AI · App</span></span>
+        <span class="mdesc"><span class="zh-only">手寫筆跡分析應用原型。</span><span class="en-only">A handwriting-analysis app prototype.</span></span>
+        <a href="https://bolt.new/p/66919367" target="_blank" rel="noopener">bolt.new/p/66919367 ↗</a>
+      </div>
+      <div class="mrow" data-cat="app">
+        <span><span class="mname"><span class="zh-only">App 客製化</span><span class="en-only">App customization</span></span><span class="mtag">UI</span></span>
+        <span class="mdesc"><span class="zh-only">介面客製化互動實驗。</span><span class="en-only">An interactive interface-customization experiment.</span></span>
+        <a href="https://codepen.io/gokucrew/pen/EaxWjaO" target="_blank" rel="noopener">codepen ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUSINESS ACUMEN ============ -->
+<section id="acumen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">這對你有什麼意義</span><span class="en-only">Why it matters to you</span></div>
+      <h2><span class="zh-only">你坐的那張椅子，我也坐過。</span><span class="en-only">I've sat in your chair.</span></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-scale"/></svg></div>
+        <h3><span class="zh-only">前 SFC 持牌代表</span><span class="en-only">Former SFC-licensed rep</span></h3>
+        <p><span class="zh-only">第 1 及 6 類受規管活動。參與併購、供股及配售交易，總額達數億港元。我看網站，像看損益表。</span><span class="en-only">Type 1 &amp; 6 regulated activities. M&amp;A and secondary issues with aggregate deal values in the hundreds of millions HKD. I read websites like a P&amp;L.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-coin"/></svg></div>
+        <h3><span class="zh-only">你的預算是資本</span><span class="en-only">Your budget is capital</span></h3>
+        <p><span class="zh-only">若兩萬比十萬更適合你，我會直說。老闆的建議。不是推銷。</span><span class="en-only">If HK$20,000 beats HK$100,000 for you, I'll say so. Owner's advice. Not a vendor's upsell.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-stamp"/></svg></div>
+        <h3><span class="zh-only">合規與認證</span><span class="en-only">Credentials, in writing</span></h3>
+        <p><span class="zh-only">HKCGI AML/CFT · HKCGI 可持續發展專業 · WIX 認證無障礙開發者。你行業的規矩，由第一日就守。</span><span class="en-only">HKCGI AML/CFT · HKCGI Sustainability Professional · Certified Accessibility Developer. Your industry's rules, respected from day one.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">合作流程</span><span class="en-only">How it works</span></div>
+      <h2><span class="zh-only">五個步驟。零神秘感。</span><span class="en-only">Five steps. Zero mystery.</span></h2>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-ear"/></svg></div>
+        <h3>01 · <span class="zh-only">聆聽</span><span class="en-only">Listen</span></h3>
+        <p><span class="zh-only">免費 20 分鐘通話。無論如何，帶走三個實際建議。</span><span class="en-only">A free 20-minute call. Three concrete improvements, either way.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-blueprint"/></svg></div>
+        <h3>02 · <span class="zh-only">藍圖</span><span class="en-only">Blueprint</span></h3>
+        <p><span class="zh-only">固定範圍、價格、時間表。動錢之前，白紙黑字。</span><span class="en-only">Fixed scope, price, timeline. In writing, before money moves.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-hammer"/></svg></div>
+        <h3>03 · <span class="zh-only">建造</span><span class="en-only">Build</span></h3>
+        <p><span class="zh-only">每週在真實測試連結上看到進度。沒有黑箱。</span><span class="en-only">Weekly progress on a live staging link. No black box.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-rocket"/></svg></div>
+        <h3>04 · <span class="zh-only">上線</span><span class="en-only">Launch</span></h3>
+        <p><span class="zh-only">網域、SSL、部署、分析。全在你名下。</span><span class="en-only">Domain, SSL, deployment, analytics. All in your name.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-shield"/></svg></div>
+        <h3>05 · <span class="zh-only">看守</span><span class="en-only">Stand guard</span></h3>
+        <p><span class="zh-only">30 日保養。之後可選維護 — 或帶著一切離開。</span><span class="en-only">30-day warranty. Then care plans — or walk away with everything.</span></p>
+      </div>
+      <div class="card glass" style="border-color:rgba(217,255,63,.5);background:linear-gradient(160deg,rgba(217,255,63,.09),#101010 60%)">
+        <div class="ico-chip"><svg class="ico"><use href="#i-infinity"/></svg></div>
+        <h3><span class="zh-only">不變的原則</span><span class="en-only">The standing rule</span></h3>
+        <p><span class="zh-only"><strong>一切屬於你。</strong>程式碼。網域。內容。一次購買，永久擁有。</span><span class="en-only"><strong>You own everything.</strong> Code. Domain. Content. Buy it once. Own it forever.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DELIVERABLES ============ -->
+<section id="deliverables">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">交付清單</span><span class="en-only">The handover</span></div>
+      <h2><span class="zh-only">你會收到什麼？<br>白紙黑字。</span><span class="en-only">What you get.<br>In writing.</span></h2>
+      <p class="lede"><span class="zh-only">搵服務最怕嘅嘢，我一次過講清楚：冇 code-lock，冇「唯獨我先修到」。</span><span class="en-only">The thing every service-shopper fears, answered upfront: no code-locks, no "only I can fix this."</span></p>
+    </div>
+    <div class="grid grid-3 reveal">
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-cube"/></svg></div>
+        <h3><span class="zh-only">全部源代碼</span><span class="en-only">All the source code</span></h3>
+        <p><span class="zh-only">完整、可讀、我哋嘅最佳水準。冇陷阱，冇綁定。</span><span class="en-only">Complete, readable, our best effort. No traps, no tethers.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-brush"/></svg></div>
+        <h3><span class="zh-only">AI-ready 設計手冊</span><span class="en-only">An AI-ready design playbook</span></h3>
+        <p><span class="zh-only">色彩、字體、間距、組件規格 — 交畀任何 AI 工具或開發者，都可以延續你個設計。</span><span class="en-only">Colours, type, spacing, component specs — hand it to any AI tool or developer and the design carries on.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-stack"/></svg></div>
+        <h3><span class="zh-only">模組化架構</span><span class="en-only">Modular by design</span></h3>
+        <p><span class="zh-only">嵌入式應用與主內容永遠分離 — 可以獨立移除、替換、升級。</span><span class="en-only">Embedded apps stay separable from your content — remove, replace or upgrade independently.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-stamp"/></svg></div>
+        <h3><span class="zh-only">名下帳戶</span><span class="en-only">Accounts in your name</span></h3>
+        <p><span class="zh-only">網域、寄存、分析 — 全部登記喺你名下，唔係我名下。</span><span class="en-only">Domain, hosting, analytics — registered to you, not to me.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-blueprint"/></svg></div>
+        <h3><span class="zh-only">文檔＋交接教學</span><span class="en-only">Docs + handover training</span></h3>
+        <p><span class="zh-only">點部署、點更新、點搬走 — 一一寫低，仲會教埋你。</span><span class="en-only">How to deploy, update, and leave — written down, then walked through.</span></p>
+      </div>
+      <div class="card glass" style="border-color:rgba(217,255,63,.5);background:linear-gradient(160deg,rgba(217,255,63,.09),#101010 60%)">
+        <div class="ico-chip"><svg class="ico"><use href="#i-infinity"/></svg></div>
+        <h3><span class="zh-only">一個標準</span><span class="en-only">One standard</span></h3>
+        <p><span class="zh-only"><strong>你唔再需要我，先至係我做得好。</strong></span><span class="en-only"><strong>You not needing me is what done looks like.</strong></span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<!-- BUILDER-V2: modular DIY configurator -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker"><span class="zh-only">收費</span><span class="en-only">Pricing</span></div>
+      <h2><span class="zh-only">頂級規格。<br>經濟結構。</span><span class="en-only">Premium grade.<br>Economical by design.</span></h2>
+      <p class="lede"><span class="zh-only">冇套餐，冇 tiers — 逐件砌，只付你需要。<strong>慳嘅係浪費，唔係質素。</strong></span><span class="en-only">No bundles, no tiers — build block by block, pay only for what you need. <strong>What you save is waste, not quality.</strong></span></p>
+    </div>
+    <noscript><p style="text-align:center;color:var(--ink-2)">01 網站 HK$28,000 · 02 商業系統 +HK$28,000 · 02B 電商 +HK$22,000 · 03 數據 +HK$16,800 · 04 AI +HK$19,800 · 05 視覺編采 +HK$8,800 · 06 訂閱 HK$1,880/月 — WhatsApp +852 6603 3707 索取詳細報價。</p></noscript>
+    <div class="grid grid-2 reveal" style="margin-bottom:18px">
+      <div class="card glass">
+        <div class="kicker" style="margin-bottom:.6rem"><span class="zh-only">經濟，因為</span><span class="en-only">Economical, because</span></div>
+        <p><span class="zh-only">你唔需要嘅，唔使買。冇代理式人頭開支，冇中環租金，冇「project management fee」— 報價單上每一行，都係真正做嘢嘅一行。</span><span class="en-only">You skip what you don&#8217;t need. No agency headcount, no Central rent, no &#8220;project management fee&#8221; — every line on the quote is a line of real work.</span></p>
+      </div>
+      <div class="card glass" style="border-color:rgba(217,255,63,.45)">
+        <div class="kicker" style="margin-bottom:.6rem"><span class="zh-only">頂級，因為</span><span class="en-only">Premium, because</span></div>
+        <p><span class="zh-only">前 SFC 持牌嘅嚴謹、專利申請中嘅 AI Logic Firewall、畫家嘅審美、30 日保養、100% 擁有權 — 每一個模組都係代理級規格，唔係平價替代品。</span><span class="en-only">SFC-grade rigour, a patent-pending AI Logic Firewall, a painter&#8217;s eye, a 30-day warranty, 100% ownership — every block is agency-grade, not a budget substitute.</span></p>
+      </div>
+    </div>
+    <div class="builder-grid">
+      <div id="bblocks"></div>
+      <aside class="blist glass">
+        <div class="bl-head"><span class="zh-only">購物清單</span><span class="en-only">Shopping list</span></div>
+        <div id="blines"></div>
+        <div class="bl-agency" id="blAgency" style="display:none">
+          <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding-top:12px"><span class="zh-only">同等範圍・代理行情</span><span class="en-only">Same scope · agency market</span></div>
+          <div style="font-size:.95rem;color:var(--ink-3);text-decoration:line-through" id="agencyRange">—</div>
+        </div>
+        <div class="bl-total">
+          <div><span class="zh-only">你嘅價・一次性</span><span class="en-only">Your price · one-off</span> <b id="tOnce">HK$0</b></div>
+          <div id="tMoRow"><span class="zh-only">每月</span><span class="en-only">Monthly</span> <b id="tMo">HK$0</b></div>
+        </div>
+        <button class="btn btn-primary" id="quoteBtn" type="button" style="width:100%;justify-content:center"><span class="zh-only">⚡ 產生報價單</span><span class="en-only">⚡ Generate quotation</span></button>
+        <a class="btn btn-wa" id="buildCta" href="https://wa.me/85266033707" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:10px"><svg class="bico ico"><use href="#i-wa"/></svg> <span class="zh-only">WhatsApp 傾呢個組合</span><span class="en-only">Discuss on WhatsApp</span></a>
+        <p class="bl-note"><span class="zh-only">每個組合都包交付清單全套：源代碼・AI-ready 設計手冊・模組化架構・文檔交接。先報價，後動工。</span><span class="en-only">Every build includes the full handover: source code · AI-ready design playbook · modular architecture · docs. Quote first, work after.</span></p>
+      </aside>
+    </div>
+    <div class="promo-note glass">
+      <span class="zh-only"><b>創始客戶禮遇（每月 2 名）：</b>免首 6 個月部署訂閱（價值 HK$11,280）＋作品集及推薦語授權。免費期後自動以 HK$1,880/月續訂 — 冇綁約，隨時取消。</span>
+      <span class="en-only"><b>Founding-client offer (2 slots/month):</b> first 6 months of Deployment Subscription free (worth HK$11,280) + portfolio &amp; testimonial rights. Auto-renews at HK$1,880/mo after — no lock-in, cancel anytime.</span>
+    </div>
+    <p class="stack-line"><span class="zh-only">零散工作：網域+DNS HK$500/年・時薪 HK$650–850。所有 AI 整合均受 AI Logic Firewall（專利申請中）約束。</span><span class="en-only">Ad-hoc: domain+DNS HK$500/yr · hourly HK$650–850. Every AI build is constrained by the AI Logic Firewall (patent pending).</span></p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="glass about-panel reveal">
+      <div>
+        <div class="kicker"><span class="zh-only">作品背後的人</span><span class="en-only">The person behind it</span></div>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem)"><span class="zh-only">AI 之前在創作。<br>之後，依然。</span><span class="en-only">Artist before AI.<br>Artist after.</span></h2>
+        <p style="margin-top:1.1rem">
+          <span class="zh-only">先有繪畫和數碼藝術，遠早於工具變聰明之前。所以我的作品不像倒模範本。構圖、節制、用色：練了多年的肌肉，不是 prompt 換來的風格。</span>
+          <span class="en-only">Painting and digital art came first — long before the tools got clever. That's why my builds don't look like templates. Composition, restraint, colour: muscles trained for years, not styles I prompt for.</span>
+        </p>
+        <div class="about-quote">
+          <span class="zh-only">「曾經我做東西是為了證明能力。現在我先問：接收這件作品的人，會是什麼感受？」</span>
+          <span class="en-only">"I used to build things to prove what I could do. Now I ask first: what would it feel like to receive this?"</span>
+        </div>
+        <div class="headline-demo">
+          <p class="hl">苦盡遍體鱗傷，演出塵世甘來。</p>
+          <p class="hn"><span class="zh-only">我為 HOHO 作品集寫的標題。這樣的句子，我也能為你寫。</span><span class="en-only">A headline I wrote for the HOHO portfolio. I can write yours too.</span></p>
+        </div>
+      </div>
+      <div>
+        <h3 style="margin-bottom:1.1rem"><span class="zh-only">履歷</span><span class="en-only">Résumé</span></h3>
+        <ul class="fact-list">
+          <li><span class="zh-only">全端開發者及設計師・四個現役產品創辦人 — 橫跨軟件、零售及消費品（香港・服務全球）</span><span class="en-only">Full-stack developer &amp; designer · founder of four live products across software, retail and consumer goods (Hong Kong, worldwide)</span></li>
+          <li><span class="zh-only">前 SFC 持牌代表（第 1 及 6 類）・參與併購及配售交易總額達數億港元（2020–2023）</span><span class="en-only">Former SFC-licensed representative (Type 1 &amp; 6) · M&amp;A and secondary issues, aggregate deal values in the hundreds of millions HKD (2020–2023)</span></li>
+          <li><span class="zh-only">畫家及數碼藝術創作者，跨越 AI 前後・英粵普三語</span><span class="en-only">Painter and digital artist, pre- and post-AI · English, Cantonese, Mandarin</span></li>
+          <li><span class="zh-only">商業分析與金融碩士 MSc Business Analytics &amp; Finance — University of Southampton（2018–2019・優等・Dean&#8217;s List）</span><span class="en-only">MSc Business Analytics &amp; Finance — University of Southampton (2018–2019 · Merit · Dean&#8217;s List)</span></li>
+          <li><span class="zh-only">工商管理學士（綜合）— 金融工程及國際企業管理雙專修 — 香港中文大學（2014–2018）</span><span class="en-only">BBA (Integrated) — double concentration in Financial Engineering &amp; Management of International Business — CUHK (2014–2018)</span></li>
+          <li><span class="zh-only">HKCGI AML/CFT 認證 — 香港公司治理公會（2025）</span><span class="en-only">HKCGI AML/CFT — The Hong Kong Chartered Governance Institute (2025)</span></li>
+          <li><span class="zh-only">HKCGI 可持續發展專業 — HKCGI 可持續發展治理學院（2025）</span><span class="en-only">HKCGI Sustainability Professional — Sustainability Governance Academy (2025)</span></li>
+          <li><span class="zh-only">認證無障礙開發者 — WIX（2024）</span><span class="en-only">Certified Accessibility Developer — WIX (2024)</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">FAQ</div>
+      <h2><span class="zh-only">問題，直接回答。</span><span class="en-only">Questions, answered straight.</span></h2>
+    </div>
+    <div class="glass faq-panel">
+      <details>
+        <summary><span class="zh-only">網站完成後，屬於誰？</span><span class="en-only">Who owns the website when it's done?</span></summary>
+        <p><span class="zh-only">你。完完全全。程式碼、網域、內容、寄存帳戶 — 全在你名下。隨時終止合作，一切跟你走。沒有「人質式」寄存。</span><span class="en-only">You. Completely. Code, domain, content, hosting accounts — all in your name. Part ways anytime; everything goes with you. No hostage hosting.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">一個項目需要多久？</span><span class="en-only">How long does a project take?</span></summary>
+        <p><span class="zh-only">Launch：2–3 週。Business：4–6 週。Platform：先定範圍，後書面鎖定。全程每週在真實連結上看到進度。</span><span class="en-only">Launch: 2–3 weeks. Business: 4–6 weeks. Platform: scoped, then fixed in writing. Weekly progress on a live link throughout.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">AI 功能點收費？用量點計？</span><span class="en-only">How does AI pricing and usage work?</span></summary>
+        <p><span class="zh-only">兩條路：受管 API — 我透過 OpenRouter 提供，月費連用量額度，超額按成本加固定手續費，設支出上限；或者自備 API key — 一次過設定費，用量直接找供應商。明碼實價，冇隱藏。</span><span class="en-only">Two routes: a managed API — I provide it via OpenRouter, monthly fee with a usage allowance, overage at cost plus a fixed margin, hard spend cap; or bring your own key — one-off setup, you pay the provider directly. Priced in the open, nothing hidden.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">植入 AI，會唔會亂講嘢？</span><span class="en-only">If I add AI, will it say something wrong?</span></summary>
+        <p><span class="zh-only">唔會由得佢。我設計咗 <strong>AI Logic Firewall（專利申請中）</strong>，喺 ICCC® 實戰驗證：一層邏輯防火牆，令 AI 只能引用你批准嘅資料、只能答你允許嘅範圍 — 超出範圍，就靜靜交返畀真人。你嘅 AI 唔會亂報價、亂承諾、亂爆料。</span><span class="en-only">Not on my watch. I designed the <strong>AI Logic Firewall (patent pending)</strong>, proven in production on ICCC®: a logic layer that lets the AI cite only material you approved and answer only within scopes you allow — anything beyond gets handed quietly to a human. Your AI will not misquote prices, invent promises, or leak.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">為什麼你的價格高於市場平均？</span><span class="en-only">Why are your prices above the market average?</span></summary>
+        <p><span class="zh-only">因為價格包含了大多數報價悄悄略去的東西：部署、保安、SSL、備份、30 日保養 — 以及一個前 SFC 持牌、經營過真實生意的建造者。以完整範圍比完整範圍，溢價其實不大。想更低入場？創始客戶價正為此而設。</span><span class="en-only">Because the price includes what most quotes quietly leave out: deployment, security, SSL, backups, a 30-day warranty — and a builder who held an SFC licence and has run real businesses. Compare full scope with full scope, and the premium shrinks. Want in cheaper? That's the founding-client rate.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">創始客戶折扣是噱頭嗎？</span><span class="en-only">Is the founding-client discount a gimmick?</span></summary>
+        <p><span class="zh-only">不是 — 是交易。你提早投入（預付 50%）並借出你的故事（作品集 + 推薦語）；我以低於市場的價格交付高階範圍。每月兩個名額，確保誠實。</span><span class="en-only">No — a trade. You commit early (50% upfront) and lend me your story (portfolio + testimonial); I deliver premium scope below market. Two slots a month keeps it honest.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">我不能自己用 AI 做嗎？</span><span class="en-only">Can't I just build it myself with AI?</span></summary>
+        <p><span class="zh-only">可以 — 預算是零的話，你確實應該。通話時我甚至會告訴你用什麼工具。我出售的東西在示範之後才開始：審美、判斷、保安、部署，以及關鍵時刻負責到底的人。</span><span class="en-only">You can — and if your budget is zero, you should. I'll even point you to the right tools on our call. What I sell begins after the demo: taste, judgment, security, deployment, and a human accountable when it matters.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">上線後壞掉怎麼辦？</span><span class="en-only">What if something breaks after launch?</span></summary>
+        <p><span class="zh-only">每個項目 30 日保養 — 缺陷免費修復。之後可選 HK$1,880/月的全包看守 — 保安、備份、修改、真人回應，一個價錢全包，隨時取消。</span><span class="en-only">30-day warranty on every build — defects fixed free. Then all-in care at HK$1,880/month — security, backups, changes and a human reply, one price, cancel anytime.</span></p>
+      </details>
+      <details>
+        <summary><span class="zh-only">你接香港以外的客戶嗎？</span><span class="en-only">Do you work with clients outside Hong Kong?</span></summary>
+        <p><span class="zh-only">接。完全支援遠程，英文、廣東話、普通話皆可。港幣定價附美元參考，支援國際付款。</span><span class="en-only">Yes. Fully remote-friendly, in English, Cantonese or Mandarin. HKD pricing with USD equivalents; payment works internationally.</span></p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" style="padding-bottom:90px">
+  <div class="wrap">
+    <div class="glass contact-panel reveal">
+      <div>
+        <div class="kicker"><span class="zh-only">下一步</span><span class="en-only">Next step</span></div>
+        <h2 style="font-size:clamp(1.8rem,3.6vw,2.6rem)"><span class="zh-only">進行免費業務快檢，<br>即時看破你的業務盲點<br>及客戶體驗弊處。</span><span class="en-only">Free business health-check.<br>Spot your blind spots<br>and UX pitfalls — instantly.</span></h2>
+        <p style="margin-top:1.1rem;max-width:420px">
+          <span class="zh-only">講講你的生意，以及網站最令你困擾的地方。我會在一個工作天內回覆 — 廣東話、英文或普通話皆可。</span>
+          <span class="en-only">Tell me about your business and what frustrates you about your web presence. I reply within one working day — in 廣東話, English or 普通話.</span>
+        </p>
+        <div class="btn-row" style="justify-content:flex-start;margin-top:1.6rem">
+          <a class="btn btn-wa" href="https://wa.me/85266033707" target="_blank" rel="noopener"><svg class="bico ico"><use href="#i-wa"/></svg> WhatsApp</a>
+        </div>
+        <p style="margin-top:1.3rem;font-size:.94rem">
+          <span class="zh-only">想直接電郵？</span><span class="en-only">Prefer email? </span>
+          <a href="mailto:vita.lam@icloud.com">vita.lam@icloud.com</a>
+        </p>
+      </div>
+      <form name="enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="enquiry">
+        <p style="display:none"><input name="bot-field"></p>
+        <div>
+          <label for="f-name"><span class="zh-only">你的名字</span><span class="en-only">Your name</span></label>
+          <input id="f-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div>
+          <label for="f-email"><span class="zh-only">電郵</span><span class="en-only">Email</span></label>
+          <input id="f-email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div>
+          <label for="f-type"><span class="zh-only">你需要什麼？</span><span class="en-only">What do you need?</span></label>
+          <select id="f-type" name="project-type">
+            <option value="new-site">新網站 / New website</option>
+            <option value="web-app">商業系統（現成/訂製）/ Business systems</option>
+            <option value="ai">AI 功能 / AI features</option>
+            <option value="rescue">急救現有網站 / Rescue my site</option>
+            <option value="care">長期維護 / Ongoing care</option>
+            <option value="other">其他 / Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-msg"><span class="zh-only">講講你的生意</span><span class="en-only">Tell me about your business</span></label>
+          <textarea id="f-msg" name="message" rows="5" required></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit"><span class="zh-only">索取免費業務快檢</span><span class="en-only">Get a free business health-check</span></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<a class="wa-float" href="https://wa.me/85266033707" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Vita Lam · vitalam.org · <a href="https://wa.me/85266033707">+852 6603 3707</a></span>
+    <span>
+      <a href="https://iccc.dev" target="_blank" rel="noopener">ICCC®</a> ·
+      <a href="https://matterus.com.hk" target="_blank" rel="noopener">MatterUs</a> ·
+      <a href="https://carboncopy.one" target="_blank" rel="noopener">Carbon Copy®</a> ·
+      <a href="https://batjik.com" target="_blank" rel="noopener">沉墨 Batjik</a>
+    </span>
+    <span class="zh-only">親手建造。AI 是工具箱一員。一如承諾。</span>
+    <span class="en-only">Built by hand. AI in the toolbox. Exactly as advertised.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ============ BUILDER-V2 config ============ */
+  function L(zh,en){return {zh:zh,en:en};}
+  var CFG=[
+    {id:'01',ico:'i-store',once:28000,name:L('01 專業網站設計','01 Professional Website Design'),desc:L('骨幹基建就緒・含 CMS・SEO・部署・SSL','Backbone-ready · CMS · SEO · deployment · SSL'),on:true,comps:[
+      {id:'01a',once:3800,name:L('中英雙語內容架構','Bilingual (ZH/EN) structure')},
+      {id:'01b',once:2800,name:L('進階 SEO・結構化資料','Advanced SEO & structured data')},
+      {id:'01c',once:4800,name:L('額外頁面組（+5 版）','Extra page set (+5 pages)')},
+      {id:'01d',once:3200,name:L('Blog／新聞模組','Blog / news module')}]},
+    {id:'02',ico:'i-key',once:28000,name:L('02 商業系統（現成/訂製）','02 Business Systems'),desc:L('製造業、零售、任何 ERP 系統 — 現成或訂製','Manufacturing, retail, any ERM — off-shelf or custom'),comps:[
+      {id:'02a',once:4800,name:L('會員分級・權限層','Member tiers & permission layers')},
+      {id:'02b',once:2800,name:L('2FA 雙重驗證','Two-factor authentication')},
+      {id:'02c',once:3800,name:L('通知系統（Email／WhatsApp）','Notifications (Email / WhatsApp)')},
+      {id:'02d',once:5800,name:L('預約系統','Booking system')}]},
+    {id:'2B',ico:'i-coin',once:22000,name:L('02B 付款・電商','02B Payments & E-commerce'),desc:L('購物車、結帳、訂單郵件・含 Stripe 整合','Cart, checkout, order emails · Stripe included'),comps:[
+      {id:'2Ba',once:3800,name:L('額外支付方式（Alipay／FPS／PayMe）','Extra gateways (Alipay / FPS / PayMe)')},
+      {id:'2Bb',once:6800,name:L('庫存系統','Inventory system')},
+      {id:'2Bc',once:5800,name:L('物流・運費整合','Shipping & logistics integration')},
+      {id:'2Bd',once:8800,name:L('製造商中樞','Manufacturers hub')},
+      {id:'2Be',once:7800,name:L('供應商管理','Supplier management')},
+      {id:'2Bf',once:2800,name:L('折扣碼・優惠券','Coupons & discount codes')}]},
+    {id:'03',ico:'i-stack',once:16800,name:L('03 數據整合系統','03 Data Integration'),desc:L('多源合一・一個儀表板・AI-ready 資料底座','Many sources, one dashboard — AI-ready backbone'),comps:[
+      {id:'03a',once:2400,name:L('額外數據來源（每個）','Extra data source (each)')},
+      {id:'03b',once:3600,name:L('自動報表（週／月）','Scheduled reports (weekly/monthly)')},
+      {id:'03c',once:4800,name:L('歷史數據遷移','Historical data migration')}]},
+    {id:'04',ico:'i-spark',once:19800,req:'03',name:L('04 AI 整合','04 AI Integration'),desc:L('AI Logic Firewall（專利申請中）・需要 03 數據底座','AI Logic Firewall (patent pending) · requires 03'),comps:[
+      {id:'04a',once:4800,name:L('表格／預約 AI 助手','AI form / booking assistant')},
+      {id:'04b',once:5800,name:L('內容生成模組','Content generation module')},
+      {id:'04c',once:4800,name:L('多語言客服 AI','Multilingual support AI')}],
+     groups:[
+      {label:L('API KEY（二選一）','API KEY (choose one)'),radio:'api',opts:[
+        {id:'apiB',month:0,def:true,name:L('自備 API key（BYOK）— 免費','Bring your own key (BYOK) — free')},
+        {id:'apiM',month:null,name:L('由我提供受管 API（經 OpenRouter）','Managed API by me (via OpenRouter)')}]},
+      {label:L('AI 模型（受管 API 適用）','AI model (for managed API)'),radio:'model',needs:'apiM',opts:[
+        {id:'mStd',month:780,def:true,name:L('標準模型（日常客服級）','Standard model (everyday support)')},
+        {id:'mPro',month:1480,name:L('進階模型（旗艦級理解力）','Advanced model (flagship reasoning)')},
+        {id:'mMax',month:2280,name:L('頂配模型（最新旗艦＋深度推理）','Top model (latest flagship + deep reasoning)')}]}]},
+    {id:'05',ico:'i-brush',once:8800,name:L('05 視覺・編采','05 Visual Arts & Editorial'),desc:L('品牌語調、視覺方向・含協作註記介面','Brand voice, visual direction · annotation interface included'),comps:[
+      {id:'05a',once:4800,name:L('品牌命名','Brand naming')},
+      {id:'05b',once:2800,name:L('金句標題套組（3 句）','Signature headline set (3)')},
+      {id:'05c',once:4200,name:L('社交貼文模板（10 款）','Social post templates (10)')}]},
+    {id:'06',ico:'i-shield',month:1880,on:true,name:L('06 部署訂閱','06 Deployment Subscription'),desc:L('寄存・SSL・備份・監測・保安修補・每月 4 小時修改・月報・最新 AI 模型升級（訂閱戶專享）・隨時取消','Hosting · SSL · backups · monitoring · patching · 4 hrs changes/mo · report · latest AI model upgrades included · cancel anytime'),comps:[]}
+  ];
+  var host=document.getElementById('bblocks'); if(!host) return;
+  function lang(){ return document.body.classList.contains('lang-en')?'en':'zh'; }
+  function bi(l){ return '<span class="zh-only">'+l.zh+'</span><span class="en-only">'+l.en+'</span>'; }
+  function fmt(n){ return 'HK$'+n.toLocaleString('en-US'); }
+  function priceTag(o){ if(o.month!=null&&o.month!==undefined&&o.month!==null) {} }
+  /* render */
+  CFG.forEach(function(b){
+    var div=document.createElement('div'); div.className='bblock'; div.id='bb'+b.id;
+    var pr = b.month!=null ? fmt(b.month)+'<i>/月 mo</i>' : (b.id==='01'?fmt(b.once):'+'+fmt(b.once));
+    var req = b.req ? ' <span class="breq">'+bi(L('（需要 '+b.req+'）','(requires '+b.req+')'))+'</span>' : '';
+    var h='<div class="bb-head"><input type="checkbox" id="c'+b.id+'"'+(b.on?' checked':'')+'>'+
+      '<label for="c'+b.id+'"><b>'+bi(b.name)+req+'</b><span class="bd">'+bi(b.desc)+'</span></label>'+
+      '<span class="bp">'+pr+'</span></div>';
+    var inner='';
+    (b.comps||[]).forEach(function(c){
+      inner+='<div class="bcomp"><input type="checkbox" id="c'+c.id+'"><label for="c'+c.id+'">'+bi(c.name)+'</label><span class="bp">'+(c.month!=null?'+'+fmt(c.month)+'<i>/月 mo</i>':'+'+fmt(c.once))+'</span></div>';
+    });
+    (b.groups||[]).forEach(function(g){
+      inner+='<div class="bgroup">'+bi(g.label)+'</div>';
+      g.opts.forEach(function(o){
+        var p = o.month==null ? bi(L('按模型計','per model')) : (o.month===0 ? '+HK$0' : '+'+fmt(o.month)+'<i>/月 mo</i>');
+        inner+='<div class="bcomp sub" data-radio="'+g.radio+'"'+(g.needs?' data-needs="'+g.needs+'"':'')+'><input type="checkbox" id="c'+o.id+'"'+(o.def?' checked':'')+' data-radio="'+g.radio+'"><label for="c'+o.id+'">'+bi(o.name)+'</label><span class="bp">'+p+'</span></div>';
+      });
+    });
+    div.innerHTML=h+(inner?'<div class="bb-comps">'+inner+'</div>':'');
+    if(b.on) div.classList.add('on');
+    host.appendChild(div);
+  });
+  function q(id){ return document.getElementById('c'+id); }
+  /* interactions */
+  CFG.forEach(function(b){
+    var box=q(b.id), block=document.getElementById('bb'+b.id);
+    box.addEventListener('change',function(){
+      if(box.checked && b.req && !q(b.req).checked){
+        q(b.req).checked=true;
+        document.getElementById('bb'+b.req).classList.add('on');
+        var el=document.getElementById('bb'+b.req); el.classList.remove('pulse'); void el.offsetWidth; el.classList.add('pulse');
+      }
+      if(!box.checked){
+        block.querySelectorAll('.bb-comps input').forEach(function(i){ if(!i.hasAttribute('data-radio')) i.checked=false; });
+        /* unchecking 03 kills 04 */
+        CFG.forEach(function(x){ if(x.req===b.id && q(x.id).checked){ q(x.id).checked=false; document.getElementById('bb'+x.id).classList.remove('on'); document.getElementById('bb'+x.id).querySelectorAll('.bb-comps input').forEach(function(i){ if(!i.hasAttribute('data-radio')) i.checked=false; }); } });
+      }
+      block.classList.toggle('on',box.checked);
+      calc();
+    });
+  });
+  /* radio-like checkbox groups */
+  document.querySelectorAll('#bblocks input[data-radio]').forEach(function(i){
+    i.addEventListener('change',function(){
+      if(i.checked){
+        document.querySelectorAll('#bblocks input[data-radio="'+i.getAttribute('data-radio')+'"]').forEach(function(o){ if(o!==i) o.checked=false; });
+      } else { i.checked=true; } /* one must stay selected */
+      calc();
+    });
+  });
+  document.querySelectorAll('#bblocks .bb-comps input:not([data-radio])').forEach(function(i){
+    i.addEventListener('change',calc);
+  });
+  /* totals + shopping list */
+  var lines=[];
+  function calc(){
+    lines=[]; var once=0,mo=0;
+    var managed=q('apiM')&&q('apiM').checked;
+    /* model rows visible logic: grey when BYOK */
+    document.querySelectorAll('[data-needs="apiM"]').forEach(function(r){ r.style.opacity=managed?'1':'.35'; });
+    CFG.forEach(function(b){
+      if(!q(b.id).checked) return;
+      if(b.month!=null){ mo+=b.month; lines.push({n:b.name,amt:b.month,m:true}); }
+      else { once+=b.once; lines.push({n:b.name,amt:b.once,m:false}); }
+      (b.comps||[]).forEach(function(c){ if(q(c.id).checked){ once+=(c.once||0); mo+=(c.month||0); lines.push({n:c.name,amt:c.once||c.month,m:!!c.month,sub:true}); } });
+      (b.groups||[]).forEach(function(g){
+        g.opts.forEach(function(o){
+          if(!q(o.id).checked) return;
+          if(g.needs && !q(g.needs).checked) return;
+          if(o.month===0){ lines.push({n:o.name,amt:0,m:true,sub:true}); }
+          else if(o.month!=null){ mo+=o.month; lines.push({n:o.name,amt:o.month,m:true,sub:true}); }
+          else if(o.id==='apiM'){ lines.push({n:o.name,amt:0,m:true,sub:true,label:'—'}); }
+        });
+      });
+    });
+    var lg=lang();
+    var html=lines.length?lines.map(function(l){
+      return '<div class="bl-line"><span>'+(l.sub?'└ ':'')+l.n[lg]+'</span><span>'+(l.label||( (l.amt===0?'HK$0':fmt(l.amt))+(l.m?'/'+(lg==='zh'?'月':'mo'):'') ))+'</span></div>';
+    }).join(''):'<div class="bl-empty">'+(lg==='zh'?'未揀任何模組':'Nothing selected yet')+'</div>';
+    document.getElementById('blines').innerHTML=html;
+    document.getElementById('tOnce').textContent=fmt(once);
+    document.getElementById('tMo').textContent=fmt(mo);
+    document.getElementById('tMoRow').style.display=mo?'block':'none';
+    var ag=document.getElementById('blAgency');
+    if(once>0){ ag.style.display='block';
+      document.getElementById('agencyRange').textContent='≈ '+fmt(Math.round(once*2.5/1000)*1000)+' – '+fmt(Math.round(once*5/1000)*1000);
+    } else ag.style.display='none';
+    var msg=(lg==='zh'?'你好 Vita，我砌咗呢個組合：\n':'Hi Vita, here is my build:\n')+
+      lines.map(function(l){return '- '+l.n[lg]+'：'+fmt(l.amt)+(l.m?(lg==='zh'?'/月':'/mo'):'');}).join('\n')+
+      (lg==='zh'?('\n合共：一次性 '+fmt(once)+(mo?' + 每月 '+fmt(mo):'')+'。想約 20 分鐘傾傾。'):('\nTotal: '+fmt(once)+' one-off'+(mo?' + '+fmt(mo)+'/mo':'')+'. I would like a 20-minute call.'));
+    document.getElementById('buildCta').href='https://wa.me/85266033707?text='+encodeURIComponent(msg);
+    window.__vlQuote={lines:lines,once:once,mo:mo};
+  }
+  /* quotation generator */
+  document.getElementById('quoteBtn').addEventListener('click',function(){
+    var d=window.__vlQuote||{lines:[],once:0,mo:0}, lg=lang();
+    var now=new Date();
+    var no='VL-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0');
+    var rows=d.lines.map(function(l,i){
+      return '<tr><td>'+(i+1)+'</td><td>'+(l.sub?'&nbsp;&nbsp;└ ':'')+l.n[lg]+'</td><td style="text-align:right">'+(l.amt===0?'HK$0':fmt(l.amt))+(l.m?('/'+(lg==='zh'?'月':'mo')):'')+'</td></tr>';
+    }).join('');
+    var T=lg==='zh'
+      ?{t:'報價單 QUOTATION',date:'日期',no:'編號',item:'項目',amt:'金額',once:'一次性合計',mo:'每月合計',valid:'本報價有效期 14 日。範圍以書面確認為準，先報價，後動工。',inc:'已包含：全部源代碼・AI-ready 設計手冊・模組化架構・文檔交接・30 日保養。保安係標準配備。',promo:'創始客戶禮遇（每月 2 名）：免首 6 個月部署訂閱（價值 HK$11,280）。',print:'列印 / 儲存 PDF'}
+      :{t:'QUOTATION',date:'Date',no:'Quote No.',item:'Item',amt:'Amount',once:'One-off total',mo:'Monthly total',valid:'Valid for 14 days. Scope is fixed in writing; quote first, work after.',inc:'Included: all source code · AI-ready design playbook · modular architecture · docs handover · 30-day warranty. Security is standard.',promo:'Founding-client offer (2/month): first 6 months of Deployment Subscription free (worth HK$11,280).',print:'Print / Save as PDF'};
+    var w=window.open('','_blank');
+    if(!w){ alert(lg==='zh'?'請允許彈出視窗以產生報價單':'Please allow pop-ups to generate the quotation'); return; }
+    w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+T.t+' '+no+'</title><style>'+
+      'body{font-family:Inter,"Noto Sans TC",sans-serif;color:#111;margin:48px;max-width:720px}'+
+      'h1{font-size:22px;letter-spacing:.06em} .lime{color:#93b31a} .meta{color:#666;font-size:13px;margin:6px 0 26px}'+
+      'table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:9px 8px;border-bottom:1px solid #ddd;text-align:left}'+
+      'th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#888}'+
+      '.tot{margin-top:18px;font-size:15px} .tot b{font-size:19px}'+
+      '.note{margin-top:26px;font-size:12px;color:#666;line-height:1.6;border-top:1px solid #ddd;padding-top:14px}'+
+      '.btnp{margin-top:26px;padding:10px 18px;background:#111;color:#fff;border:none;cursor:pointer;font-size:14px}'+
+      '@media print{.btnp{display:none}}</style></head><body>'+
+      '<h1>【VITA<span class="lime"> LAM</span>】 '+T.t+'</h1>'+
+      '<div class="meta">'+T.no+' '+no+' · '+T.date+' '+now.toLocaleDateString()+' · vitalam.org · vita.lam@icloud.com · +852 6603 3707</div>'+
+      '<table><tr><th>#</th><th>'+T.item+'</th><th style="text-align:right">'+T.amt+'</th></tr>'+rows+'</table>'+
+      '<div class="tot">'+T.once+'：<b>'+fmt(d.once)+'</b>'+(d.mo?('　·　'+T.mo+'：<b>'+fmt(d.mo)+'</b>'):'')+'</div>'+
+      '<div class="note">'+(d.once>0?((lg==='zh'?'同等範圍・香港代理行情約 ':'Equivalent scope at HK agency market rates: ≈ ')+fmt(Math.round(d.once*2.5/1000)*1000)+' – '+fmt(Math.round(d.once*5/1000)*1000)+(lg==='zh'?'（本報價為直接交付價：冇代理開支，規格不減。）':' (this quote is a direct-delivery price: agency grade, without agency overhead.)')+'<br>'):'')+T.inc+'<br>'+T.promo+'<br>'+T.valid+'</div>'+
+      '<button class="btnp" onclick="window.print()">'+T.print+'</button>'+
+      '</body></html>');
+    w.document.close();
+  });
+  document.getElementById('langBtn').addEventListener('click',function(){ setTimeout(calc,0); });
+  calc();
+})();
+</script>
+
+
+<!-- ========== REVIEW-NOTES-TOOL START (delete from here to the END marker before final launch) ========== -->
+<div id="noteBar" aria-label="Review notes toolbar">
+  <button id="noteToggle" type="button">✎ 筆記 Notes</button>
+  <span id="noteCount" hidden>0 條筆記</span>
+  <button id="noteCopy" type="button" hidden>📋 複製評論</button>
+  <button id="noteDl" type="button" hidden>⬇ 下載 .md</button>
+  <button id="noteClear" type="button" hidden>✕ 清空</button>
+</div>
+<div id="noteToast">已複製 — 直接貼入 Bolt.new</div>
+<script>
+(function(){
+  var SECTS=[
+    ['#top','Hero 開場'],
+    ['.chooser','三秒導航 Chooser'],
+    ['.proof','信任列 Proof strip'],
+    ['#ai','AI 段落'],
+    ['#services','服務 Services'],
+    ['#work','作品 Work'],
+    ['#acumen','商業眼光 Acumen'],
+    ['#process','流程 Process'],
+    ['#deliverables','交付清單 Deliverables'],
+    ['#pricing','收費 Pricing'],
+    ['#about','關於 About'],
+    ['#faq','FAQ'],
+    ['#contact','聯絡 Contact']
+  ];
+  var KEY='vl-bolt-notes', notes={};
+  try{ notes=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ notes={}; }
+  function persist(){ try{ localStorage.setItem(KEY,JSON.stringify(notes)); }catch(e){} }
+  var bar=document.getElementById('noteBar'),
+      tgl=document.getElementById('noteToggle'),
+      cnt=document.getElementById('noteCount'),
+      cpy=document.getElementById('noteCopy'),
+      dl=document.getElementById('noteDl'),
+      clr=document.getElementById('noteClear'),
+      toast=document.getElementById('noteToast');
+  var widgets=[];
+  SECTS.forEach(function(cfg,i){
+    var el=document.querySelector(cfg[0]); if(!el) return;
+    el.classList.add('note-host');
+    var tab=document.createElement('button');
+    tab.type='button'; tab.className='note-tab'; tab.textContent='＋ 註 '+(i+1);
+    var panel=document.createElement('div'); panel.className='note-panel';
+    panel.innerHTML='<label>'+cfg[1]+' — 想 Bolt.new 點改？</label>'+
+      '<textarea placeholder="例：呢度個標題想再大啲，改用……（留空 = 唔改）"></textarea>'+
+      '<div class="np-row"><span>會自動儲存</span><button type="button" class="np-close">完成 ✓</button></div>';
+    var ta=panel.querySelector('textarea');
+    ta.value=notes[cfg[0]]||'';
+    function paint(){ var has=ta.value.trim()!==''; tab.classList.toggle('has',has); tab.textContent=(has?'✎ 註 ':'＋ 註 ')+(i+1); updateCount(); }
+    ta.addEventListener('input',function(){ notes[cfg[0]]=ta.value; persist(); paint(); });
+    tab.addEventListener('click',function(){ var open=panel.classList.toggle('open'); if(open) ta.focus(); });
+    panel.querySelector('.np-close').addEventListener('click',function(){ panel.classList.remove('open'); });
+    el.appendChild(tab); el.appendChild(panel);
+    widgets.push({cfg:cfg,ta:ta,paint:paint});
+    paint();
+  });
+  function countNotes(){ return widgets.filter(function(w){return w.ta.value.trim()!=='';}).length; }
+  function updateCount(){ cnt.textContent=countNotes()+' 條筆記'; }
+  function brief(){
+    var d=new Date(), out='# vitalam.org 修改指示（Bolt.new）\n';
+    out+='> 產生時間：'+d.toISOString().slice(0,16).replace('T',' ')+'\n';
+    out+='> 規則：只改以下列明的地方，其他一切（文案、結構、設計 tokens、雙語系統、互動）保持不變。設計規則見 vitalam-design-playbook.md。\n\n';
+    var n=0;
+    SECTS.forEach(function(cfg,i){
+      var t=(notes[cfg[0]]||'').trim(); if(!t) return; n++;
+      out+='## '+n+'. '+cfg[1]+'（selector: '+cfg[0]+'）\n'+t+'\n\n';
+    });
+    if(!n) out+='（未有任何筆記）\n';
+    return out;
+  }
+  function showToast(msg){ toast.textContent=msg; toast.style.display='block'; setTimeout(function(){toast.style.display='none';},2200); }
+  cpy.addEventListener('click',function(){
+    var text=brief();
+    function fallback(){
+      var t=document.createElement('textarea'); t.value=text; document.body.appendChild(t);
+      t.select(); try{document.execCommand('copy');}catch(e){} document.body.removeChild(t);
+      showToast('已複製 — 直接貼入 Bolt.new');
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){showToast('已複製 — 直接貼入 Bolt.new');},fallback);
+    }else fallback();
+  });
+  dl.addEventListener('click',function(){
+    var blob=new Blob([brief()],{type:'text/markdown'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='bolt-notes.md';
+    document.body.appendChild(a); a.click(); document.body.removeChild(a); URL.revokeObjectURL(a.href);
+  });
+  clr.addEventListener('click',function(){
+    if(!confirm('清空所有筆記？')) return;
+    notes={}; persist();
+    widgets.forEach(function(w){ w.ta.value=''; w.paint(); w.ta.closest('.note-panel').classList.remove('open'); });
+  });
+  tgl.addEventListener('click',function(){
+    var on=document.body.classList.toggle('notes-on');
+    tgl.classList.toggle('on',on);
+    [cnt,cpy,dl,clr].forEach(function(b){ b.hidden=!on; });
+    updateCount();
+  });
+})();
+</script>
+<!-- ========== REVIEW-NOTES-TOOL END ========== -->
+
+<script>
+(function(){
+  /* language toggle — 繁中 default */
+  var btn=document.getElementById('langBtn');
+  btn.addEventListener('click',function(){
+    var en=document.body.classList.toggle('lang-en');
+    document.documentElement.lang=en?'en':'zh-Hant-HK';
+    btn.textContent=en?'中文':'EN';
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  /* work filter */
+  function setFilter(cat){
+    document.querySelectorAll('#workGrid [data-cat], .more-panel [data-cat]').forEach(function(el){
+      var cats=el.getAttribute('data-cat').split(' ');
+      el.classList.toggle('hide',cat!=='all'&&cats.indexOf(cat)===-1);
+    });
+    document.querySelectorAll('#chips .chip').forEach(function(c){
+      c.classList.toggle('on',c.getAttribute('data-filter')===cat);
+    });
+  }
+  document.querySelectorAll('#chips .chip').forEach(function(c){
+    c.addEventListener('click',function(){setFilter(c.getAttribute('data-filter'));});
+  });
+  /* chooser tiles */
+  document.querySelectorAll('.choose-tile').forEach(function(t){
+    t.addEventListener('click',function(){
+      var k=t.getAttribute('data-choose');
+      if(k==='work'){setFilter('all');return;}
+      setFilter(k);
+      var card=document.getElementById('svc-'+k);
+      if(card){card.classList.remove('pulse');void card.offsetWidth;card.classList.add('pulse');}
+    });
+  });
+  /* reveal */
+  if('IntersectionObserver' in window){
+    document.documentElement.classList.add('js');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.1});
+    document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+  }
+})();
+</script>
+</body>
+</html>
