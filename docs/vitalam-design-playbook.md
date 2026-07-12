@@ -15,13 +15,8 @@ Swiss-brutalist editorial on a black drafting grid: engineering precision, one e
 | `--accent` | `#D9FF3F` | THE accent — CTAs, highlights, one word per headline max |
 | `--accent-2` | `#C4EC2D` | accent hover |
 | `--violet` | `#A78BFA` | rare secondary (category chips only, ≤1 use per viewport) |
-| `--amber` | `#F2B84B` | rare secondary — icon-chip glyph colour only, one chip per section max |
-| `--teal` | `#4DD9C0` | rare secondary — icon-chip glyph colour only, one chip per section max |
-| `--sky` | `#7EC8F0` | rare secondary — icon-chip glyph colour only, one chip per section max |
 | panel | `#101010` | card/panel fill |
 | line | `#282826` | all borders, 1px |
-
-Secondary colours never touch buttons, CTAs, prices, or highlighted/lime-bordered cards — lime stays the only accent those own. They only ever recolour the glyph of an `.ico-chip` (via `.ico-chip.amber/.teal/.sky` — chip background and border stay the standard dark/hairline) to give an individual card in a grid a distinct identity, e.g. picking out one card among several siblings. Spend them like violet: sparingly, one per section, never adjacent to another secondary colour.
 
 Text on accent is always `#0C0D04`. Never place accent text on panel fills below 1rem (contrast).
 

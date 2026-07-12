@@ -42,6 +42,9 @@
   --accent:#D9FF3F;
   --accent-2:#C4EC2D;
   --violet:#A78BFA;
+  --amber:#F2B84B;
+  --teal:#4DD9C0;
+  --sky:#7EC8F0;
   --glass-bg:#101010;
   --glass-line:#282826;
   --glass-inner:none;
@@ -103,6 +106,9 @@ section:has(.sec-head) {counter-increment:sec}
   background:#141412;border:1px solid var(--glass-line);
   margin-bottom:20px;
 }
+.ico-chip.amber{color:var(--amber)}
+.ico-chip.teal{color:var(--teal)}
+.ico-chip.sky{color:var(--sky)}
 /* ---------- nav ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
@@ -208,14 +214,11 @@ a.card h3{color:var(--ink)}
 .stack-line{font-size:.9rem;color:var(--ink-3);margin-top:1.8rem;max-width:680px;margin-left:auto;margin-right:auto;text-align:center}
 .stack-line b{color:var(--ink-2)}
 /* ---------- work ---------- */
-.chips{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 2rem}
-.chip{
-  font:inherit;font-size:.86rem;font-weight:600;color:var(--ink-2);cursor:pointer;
-  padding:9px 18px;border-radius:3px;border:1px solid var(--glass-line);
-  background:transparent;transition:.18s;
-}
-.chip:hover{color:var(--accent);border-color:var(--accent)}
-.chip.on{background:var(--accent);color:#0C0D04;border-color:var(--accent)}
+.cat-label{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:2.8rem 0 1rem;display:flex;align-items:center;gap:14px}
+.cat-label:first-of-type{margin-top:0}
+.cat-label::after{content:"";flex:1;height:1px;background:var(--glass-line)}
+.cat-row{display:grid;grid-template-columns:1.12fr .88fr;gap:18px;align-items:start}
+@media(max-width:960px){.cat-row{grid-template-columns:1fr}}
 .hide{display:none !important}
 .work-card{display:flex;flex-direction:column}
 .work-head{display:flex;align-items:center;gap:15px}
@@ -227,20 +230,21 @@ a.card h3{color:var(--ink)}
 .wrow b{color:var(--ink-3);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700}
 .wrow span{color:var(--ink-2)}
 .work-link{margin-top:auto;padding-top:18px;font-size:.92rem;font-weight:600}
-.more-panel{margin-top:2rem;padding:16px 30px}
-.more-panel h3{padding:14px 0 8px}
-.mrow{
-  display:grid;grid-template-columns:auto 1fr auto;gap:8px 18px;align-items:baseline;
-  padding:14px 0;border-top:1px solid rgba(255,255,255,.08);font-size:.93rem;
-}
-.mrow:first-of-type{border-top:none}
-.mrow .mname{color:var(--ink);font-weight:700;white-space:nowrap}
-.mrow .mtag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-left:10px}
-.mrow .mdesc{color:var(--ink-3)}
-.mrow a{white-space:nowrap;font-weight:600;font-size:.88rem}
-@media(max-width:700px){.mrow{grid-template-columns:1fr;gap:4px}}
-.shot-wrap{margin:0 0 18px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9;background:rgba(255,255,255,.04)}
+.work-list{padding:8px 24px;align-self:start}
+.wl-row{display:block;width:100%;text-align:left;font:inherit;color:inherit;background:none;border:0;border-top:1px solid rgba(255,255,255,.08);padding:15px 2px;cursor:pointer;transition:.15s}
+.wl-row:first-child{border-top:0}
+.wl-row:hover .wl-name{color:var(--accent)}
+.wl-row:hover .wl-swap{opacity:1;transform:none}
+.wl-name{display:block;color:var(--ink);font-weight:700;font-size:.95rem}
+.wl-tag{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-left:10px}
+.wl-desc{display:block;color:var(--ink-3);font-size:.85rem;margin-top:3px}
+.wl-swap{float:right;color:var(--accent);font-weight:700;opacity:0;transform:translateX(-4px);transition:.15s}
+.work-note{text-align:center;color:var(--ink-3);font-size:.9rem;margin-top:2.6rem}
+.work-card .w-desc{margin-top:16px}
+.shot-wrap{position:relative;margin:0 0 18px;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.1);aspect-ratio:16/9;background:rgba(255,255,255,.04)}
 .shot-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.shot-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:none}
+.shot-wrap.playing video{display:block}
 /* ---------- pricing ---------- */
 .anchor-line{max-width:640px;margin:0 auto 3.2rem;text-align:center;color:var(--ink-2);font-size:1.05rem}
 .anchor-line b{color:var(--ink)}
@@ -465,7 +469,6 @@ html.js .reveal.in{opacity:1;transform:none}
         </div>
       </div>
       <a href="#work"><span class="zh-only">作品</span><span class="en-only">Work</span></a>
-      <a href="#process"><span class="zh-only">流程</span><span class="en-only">Process</span></a>
       <a href="#deliverables"><span class="zh-only">交付</span><span class="en-only">Handover</span></a>
       <a href="#pricing"><span class="zh-only">收費</span><span class="en-only">Pricing</span></a>
       <a href="#about"><span class="zh-only">關於</span><span class="en-only">About</span></a>
@@ -593,7 +596,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="sec-head">
       <div class="kicker"><span class="zh-only">服務</span><span class="en-only">Services</span></div>
-      <h2><span class="zh-only">網站開發，連 AI。<br>六件事，逐件講。</span><span class="en-only">Web development, with AI.<br>Six things. One at a time.</span></h2>
+      <h2><span class="zh-only">無功不受祿。<br>照單執藥，童叟無欺。</span><span class="en-only">No reward without merit.<br>Exactly what's billed — fair to everyone.</span></h2>
       <p class="lede"><span class="zh-only">每項服務都有自己嘅專頁 — 撳入去，睇三個非佢不可嘅理由。</span><span class="en-only">Every service has its own page — click in for three reasons it has to be me.</span></p>
     </div>
     <div class="grid grid-3 reveal">
@@ -642,180 +645,60 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="sec-head">
       <div class="kicker"><span class="zh-only">精選作品</span><span class="en-only">Selected work</span></div>
-      <h2><span class="zh-only">我創辦生意。<br>包括我自己的。</span><span class="en-only">I build businesses.<br>Mine included.</span></h2>
+      <h2><span class="zh-only">懂你生意痛點，<br>全因知己知彼。</span><span class="en-only">I know your pain points —<br>because I've lived both sides.</span></h2>
       <p class="lede">
-        <span class="zh-only">以下全部都在營運中。每一個都教會我接案學不到的事 — 做那個真金白銀押上去的老闆。</span>
-        <span class="en-only">Everything below is live. Each one taught me what client work can't — being the owner whose money is on the line.</span>
+        <span class="zh-only">營運各種生意及行業。為了我學會接案學不到的事。<br>真槍實彈的老闆，分享第一手成功心得。</span>
+        <span class="en-only">Real businesses, real industries — learning what client work never teaches.<br>An owner with skin in the game, sharing first-hand what works.</span>
       </p>
     </div>
-    <div class="chips" id="chips">
-      <button class="chip on" data-filter="all"><span class="zh-only">全部</span><span class="en-only">All</span></button>
-      <button class="chip" data-filter="site"><span class="zh-only">網站</span><span class="en-only">Websites</span></button>
-      <button class="chip" data-filter="app"><span class="zh-only">商業系統</span><span class="en-only">Business systems</span></button>
-      <button class="chip" data-filter="ai">AI</button>
-    </div>
-    <div class="grid grid-2 reveal" id="workGrid">
-      <div class="card glass work-card" data-cat="app">
-        <div class="work-head">
-          <div class="ico-chip"><svg class="ico"><use href="#i-cube"/></svg></div>
-          <div><span class="work-tag"><span class="zh-only">全端平台</span><span class="en-only">Fullstack platform</span></span><h3>ICCC®</h3></div>
-        </div>
-        <div class="shot-wrap"><img src="assets/iccc.jpg" alt="iccc website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Ficcc.dev?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
-        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">品牌永遠向 SaaS 租用自己的核心系統。</span><span class="en-only">Brands rent their core systems from SaaS. Forever.</span></span></div>
-        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">完整品牌作業系統 — 店面、指揮中心、生產後台。內建合規，以及 AI Logic Firewall（專利申請中）。</span><span class="en-only">A full brand OS — storefront, command centre, production backend. Compliance-ready, with the AI Logic Firewall (patent pending).</span></span></div>
-        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">一次購買永久擁有。14 日交付。100% 退款保證。</span><span class="en-only">Buy once, own forever. 14-day delivery. 100% refund guarantee.</span></span></div>
-        <a class="work-link" href="https://iccc.dev" target="_blank" rel="noopener">iccc.dev ↗</a>
-      </div>
-      <div class="card glass work-card" data-cat="site">
-        <div class="work-head">
-          <div class="ico-chip"><svg class="ico"><use href="#i-home"/></svg></div>
-          <div><span class="work-tag"><span class="zh-only">實體零售</span><span class="en-only">Real-world retail</span></span><h3>MatterUs</h3></div>
-        </div>
-        <div class="shot-wrap"><img src="assets/matterus.jpg" alt="matterus website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fmatterus.com.hk?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
-        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">智能家居零碎混亂，令人卻步。</span><span class="en-only">Smart homes were fragmented and intimidating.</span></span></div>
-        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">圍繞 Matter 標準的顧問—銷售—安裝。尖沙咀零售。</span><span class="en-only">Consult–sell–install on the Matter standard. Retail in Tsim Sha Tsui.</span></span></div>
-        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">Nanoleaf 授權經銷商。真刀真槍談回來的合約。</span><span class="en-only">Authorized Nanoleaf distributor. A negotiated deal, not a side project.</span></span></div>
-        <a class="work-link" href="https://matterus.com.hk" target="_blank" rel="noopener">matterus.com.hk ↗</a>
-      </div>
-      <div class="card glass work-card" data-cat="site">
+    <!-- LOGO-PLACEHOLDERS: brand logo files (Carbon Copy / G Entertainment / MatterUs) to be embedded here when provided -->
+    <div class="cat-label"><span class="zh-only">網站</span><span class="en-only">Websites</span></div>
+    <div class="cat-row reveal">
+      <div class="card glass work-card" id="feat-site">
         <div class="work-head">
           <div class="ico-chip"><svg class="ico"><use href="#i-drop"/></svg></div>
           <div><span class="work-tag"><span class="zh-only">D2C 品牌 · 電商</span><span class="en-only">D2C brand · E-commerce</span></span><h3>Carbon Copy®</h3></div>
         </div>
-        <div class="shot-wrap"><img src="assets/carboncopy.jpg" alt="carboncopy website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fcarboncopy.one?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
+        <div class="shot-wrap" data-video="assets/carboncopy.mp4"><img src="assets/carboncopy.jpg" alt="Carbon Copy website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fcarboncopy.one?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display='none'}"></div>
         <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">在擁擠的類別中，信任難以被看見。</span><span class="en-only">Trust is hard to signal in a crowded category.</span></span></div>
         <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">精密工程風格的個人護理品牌。命名、語調、雙語電商。</span><span class="en-only">A precision-engineered personal-care brand. Naming, voice, bilingual e-commerce.</span></span></div>
         <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">ISO 測試。GMP 生產。市場有售。</span><span class="en-only">ISO-tested. GMP-manufactured. Live in market.</span></span></div>
         <a class="work-link" href="https://carboncopy.one" target="_blank" rel="noopener">carboncopy.one ↗</a>
       </div>
-      <div class="card glass work-card" data-cat="app ai">
+      <div class="glass work-list" id="list-site">
+        <button type="button" class="wl-row" data-id="matterus"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name">MatterUs<span class="wl-tag"><span class="zh-only">實體零售</span><span class="en-only">Real-world retail</span></span></span><span class="wl-desc"><span class="zh-only">圍繞 Matter 標準的顧問—銷售—安裝。尖沙咀零售。</span><span class="en-only">Consult–sell–install on the Matter standard. Retail in Tsim Sha Tsui.</span></span></button>
+        <button type="button" class="wl-row" data-id="moderndesign"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name"><span class="zh-only">《現代網站設計》</span><span class="en-only">“Modern Design”</span><span class="wl-tag"><span class="zh-only">設計示範</span><span class="en-only">Design demo</span></span></span><span class="wl-desc"><span class="zh-only">本網站設計雛形。</span><span class="en-only">The prototype behind this site’s design.</span></span></button>
+        <button type="button" class="wl-row" data-id="humanrights"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name"><span class="zh-only">《人權學習網》- 公司委託</span><span class="en-only">Human-rights learning site — corporate commission</span><span class="wl-tag"><span class="zh-only">公益教育</span><span class="en-only">Public education</span></span></span><span class="wl-desc"><span class="zh-only">推廣人權的公益網站。</span><span class="en-only">A site promoting human rights.</span></span></button>
+        <button type="button" class="wl-row" data-id="proxy"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name">Proxy by MatterUs<span class="wl-tag"><span class="zh-only">商業頁面</span><span class="en-only">Business page</span></span></span><span class="wl-desc"><span class="zh-only">簡潔直接的商業服務頁。</span><span class="en-only">A clean, direct business service page.</span></span></button>
+        <button type="button" class="wl-row" data-id="hoho"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name"><span class="zh-only">《陳昊霆》個人作品集</span><span class="en-only">“Hong Chan” — personal portfolio</span><span class="wl-tag"><span class="zh-only">快速作品集</span><span class="en-only">Rapid portfolio</span></span></span><span class="wl-desc"><span class="zh-only">快速交付的個人作品集 — 標題文案也是我寫的：「苦盡遍體鱗傷，演出塵世甘來。」</span><span class="en-only">A portfolio delivered fast — headline copy written by me.</span></span></button>
+      </div>
+    </div>
+    <div class="cat-label"><span class="zh-only">商業系統 · 軟件及 AI</span><span class="en-only">Business systems · Software &amp; AI</span></div>
+    <div class="cat-row reveal">
+      <div class="card glass work-card" id="feat-sys">
         <div class="work-head">
-          <div class="ico-chip"><svg class="ico"><use href="#i-ink"/></svg></div>
-          <div><span class="work-tag"><span class="zh-only">整合應用 · 廣東話原生</span><span class="en-only">Integrated app · Cantonese-native</span></span><h3>沉墨 Batjik</h3></div>
+          <div class="ico-chip"><svg class="ico"><use href="#i-cube"/></svg></div>
+          <div><span class="work-tag"><span class="zh-only">全端平台</span><span class="en-only">Fullstack platform</span></span><h3><span class="zh-only">ICCC®全自動AI防火牆</span><span class="en-only">ICCC® Full Stack Automated AI Firewall</span></h3></div>
         </div>
-        <div class="shot-wrap"><img src="assets/batjik.jpg" alt="batjik website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fbatjik.com?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=&#39;none&#39;}"></div>
-        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">自我探索工具從不說香港人思考的語言。</span><span class="en-only">Self-discovery tools never speak the language Hongkongers think in.</span></span></div>
-        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">筆跡 × 名字 × 原生家庭心理。客人與管理員同一入口，分身份登入，一頁管理所有請求。</span><span class="en-only">Handwriting × name × family-of-origin psychology. One entrance for customers and admin, role-based logins, every request managed on one page.</span></span></div>
-        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">本地化出於直覺，不是翻譯。</span><span class="en-only">Localization by instinct, not translation.</span></span></div>
-        <a class="work-link" href="https://batjik.com" target="_blank" rel="noopener">batjik.com ↗</a>
+        <div class="shot-wrap" data-video="assets/iccc.mp4"><img src="assets/iccc.jpg" alt="ICCC website screenshot" loading="lazy" data-alt="https://s0.wordpress.com/mshots/v1/https%3A%2F%2Ficcc.dev?w=1024" onerror="if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display='none'}"></div>
+        <div class="wrow first"><b><span class="zh-only">問題</span><span class="en-only">Problem</span></b><span><span class="zh-only">品牌永遠向 SaaS 租用自己的核心系統。</span><span class="en-only">Brands rent their core systems from SaaS. Forever.</span></span></div>
+        <div class="wrow"><b><span class="zh-only">做了</span><span class="en-only">Built</span></b><span><span class="zh-only">完整品牌作業系統 — 店面、指揮中心、生產後台。內建合規，以及 AI Logic Firewall（專利申請中）。</span><span class="en-only">A full brand OS — storefront, command centre, production backend. Compliance-ready, with the AI Logic Firewall (patent pending).</span></span></div>
+        <div class="wrow"><b><span class="zh-only">成績</span><span class="en-only">Receipt</span></b><span><span class="zh-only">一次購買永久擁有。14 日交付。100% 退款保證。</span><span class="en-only">Buy once, own forever. 14-day delivery. 100% refund guarantee.</span></span></div>
+        <a class="work-link" href="https://iccc.dev" target="_blank" rel="noopener">iccc.dev ↗</a>
+      </div>
+      <div class="glass work-list" id="list-sys">
+        <button type="button" class="wl-row" data-id="bizplan"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name"><span class="zh-only">《賦譽療癒水晶專門店》營運策略報告交付</span><span class="en-only">“Fu Yu Healing Crystal Studio” — operations-strategy report</span><span class="wl-tag"><span class="zh-only">營運策略</span><span class="en-only">Operations strategy</span></span></span><span class="wl-desc"><span class="zh-only">由市場分析到財務預測，完整創業計劃書交付。</span><span class="en-only">From market analysis to financial forecasting — a complete business plan, delivered.</span></span></button>
+        <button type="button" class="wl-row" data-id="batjik"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name">沉墨 Batjik<span class="wl-tag"><span class="zh-only">整合應用 · 廣東話原生</span><span class="en-only">Integrated app · Cantonese-native</span></span></span><span class="wl-desc"><span class="zh-only">筆跡 × 名字 × 原生家庭心理。廣東話原生。</span><span class="en-only">Handwriting × name × family-of-origin psychology. Cantonese-native.</span></span></button>
+        <button type="button" class="wl-row" data-id="taiji"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name"><span class="zh-only">《萬聲殿》遊戲開發及AI整合應用 - 學校委託</span><span class="en-only">“Hall of Myriad Voices” — game dev &amp; AI integration, school commission</span><span class="wl-tag"><span class="zh-only">AI · 遊戲</span><span class="en-only">AI · Game</span></span></span><span class="wl-desc"><span class="zh-only">以 AI 互動遊戲傳承道家思想 — 學校項目。</span><span class="en-only">Taoism delivered as an interactive AI game — a school commission.</span></span></button>
+        <button type="button" class="wl-row" data-id="handwriting"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name"><span class="zh-only">筆跡鑒證自動化軟件</span><span class="en-only">Automated handwriting-forensics software</span><span class="wl-tag">AI · App</span></span><span class="wl-desc"><span class="zh-only">手寫筆跡分析應用原型。</span><span class="en-only">A handwriting-analysis app prototype.</span></span></button>
+        <button type="button" class="wl-row" data-id="packmate"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name">PackMate<span class="wl-tag"><span class="zh-only">電商後台 · 客製系統</span><span class="en-only">E-commerce backend · Custom build</span></span></span><span class="wl-desc"><span class="zh-only">電商包裝物料管理系統 — 客戶委託的舊有客製項目。</span><span class="en-only">A packing-materials management system for e-commerce — a past custom build for a client.</span></span></button>
       </div>
     </div>
-    <div class="glass more-panel reveal">
-      <h3><span class="zh-only">更多作品</span><span class="en-only">More projects</span></h3>
-      <!-- LOGO-PLACEHOLDERS: brand logo files (Carbon Copy / G Entertainment / MatterUs) to be embedded here when provided -->
-      <div class="mrow" data-cat="ai">
-        <span><span class="mname">太極 Taiji Game</span><span class="mtag">AI</span></span>
-        <span class="mdesc"><span class="zh-only">以 AI 互動遊戲傳承道家思想 — 學校項目。</span><span class="en-only">Taoism delivered as an interactive AI game — a school project.</span></span>
-        <a href="https://taiji.game.carboncopy.one" target="_blank" rel="noopener">taiji.game.carboncopy.one ↗</a>
-      </div>
-      <div class="mrow" data-cat="site">
-        <span><span class="mname">GEM</span><span class="mtag"><span class="zh-only">業務革新</span><span class="en-only">Business revamp</span></span></span>
-        <span class="mdesc"><span class="zh-only">由品牌到網站，整個生意的形象革新示範。</span><span class="en-only">A whole-business revamp, brand to website.</span></span>
-        <a href="http://gem.portfolio.demo.carboncopy.one" target="_blank" rel="noopener">gem.portfolio.demo ↗</a>
-      </div>
-      <div class="mrow" data-cat="site">
-        <span><span class="mname">Modern Design</span><span class="mtag"><span class="zh-only">設計示範</span><span class="en-only">Design demo</span></span></span>
-        <span class="mdesc"><span class="zh-only">現代風格設計示範 — 睇下唔同嘅面貌。</span><span class="en-only">A modern-style design demo — a different face, same hands.</span></span>
-        <a href="http://moderndesign.demo.carboncopy.one" target="_blank" rel="noopener">moderndesign.demo ↗</a>
-      </div>
-      <div class="mrow" data-cat="site">
-        <span><span class="mname">humanrights.com.hk</span><span class="mtag"><span class="zh-only">公益</span><span class="en-only">Public interest</span></span></span>
-        <span class="mdesc"><span class="zh-only">推廣人權的公益網站。</span><span class="en-only">A site promoting human rights.</span></span>
-        <a href="https://humanrights.com.hk" target="_blank" rel="noopener">humanrights.com.hk ↗</a>
-      </div>
-      <div class="mrow" data-cat="site">
-        <span><span class="mname">Proxy by MatterUs</span><span class="mtag"><span class="zh-only">商業頁面</span><span class="en-only">Business page</span></span></span>
-        <span class="mdesc"><span class="zh-only">簡潔直接的商業服務頁。</span><span class="en-only">A clean, direct business service page.</span></span>
-        <a href="https://proxy.matterus.com.hk" target="_blank" rel="noopener">proxy.matterus.com.hk ↗</a>
-      </div>
-      <div class="mrow" data-cat="site">
-        <span><span class="mname">HOHO</span><span class="mtag"><span class="zh-only">快速作品集</span><span class="en-only">Rapid portfolio</span></span></span>
-        <span class="mdesc"><span class="zh-only">快速交付的個人作品集 — 標題文案也是我寫的：「苦盡遍體鱗傷，演出塵世甘來。」</span><span class="en-only">A portfolio delivered fast — headline written by me: 「苦盡遍體鱗傷，演出塵世甘來。」</span></span>
-        <a href="https://hoho.portfolio.demo.carboncopy.one" target="_blank" rel="noopener">hoho.portfolio.demo ↗</a>
-      </div>
-      <div class="mrow" data-cat="ai app">
-        <span><span class="mname"><span class="zh-only">手寫分析 App</span><span class="en-only">Handwriting app</span></span><span class="mtag">AI · App</span></span>
-        <span class="mdesc"><span class="zh-only">手寫筆跡分析應用原型。</span><span class="en-only">A handwriting-analysis app prototype.</span></span>
-        <a href="https://bolt.new/p/66919367" target="_blank" rel="noopener">bolt.new/p/66919367 ↗</a>
-      </div>
-      <div class="mrow" data-cat="app">
-        <span><span class="mname"><span class="zh-only">App 客製化</span><span class="en-only">App customization</span></span><span class="mtag">UI</span></span>
-        <span class="mdesc"><span class="zh-only">介面客製化互動實驗。</span><span class="en-only">An interactive interface-customization experiment.</span></span>
-        <a href="https://codepen.io/gokucrew/pen/EaxWjaO" target="_blank" rel="noopener">codepen ↗</a>
-      </div>
-    </div>
+    <p class="work-note"><span class="zh-only">更多作品未能盡錄，敬請向我們查詢心水項目。</span><span class="en-only">Far more projects than we can show — ask us about the one you have in mind.</span></p>
   </div>
 </section>
 
 <!-- ============ BUSINESS ACUMEN ============ -->
-<section id="acumen">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker"><span class="zh-only">這對你有什麼意義</span><span class="en-only">Why it matters to you</span></div>
-      <h2><span class="zh-only">你坐的那張椅子，我也坐過。</span><span class="en-only">I've sat in your chair.</span></h2>
-    </div>
-    <div class="grid grid-3 reveal">
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-scale"/></svg></div>
-        <h3><span class="zh-only">前 SFC 持牌代表</span><span class="en-only">Former SFC-licensed rep</span></h3>
-        <p><span class="zh-only">第 1 及 6 類受規管活動。參與併購、供股及配售交易，總額達數億港元。我看網站，像看損益表。</span><span class="en-only">Type 1 &amp; 6 regulated activities. M&amp;A and secondary issues with aggregate deal values in the hundreds of millions HKD. I read websites like a P&amp;L.</span></p>
-      </div>
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-coin"/></svg></div>
-        <h3><span class="zh-only">你的預算是資本</span><span class="en-only">Your budget is capital</span></h3>
-        <p><span class="zh-only">若兩萬比十萬更適合你，我會直說。老闆的建議。不是推銷。</span><span class="en-only">If HK$20,000 beats HK$100,000 for you, I'll say so. Owner's advice. Not a vendor's upsell.</span></p>
-      </div>
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-stamp"/></svg></div>
-        <h3><span class="zh-only">合規與認證</span><span class="en-only">Credentials, in writing</span></h3>
-        <p><span class="zh-only">HKCGI AML/CFT · HKCGI 可持續發展專業 · WIX 認證無障礙開發者。你行業的規矩，由第一日就守。</span><span class="en-only">HKCGI AML/CFT · HKCGI Sustainability Professional · Certified Accessibility Developer. Your industry's rules, respected from day one.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROCESS ============ -->
-<section id="process">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker"><span class="zh-only">合作流程</span><span class="en-only">How it works</span></div>
-      <h2><span class="zh-only">五個步驟。零神秘感。</span><span class="en-only">Five steps. Zero mystery.</span></h2>
-    </div>
-    <div class="grid grid-3 reveal">
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-ear"/></svg></div>
-        <h3>01 · <span class="zh-only">聆聽</span><span class="en-only">Listen</span></h3>
-        <p><span class="zh-only">免費 20 分鐘通話。無論如何，帶走三個實際建議。</span><span class="en-only">A free 20-minute call. Three concrete improvements, either way.</span></p>
-      </div>
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-blueprint"/></svg></div>
-        <h3>02 · <span class="zh-only">藍圖</span><span class="en-only">Blueprint</span></h3>
-        <p><span class="zh-only">固定範圍、價格、時間表。動錢之前，白紙黑字。</span><span class="en-only">Fixed scope, price, timeline. In writing, before money moves.</span></p>
-      </div>
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-hammer"/></svg></div>
-        <h3>03 · <span class="zh-only">建造</span><span class="en-only">Build</span></h3>
-        <p><span class="zh-only">每週在真實測試連結上看到進度。沒有黑箱。</span><span class="en-only">Weekly progress on a live staging link. No black box.</span></p>
-      </div>
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-rocket"/></svg></div>
-        <h3>04 · <span class="zh-only">上線</span><span class="en-only">Launch</span></h3>
-        <p><span class="zh-only">網域、SSL、部署、分析。全在你名下。</span><span class="en-only">Domain, SSL, deployment, analytics. All in your name.</span></p>
-      </div>
-      <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-shield"/></svg></div>
-        <h3>05 · <span class="zh-only">看守</span><span class="en-only">Stand guard</span></h3>
-        <p><span class="zh-only">30 日保養。之後可選維護 — 或帶著一切離開。</span><span class="en-only">30-day warranty. Then care plans — or walk away with everything.</span></p>
-      </div>
-      <div class="card glass" style="border-color:rgba(217,255,63,.5);background:linear-gradient(160deg,rgba(217,255,63,.09),#101010 60%)">
-        <div class="ico-chip"><svg class="ico"><use href="#i-infinity"/></svg></div>
-        <h3><span class="zh-only">不變的原則</span><span class="en-only">The standing rule</span></h3>
-        <p><span class="zh-only"><strong>一切屬於你。</strong>程式碼。網域。內容。一次購買，永久擁有。</span><span class="en-only"><strong>You own everything.</strong> Code. Domain. Content. Buy it once. Own it forever.</span></p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ DELIVERABLES ============ -->
 <section id="deliverables">
   <div class="wrap">
@@ -841,7 +724,7 @@ html.js .reveal.in{opacity:1;transform:none}
         <p><span class="zh-only">嵌入式應用與主內容永遠分離 — 可以獨立移除、替換、升級。</span><span class="en-only">Embedded apps stay separable from your content — remove, replace or upgrade independently.</span></p>
       </div>
       <div class="card glass">
-        <div class="ico-chip"><svg class="ico"><use href="#i-stamp"/></svg></div>
+        <div class="ico-chip amber"><svg class="ico"><use href="#i-stamp"/></svg></div>
         <h3><span class="zh-only">名下帳戶</span><span class="en-only">Accounts in your name</span></h3>
         <p><span class="zh-only">網域、寄存、分析 — 全部登記喺你名下，唔係我名下。</span><span class="en-only">Domain, hosting, analytics — registered to you, not to me.</span></p>
       </div>
@@ -937,6 +820,23 @@ html.js .reveal.in{opacity:1;transform:none}
           <li><span class="zh-only">HKCGI 可持續發展專業 — HKCGI 可持續發展治理學院（2025）</span><span class="en-only">HKCGI Sustainability Professional — Sustainability Governance Academy (2025)</span></li>
           <li><span class="zh-only">認證無障礙開發者 — WIX（2024）</span><span class="en-only">Certified Accessibility Developer — WIX (2024)</span></li>
         </ul>
+      </div>
+    </div>
+    <div class="grid grid-3 reveal" style="margin-top:28px">
+      <div class="card glass">
+        <div class="ico-chip sky"><svg class="ico"><use href="#i-scale"/></svg></div>
+        <h3><span class="zh-only">前 SFC 持牌代表</span><span class="en-only">Former SFC-licensed rep</span></h3>
+        <p><span class="zh-only">第 1 及 6 類受規管活動。參與併購、供股及配售交易，總額達數億港元。我看網站，像看損益表。</span><span class="en-only">Type 1 &amp; 6 regulated activities. M&amp;A and secondary issues with aggregate deal values in the hundreds of millions HKD. I read websites like a P&amp;L.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-coin"/></svg></div>
+        <h3><span class="zh-only">你的預算是資本</span><span class="en-only">Your budget is capital</span></h3>
+        <p><span class="zh-only">若兩萬比十萬更適合你，我會直說。老闆的建議。不是推銷。</span><span class="en-only">If HK$20,000 beats HK$100,000 for you, I'll say so. Owner's advice. Not a vendor's upsell.</span></p>
+      </div>
+      <div class="card glass">
+        <div class="ico-chip"><svg class="ico"><use href="#i-stamp"/></svg></div>
+        <h3><span class="zh-only">合規與認證</span><span class="en-only">Credentials, in writing</span></h3>
+        <p><span class="zh-only">HKCGI AML/CFT · HKCGI 可持續發展專業 · WIX 認證無障礙開發者。你行業的規矩，由第一日就守。</span><span class="en-only">HKCGI AML/CFT · HKCGI Sustainability Professional · Certified Accessibility Developer. Your industry's rules, respected from day one.</span></p>
       </div>
     </div>
   </div>
@@ -1255,8 +1155,6 @@ html.js .reveal.in{opacity:1;transform:none}
     ['#ai','AI 段落'],
     ['#services','服務 Services'],
     ['#work','作品 Work'],
-    ['#acumen','商業眼光 Acumen'],
-    ['#process','流程 Process'],
     ['#deliverables','交付清單 Deliverables'],
     ['#pricing','收費 Pricing'],
     ['#about','關於 About'],
@@ -1349,29 +1247,88 @@ html.js .reveal.in{opacity:1;transform:none}
     btn.textContent=en?'中文':'EN';
   });
   document.getElementById('yr').textContent=new Date().getFullYear();
-  /* work filter */
-  function setFilter(cat){
-    document.querySelectorAll('#workGrid [data-cat], .more-panel [data-cat]').forEach(function(el){
-      var cats=el.getAttribute('data-cat').split(' ');
-      el.classList.toggle('hide',cat!=='all'&&cats.indexOf(cat)===-1);
-    });
-    document.querySelectorAll('#chips .chip').forEach(function(c){
-      c.classList.toggle('on',c.getAttribute('data-filter')===cat);
-    });
-  }
-  document.querySelectorAll('#chips .chip').forEach(function(c){
-    c.addEventListener('click',function(){setFilter(c.getAttribute('data-filter'));});
-  });
   /* chooser tiles */
   document.querySelectorAll('.choose-tile').forEach(function(t){
     t.addEventListener('click',function(){
       var k=t.getAttribute('data-choose');
-      if(k==='work'){setFilter('all');return;}
-      setFilter(k);
+      if(k==='work'){return;}
       var card=document.getElementById('svc-'+k);
       if(card){card.classList.remove('pulse');void card.offsetWidth;card.classList.add('pulse');}
     });
   });
+  /* work browser: featured card + swappable category lists + hover-to-play video */
+  var ONERR='if(!this.dataset.f){this.dataset.f=1;this.src=this.dataset.alt}else{this.parentNode.style.display=\'none\'}';
+  function bi(p){return '<span class="zh-only">'+p[0]+'</span><span class="en-only">'+p[1]+'</span>';}
+  function tx(v){return typeof v==='string'?v:bi(v);}
+  var WORKS={
+    carboncopy:{icon:'i-drop',name:'Carbon Copy®',tag:['D2C 品牌 · 電商','D2C brand · E-commerce'],img:'assets/carboncopy.jpg',video:'assets/carboncopy.mp4',alt:'Carbon Copy website screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fcarboncopy.one?w=1024',link:'https://carboncopy.one',linkLabel:'carboncopy.one',desc:['精密工程風格的個人護理品牌。命名、語調、雙語電商。','A precision-engineered personal-care brand. Naming, voice, bilingual e-commerce.'],rows:[[['問題','Problem'],['在擁擠的類別中，信任難以被看見。','Trust is hard to signal in a crowded category.']],[['做了','Built'],['精密工程風格的個人護理品牌。命名、語調、雙語電商。','A precision-engineered personal-care brand. Naming, voice, bilingual e-commerce.']],[['成績','Receipt'],['ISO 測試。GMP 生產。市場有售。','ISO-tested. GMP-manufactured. Live in market.']]]},
+    matterus:{icon:'i-home',name:'MatterUs',tag:['實體零售','Real-world retail'],img:'assets/matterus.jpg',video:'assets/matterus.mp4',alt:'MatterUs website screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fmatterus.com.hk?w=1024',link:'https://matterus.com.hk',linkLabel:'matterus.com.hk',desc:['圍繞 Matter 標準的顧問—銷售—安裝。尖沙咀零售。','Consult–sell–install on the Matter standard. Retail in Tsim Sha Tsui.'],rows:[[['問題','Problem'],['智能家居零碎混亂，令人卻步。','Smart homes were fragmented and intimidating.']],[['做了','Built'],['圍繞 Matter 標準的顧問—銷售—安裝。尖沙咀零售。','Consult–sell–install on the Matter standard. Retail in Tsim Sha Tsui.']],[['成績','Receipt'],['Nanoleaf 授權經銷商。真刀真槍談回來的合約。','Authorized Nanoleaf distributor. A negotiated deal, not a side project.']]]},
+    moderndesign:{icon:'i-brush',name:['《現代網站設計》','“Modern Design”'],tag:['設計示範','Design demo'],img:'assets/moderndesign.jpg',video:'assets/moderndesign.mp4',alt:'Modern Design demo screenshot',mshots:'https://s0.wordpress.com/mshots/v1/http%3A%2F%2Fmoderndesign.demo.carboncopy.one?w=1024',link:'http://moderndesign.demo.carboncopy.one',linkLabel:'moderndesign.demo',desc:['本網站設計雛形。','The prototype behind this site’s design.']},
+    humanrights:{icon:'i-scale',name:['《人權學習網》- 公司委託','Human-rights learning site — corporate commission'],tag:['公益教育','Public education'],img:'assets/humanrights.jpg',video:'assets/humanrights.mp4',alt:'humanrights.com.hk screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fhumanrights.com.hk?w=1024',link:'https://humanrights.com.hk',linkLabel:'humanrights.com.hk',desc:['推廣人權的公益網站。','A site promoting human rights.']},
+    proxy:{icon:'i-compass',name:'Proxy by MatterUs',tag:['商業頁面','Business page'],img:'assets/proxy.jpg',video:'assets/proxy.mp4',alt:'Proxy by MatterUs screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fproxy.matterus.com.hk?w=1024',link:'https://proxy.matterus.com.hk',linkLabel:'proxy.matterus.com.hk',desc:['簡潔直接的商業服務頁。','A clean, direct business service page.']},
+    hoho:{icon:'i-eye',name:['《陳昊霆》個人作品集','“Hong Chan” — personal portfolio'],tag:['快速作品集','Rapid portfolio'],img:'assets/hoho.jpg',video:'assets/hoho.mp4',alt:'Hong Chan portfolio screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fhoho.portfolio.demo.carboncopy.one?w=1024',link:'https://hoho.portfolio.demo.carboncopy.one',linkLabel:'hoho.portfolio.demo',desc:['快速交付的個人作品集 — 標題文案也是我寫的：「苦盡遍體鱗傷，演出塵世甘來。」','A portfolio delivered fast — headline copy written by me.']},
+    iccc:{icon:'i-cube',name:['ICCC®全自動AI防火牆','ICCC® Full Stack Automated AI Firewall'],tag:['全端平台','Fullstack platform'],img:'assets/iccc.jpg',video:'assets/iccc.mp4',alt:'ICCC website screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Ficcc.dev?w=1024',link:'https://iccc.dev',linkLabel:'iccc.dev',desc:['完整品牌作業系統 — 店面、指揮中心、生產後台。','A full brand OS — storefront, command centre, production backend.'],rows:[[['問題','Problem'],['品牌永遠向 SaaS 租用自己的核心系統。','Brands rent their core systems from SaaS. Forever.']],[['做了','Built'],['完整品牌作業系統 — 店面、指揮中心、生產後台。內建合規，以及 AI Logic Firewall（專利申請中）。','A full brand OS — storefront, command centre, production backend. Compliance-ready, with the AI Logic Firewall (patent pending).']],[['成績','Receipt'],['一次購買永久擁有。14 日交付。100% 退款保證。','Buy once, own forever. 14-day delivery. 100% refund guarantee.']]]},
+    bizplan:{icon:'i-blueprint',name:['《賦譽療癒水晶專門店》營運策略報告交付','“Fu Yu Healing Crystal Studio” — operations-strategy report'],tag:['營運策略','Operations strategy'],img:'assets/bizplan.jpg',video:'assets/bizplan.mp4',alt:'Business plan deliverable screenshot',mshots:'https://s0.wordpress.com/mshots/v1/http%3A%2F%2Fgem.portfolio.demo.carboncopy.one?w=1024',link:'http://gem.portfolio.demo.carboncopy.one',linkLabel:'gem.portfolio.demo',desc:['由市場分析到財務預測，完整創業計劃書交付。','From market analysis to financial forecasting — a complete business plan, delivered.']},
+    batjik:{icon:'i-ink',name:'沉墨 Batjik',tag:['整合應用 · 廣東話原生','Integrated app · Cantonese-native'],img:'assets/batjik.jpg',video:'assets/batjik.mp4',alt:'Batjik website screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fbatjik.com?w=1024',link:'https://batjik.com',linkLabel:'batjik.com',desc:['筆跡 × 名字 × 原生家庭心理。廣東話原生。','Handwriting × name × family-of-origin psychology. Cantonese-native.'],rows:[[['問題','Problem'],['自我探索工具從不說香港人思考的語言。','Self-discovery tools never speak the language Hongkongers think in.']],[['做了','Built'],['筆跡 × 名字 × 原生家庭心理。客人與管理員同一入口，分身份登入，一頁管理所有請求。','Handwriting × name × family-of-origin psychology. One entrance for customers and admin, role-based logins, every request managed on one page.']],[['成績','Receipt'],['本地化出於直覺，不是翻譯。','Localization by instinct, not translation.']]]},
+    taiji:{icon:'i-spark',name:['《萬聲殿》遊戲開發及AI整合應用 - 學校委託','“Hall of Myriad Voices” — game dev & AI integration, school commission'],tag:['AI · 遊戲','AI · Game'],img:'assets/taiji.jpg',video:'assets/taiji.mp4',alt:'Hall of Myriad Voices game screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Ftaiji.game.carboncopy.one?w=1024',link:'https://taiji.game.carboncopy.one',linkLabel:'taiji.game.carboncopy.one',desc:['以 AI 互動遊戲傳承道家思想 — 學校項目。','Taoism delivered as an interactive AI game — a school commission.']},
+    handwriting:{icon:'i-pulse',name:['筆跡鑒證自動化軟件','Automated handwriting-forensics software'],tag:'AI · App',img:'assets/handwriting.jpg',video:'assets/handwriting.mp4',alt:'Handwriting analysis app screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fbolt.new%2Fp%2F66919367?w=1024',link:'https://bolt.new/p/66919367',linkLabel:'bolt.new/p/66919367',desc:['手寫筆跡分析應用原型。','A handwriting-analysis app prototype.']},
+    packmate:{icon:'i-cube',name:'PackMate',tag:['電商後台 · 客製系統','E-commerce backend · Custom build'],img:'assets/packmate.jpg',video:'assets/packmate.mp4',alt:'PackMate packing materials dashboard screenshot',mshots:'https://s0.wordpress.com/mshots/v1/https%3A%2F%2Fpacking.app.demo.carboncopy.one%2F?w=1024',link:'https://packing.app.demo.carboncopy.one/',linkLabel:'packing.app.demo',desc:['電商包裝物料管理系統 — 客戶委託的舊有客製項目。','A packing-materials management system for e-commerce — a past custom build for a client.']}
+  };
+  var CATS={
+    site:{featured:'carboncopy',order:['carboncopy','matterus','moderndesign','humanrights','proxy','hoho']},
+    sys:{featured:'iccc',order:['iccc','bizplan','batjik','taiji','handwriting','packmate']}
+  };
+  function featHTML(it){
+    var h='<div class="work-head"><div class="ico-chip"><svg class="ico"><use href="#'+it.icon+'"/></svg></div><div><span class="work-tag">'+tx(it.tag)+'</span><h3>'+tx(it.name)+'</h3></div></div>';
+    h+='<div class="shot-wrap" data-video="'+it.video+'"><img src="'+it.img+'" alt="'+it.alt+'" loading="lazy" data-alt="'+it.mshots+'" onerror="'+ONERR+'"></div>';
+    if(it.rows){for(var i=0;i<it.rows.length;i++){h+='<div class="wrow'+(i===0?' first':'')+'"><b>'+bi(it.rows[i][0])+'</b><span>'+bi(it.rows[i][1])+'</span></div>';}}
+    else{h+='<p class="w-desc">'+tx(it.desc)+'</p>';}
+    h+='<a class="work-link" href="'+it.link+'" target="_blank" rel="noopener">'+it.linkLabel+' ↗</a>';
+    return h;
+  }
+  function rowHTML(id){
+    var it=WORKS[id];
+    return '<button type="button" class="wl-row" data-id="'+id+'"><span class="wl-swap" aria-hidden="true">⇄</span><span class="wl-name">'+tx(it.name)+'<span class="wl-tag">'+tx(it.tag)+'</span></span><span class="wl-desc">'+tx(it.desc)+'</span></button>';
+  }
+  function bindShots(scope){
+    (scope||document).querySelectorAll('.shot-wrap[data-video]').forEach(function(w){
+      if(w.dataset.b){return;}
+      w.dataset.b=1;
+      w.addEventListener('mouseenter',function(){
+        if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){return;}
+        var v=w.querySelector('video');
+        if(!v){v=document.createElement('video');v.muted=true;v.loop=true;v.playsInline=true;v.preload='metadata';v.setAttribute('aria-hidden','true');v.src=w.getAttribute('data-video');w.appendChild(v);}
+        w.classList.add('playing');
+        var p=v.play();if(p&&p.catch){p.catch(function(){});}
+      });
+      w.addEventListener('mouseleave',function(){
+        var v=w.querySelector('video');if(v){v.pause();}
+        w.classList.remove('playing');
+      });
+    });
+  }
+  function renderCat(key){
+    var c=CATS[key];
+    var feat=document.getElementById('feat-'+key);
+    var list=document.getElementById('list-'+key);
+    if(!feat||!list){return;}
+    feat.innerHTML=featHTML(WORKS[c.featured]);
+    list.innerHTML=c.order.filter(function(id){return id!==c.featured;}).map(rowHTML).join('');
+    bindShots(feat);
+  }
+  Object.keys(CATS).forEach(function(key){
+    var list=document.getElementById('list-'+key);
+    if(!list){return;}
+    renderCat(key);
+    list.addEventListener('click',function(e){
+      var b=e.target.closest('.wl-row');if(!b){return;}
+      var c=CATS[key],id=b.getAttribute('data-id');
+      var i=c.order.indexOf(id),j=c.order.indexOf(c.featured);
+      c.order[i]=c.featured;c.order[j]=id;c.featured=id;
+      renderCat(key);
+    });
+  });
+  bindShots(document);
   /* reveal */
   if('IntersectionObserver' in window){
     document.documentElement.classList.add('js');
