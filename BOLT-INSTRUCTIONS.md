@@ -15,17 +15,27 @@ preview, and apply small requested changes — NOT to rebuild, refactor, reforma
 2. The bilingual system is sacred: every string exists as
    `<span class="zh-only">…</span><span class="en-only">…</span>`; `zh-Hant-HK`
    is default; `#langBtn` toggles `body.lang-en`. Never remove either language.
-3. The pricing builder is driven by the `CFG` array in the inline script.
-   Change prices/components ONLY by editing `CFG`. Keep the rules:
-   04 requires 03; API-key pair is choose-one; model trio only applies to
-   managed API; shopping list, agency-equivalent meter (2.5×–5× one-off total),
-   quotation window, and WhatsApp handoff must keep working.
+3. The pricing builder now lives on `pricing.html`, driven by the `CFG` array
+   in its inline script (v5 algorithmic model — see docs/pricing-methodology-audit.md).
+   Change prices/floors/components ONLY by editing `CFG`. Keep the invariants:
+   every price = 0.5 × its `floor` (min HK$1,280/module); NO monthly fees
+   anywhere (SiteCare+ is a 24-month prepaid one-off); the fair-value-floor
+   meter (sum of selected modules' floors), 14-day quote lock, bundle
+   quick-picks (bundle price must equal the sum of its modules), quotation
+   window, and WhatsApp handoff must keep working.
 4. The blocks between `REVIEW-NOTES-TOOL START/END` markers (and the matching
    CSS block) are a temporary review scaffold. Leave them intact until told to
    remove them for launch — then delete both fenced blocks completely.
-5. Wording locks: 「AI Logic Firewall（專利申請中）」 appears in exactly 4 places —
-   do not add it elsewhere or explain its mechanism. No security add-on, no care
-   tiers, never the words 平/cheap/折/discount. Founding offer text stays as-is.
+5. Wording locks: 「AI Logic Firewall（專利申請中）」 on the landing page appears
+   in exactly 4 places — do not add it elsewhere or explain its mechanism.
+   No security add-on, no care tiers (SiteCare+ is ONE plan with security
+   included). No founding offer, no monthly fees — both are retired. All
+   comparative price claims must match docs/pricing-methodology-audit.md:
+   pricing is framed as an OPEN COLLABORATION (0.5×floor is a TARGET, never
+   an absolute warranty — no 承諾/promise/guarantee/永不高於 wording); the
+   public is invited to submit market pricing info; est. hours are anchored
+   to the TVP-approved SmartFlow project (MatterUs Company Limited); AI
+   integration stays excluded from the collaborative review.
 6. Design tokens (lime #D9FF3F on #0A0A09, grid background, sharp corners,
    hairline borders, hard-offset hover) come from vitalam-design-playbook.md.
    No new colours, no soft shadows, no rounded pills, no icon fonts.

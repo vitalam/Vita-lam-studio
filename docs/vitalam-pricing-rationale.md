@@ -1,4 +1,6 @@
 # vitalam.org — Detailed Pricing Rationale
+> **SUPERSEDED (2026-07-12):** the live pricing model is now the v5 algorithmic model — see `pricing-methodology-audit.md` (v1.3) and `pricing-page-content-v5.md`. This document is retained for history only.
+
 *Vita Lam · July 2026 · companion document: `vitalam-revamp-strategy.md` · FX: US$1 ≈ HK$7.8*
 
 ## 0. v8 REVISION — DIY block pricing (current model)

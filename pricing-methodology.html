@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定價方法及實證聲明｜Vita Lam — Pricing Methodology</title>
+<meta name="description" content="VITA LAM 定價方法及實證聲明 v1.4：以市場公允下限 × 0.5 為定價目標，方法及數據全公開，誠邀提交行情資訊參與校準。Public pricing methodology and substantiation statement — open for collaborative calibration.">
+<link rel="canonical" href="https://vitalam.org/pricing-methodology.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A09;
+  --ink:#F2F2EE;
+  --ink-2:#B9B9B2;
+  --ink-3:#83837C;
+  --accent:#D9FF3F;
+  --accent-2:#C4EC2D;
+  --violet:#A78BFA;
+  --glass-bg:#101010;
+  --glass-line:#282826;
+  --r:6px;
+  --max:860px;
+  --sans:"Inter","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16.5px;line-height:1.66;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+  radial-gradient(ellipse 40% 30% at 18% 12%,rgba(217,255,63,.06),transparent 65%),
+  radial-gradient(ellipse 35% 30% at 85% 75%,rgba(167,139,250,.05),transparent 65%),
+  repeating-linear-gradient(0deg,transparent,transparent 71px,rgba(242,242,238,.045) 71px,rgba(242,242,238,.045) 72px),
+  repeating-linear-gradient(90deg,transparent,transparent 71px,rgba(242,242,238,.045) 71px,rgba(242,242,238,.045) 72px),
+  var(--bg)}
+/* ---------- language: 繁中 default, EN via .lang-en ---------- */
+body:not(.lang-en) .en-only{display:none !important}
+body.lang-en .zh-only{display:none !important}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:900;letter-spacing:.01em;line-height:1.15}
+body.lang-en h1{font-weight:800;letter-spacing:-.02em}
+h2{font-size:1.25rem;font-weight:800;margin:2.6rem 0 .8rem;padding-top:1.4rem;border-top:1px solid var(--glass-line)}
+p{color:var(--ink-2);margin:.55rem 0}
+strong{color:var(--ink);font-weight:700}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:1rem}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.glass{background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:var(--r)}
+.ico{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(10,10,9,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--glass-line);
+}
+.nav-inner{max-width:1120px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.logo{font-size:1.05rem;color:var(--ink);font-weight:800}
+.logo em{color:var(--accent);font-style:normal}
+.logo::before{content:"【";color:var(--accent)}
+.logo::after{content:"】";color:var(--accent)}
+.nav-links{display:flex;gap:20px;margin-left:auto;align-items:center}
+.nav-links a{color:var(--ink-2);font-size:.9rem;font-weight:500}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+#langBtn{
+  border:1px solid var(--glass-line);background:transparent;color:var(--ink);
+  font:inherit;font-size:.82rem;font-weight:600;padding:7px 13px;border-radius:3px;cursor:pointer;
+}
+#langBtn:hover{border-color:var(--accent);color:var(--accent)}
+.nav-cta{background:var(--accent);color:#0C0D04 !important;font-weight:700;padding:9px 17px;border-radius:3px;font-size:.88rem !important}
+.nav-cta:hover{text-decoration:none !important;background:var(--accent-2)}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+.meta{font-size:.88rem;color:var(--ink-3);margin-top:1rem}
+.meta b{color:var(--ink-2)}
+.formula{
+  margin:1.2rem 0;padding:18px 22px;text-align:center;
+  border:1px solid rgba(217,255,63,.45);border-radius:var(--r);
+  background:linear-gradient(160deg,rgba(217,255,63,.08),#101010 60%);
+  font-weight:800;color:var(--ink);font-size:1.05rem;
+}
+article{padding:160px 0 60px}
+article ol,article ul{margin:.5rem 0 .5rem 1.4rem;color:var(--ink-2)}
+article li{margin:.35rem 0}
+.clause{margin:.9rem 0}
+.clause .no{color:var(--accent);font-weight:700;margin-right:8px}
+table{width:100%;border-collapse:collapse;font-size:.9rem;margin:1rem 0}
+th{text-align:left;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.14)}
+td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.07);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td:first-child{color:var(--ink);font-weight:600}
+td.num{text-align:right;white-space:nowrap;color:var(--accent);font-weight:600}
+.revision{font-size:.85rem;color:var(--ink-3)}
+.revision b{color:var(--ink-2)}
+/* ---------- WhatsApp float ---------- */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:56px;height:56px;border-radius:6px;padding:14px;color:#0C0D04;
+  background:var(--accent);box-shadow:0 10px 26px -8px rgba(217,255,63,.5);
+  display:flex;align-items:center;justify-content:center;transition:.18s;
+}
+.wa-float:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(217,255,63,.3);text-decoration:none}
+footer{padding:30px 0 56px;font-size:.87rem;color:var(--ink-3)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between;max-width:1120px}
+footer a{color:var(--ink-3)}
+footer a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<!-- ======== icon sprite ======== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="i-wa" viewBox="0 0 48 48"><path d="M24 6a17 17 0 00-14.6 25.6L7 42l10.8-2.3A17 17 0 1024 6z"/><path d="M17 18c0 8 6 13 13 14 2 0 4-1 4-3l-1-3-4 1c-3-1-6-4-7-7l2-3-2-4c-2 0-5 2-5 5z"/></symbol>
+</defs>
+</svg>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">VITA<em>&nbsp;LAM</em></a>
+    <div class="nav-links">
+      <a href="pricing.html"><span class="zh-only">← 收費</span><span class="en-only">← Pricing</span></a>
+      <a href="pricing-benchmark.html"><span class="zh-only">基準儀表板</span><span class="en-only">Dashboard</span></a>
+      <a href="index.html"><span class="zh-only">主頁</span><span class="en-only">Home</span></a>
+      <button id="langBtn" type="button" aria-label="Switch language">EN</button>
+      <a class="nav-cta" href="index.html#contact"><span class="zh-only">免費 20 分鐘健檢</span><span class="en-only">Free 20-min review</span></a>
+    </div>
+  </div>
+</nav>
+
+<article>
+  <div class="wrap">
+    <div class="kicker"><span class="zh-only">公開文件</span><span class="en-only">Public Document</span></div>
+    <h1><span class="zh-only">定價方法及實證聲明</span><span class="en-only">Pricing Methodology &amp; Substantiation Statement</span></h1>
+    <p class="meta">
+      <span class="zh-only"><b>版本：</b>1.4 ・ <b>生效日：</b>2026-07-13 ・ <b>發布：</b>VITA LAM (G Entertainment Ltd)<br>本文件為公開文件，供客戶及任何第三方查核；並誠邀任何人提交市場價格資訊，參與校準（§8）。</span>
+      <span class="en-only"><b>Version:</b> 1.4 · <b>Effective:</b> 2026-07-13 · <b>Published by:</b> VITA LAM (G Entertainment Ltd)<br>This is a public document, maintained for client and third-party audit — and an open invitation to submit market pricing information (§8).</span>
+    </p>
+
+    <h2 id="s1"><span class="zh-only">§1 目的</span><span class="en-only">§1 Purpose</span></h2>
+    <p class="clause"><span class="no">1.1</span><span class="zh-only">本文件說明本公司公開價目表上所有價格嘅計算方法、數據來源及查核程序。</span><span class="en-only">This document sets out how every price on our published rate card is derived, sourced, and verifiable.</span></p>
+    <p class="clause"><span class="no">1.2</span><span class="zh-only">本文件旨在為本公司之比較性價格聲稱提供實證基礎（《商品說明條例》第 362 章之精神）。</span><span class="en-only">It substantiates our comparative pricing claims in the spirit of the Trade Descriptions Ordinance (Cap. 362).</span></p>
+
+    <h2 id="s2"><span class="zh-only">§2 定價公式</span><span class="en-only">§2 Pricing Formula</span></h2>
+    <p class="clause"><span class="no">2.1</span><span class="zh-only">所有服務（一次性收費）：</span><span class="en-only">All fees, one-off:</span></p>
+    <div class="formula">
+      <span class="zh-only">P = max（ 0.50 × 市場公允價值下限,　HK$1,280,　法定最低工資 × 預估工時 ）</span>
+      <span class="en-only">P = max( 0.50 × fair-value floor, HK$1,280, statutory minimum wage × estimated hours )</span>
+    </div>
+    <p class="clause"><span class="no">2.2</span><span class="zh-only"><strong>五折目標 The 50% target</strong>：所有模組以公允價值下限之 50% 為定價目標，並藉 §8 之公開協作程序持續校準。</span><span class="en-only"><strong>The 50% target</strong>: every module targets 50% of the fair-value floor, continuously calibrated through the open collaboration procedure in §8.</span></p>
+    <p class="clause"><span class="no">2.3</span><span class="zh-only"><strong>最低收費 Minimum charge</strong>：每模組最低 HK$1,280。</span><span class="en-only"><strong>Minimum charge</strong>: each module carries a HK$1,280 minimum.</span></p>
+    <p class="clause"><span class="no">2.4</span><span class="zh-only"><strong>工資下限 Wage floor</strong>：價格在任何情況下不低於法定最低工資乘以該模組之公開預估工時。現行法定最低工資為每小時 HK$43.10（2026 年 5 月 1 日起，勞工處）。各模組預估工時載於<a href="#appendix-a">附錄 A</a>，並隨每週基準一併公開。</span><span class="en-only"><strong>Wage floor</strong>: prices never fall below the statutory minimum wage (HK$43.10/hour from 1 May 2026, Labour Department) multiplied by the module's disclosed estimated hours (<a href="#appendix-a">Appendix A</a>), published with each weekly benchmark.</span></p>
+    <p class="clause"><span class="no">2.5</span><span class="zh-only">品牌尾數調整（x,800／x,880／x80）只可向下或持平，且不得跌穿 §2.3 及 §2.4 之下限。</span><span class="en-only">Brand price-endings round at or below the formula output, never below the §2.3–2.4 floors.</span></p>
+    <p class="clause"><span class="no">2.6</span><span class="zh-only"><strong>範圍與最低收費之一致性 Minimum-charge consistency</strong>：模組範圍須訂定至其同等範圍公允下限不低於 §2.3 之最低收費（例：修改請求定義為至 3 小時開發），以維持 §2.2 定價目標之一致性。</span><span class="en-only"><strong>Minimum-charge consistency</strong>: module scopes are defined so their equivalent-scope floor is never below the §2.3 minimum (e.g., a change request = up to 3 dev-hours), keeping the §2.2 pricing target consistent.</span></p>
+    <p class="clause"><span class="no">2.7</span><span class="zh-only"><strong>不設月費 No recurring monthly fees</strong>：持續服務以定期預繳加購計劃（SiteCare+，24 個月）發售，按 §2.1 公式以多年期維護行情下限計價；只限項目上線時或其後 60 日內加購；期滿按當時基準價續期；可隨網站轉讓。</span><span class="en-only"><strong>No recurring monthly fees</strong>: ongoing service is sold as a fixed-term prepaid add-on (SiteCare+, 24 months) priced by §2.1 against multi-year maintenance floors; attachable only at launch or within 60 days; renewable at the then-current benchmark price; transferable with the site.</span></p>
+    <p class="clause"><span class="no">2.8</span><span class="zh-only"><strong>計劃內承保服務費率 Covered-service rates under a plan</strong>：預繳計劃內之服務（如 SiteCare+ 會員修改請求，每小時 HK$140，不限次數，優先隊列）屬計劃承保範圍之服務費，並非獨立模組，故不適用 §2.3 每模組最低收費；惟仍須符合 §2.4 工資下限（$140/h ＞ $43.10/h ✓）。非計劃客戶之修改請求則為獨立模組，適用全部公式。</span><span class="en-only"><strong>Covered-service rates under a plan</strong>: services rendered under a prepaid plan (e.g., SiteCare+ member revisions at HK$140/hour, unlimited, priority queue) are covered-service fees, not standalone modules — the §2.3 module minimum does not apply, but the §2.4 wage floor still does ($140/h &gt; $43.10/h ✓). Non-plan change requests are standalone modules subject to the full formula.</span></p>
+
+    <h2 id="s3"><span class="zh-only">§3 定義</span><span class="en-only">§3 Definitions</span></h2>
+    <p class="clause"><span class="no">3.1</span><span class="zh-only"><strong>公允價值下限 Fair-value floor</strong>：就同等範圍服務，獨立公開香港報價區間之最低位。</span><span class="en-only"><strong>Fair-value floor</strong>: the lowest end of the independently published Hong Kong price range for equivalent scope.</span></p>
+    <p class="clause"><span class="no">3.2</span><span class="zh-only"><strong>同等範圍 Equivalent scope（Q=1 訂製級）</strong>：同時符合以下全部條件之服務——(a) 全訂製程式碼，非模板或頁面產生器；(b) 原始碼完整交付；(c) AI-ready 技術文件；(d) 包含 CMS、基礎 SEO、SSL 及部署。</span><span class="en-only"><strong>Equivalent scope (Q=1, custom grade)</strong>: a service meeting all of — (a) fully custom code, no templates/builders; (b) full source-code handover; (c) AI-ready documentation; (d) CMS, baseline SEO, SSL and deployment included.</span></p>
+    <p class="clause"><span class="no">3.3</span><span class="zh-only">不符合 §3.2 之報價（模板方案、按用戶收費之 SaaS 授權）一律剔除，不作基準。</span><span class="en-only">Quotes failing §3.2 (template offers, per-user SaaS licences) are excluded from benchmarking.</span></p>
+
+    <h2 id="s4"><span class="zh-only">§4 基準程序</span><span class="en-only">§4 Benchmark Procedure</span></h2>
+    <p class="clause"><span class="no">4.1</span><span class="zh-only"><strong>頻率 Cadence</strong>：逢星期一重新檢索及重算。價目表註明「基準更新」日期。</span><span class="en-only"><strong>Cadence</strong>: re-collected and recomputed every Monday; the rate card displays its refresh date.</span></p>
+    <p class="clause"><span class="no">4.2</span><span class="zh-only"><strong>樣本 Sample</strong>：每一服務類別以不少於三個可信公開價格點建立區間。</span><span class="en-only"><strong>Sample</strong>: each service category requires ≥3 credible published price points.</span></p>
+    <p class="clause"><span class="no">4.3</span><span class="zh-only"><strong>下限推導 Floor derivation</strong>：剔除不符 §3.2 之報價後，取符合同等範圍之最低公開報價為下限。</span><span class="en-only"><strong>Floor derivation</strong>: after §3.2 exclusions, the lowest remaining published quote becomes the floor.</span></p>
+    <p class="clause"><span class="no">4.4</span><span class="zh-only"><strong>穩定帶 Stability band</strong>：下限變動少於 5% 不觸發調價，變動照錄於週報。</span><span class="en-only"><strong>Stability band</strong>: floor moves under 5% do not trigger repricing but are logged.</span></p>
+    <p class="clause"><span class="no">4.5</span><span class="zh-only"><strong>報價鎖定 Quote lock</strong>：所有報價鎖定 14 日，以報價日與簽約日兩者中對客戶較優者為準。</span><span class="en-only"><strong>Quote lock</strong>: all quotes lock for 14 days at the client-favourable price.</span></p>
+
+    <h2 id="s5"><span class="zh-only">§5 資料來源登記</span><span class="en-only">§5 Source Register</span></h2>
+    <p class="clause"><span class="no">5.1</span><span class="zh-only">基準來源包括（不限於）：香港本地設計及開發公司公開價目、行業定價指南、平台報價統計、開發人力成本數據。現行登記：East Tech、PRO360、HelloToby、isualsense、J Marketing、UXlicious、eXpand、2Easy、HooraySEO、Xell、GoDaddy HK、Truelogic HK、TechBehemoths、FunctionEight、Shopify HK、ERI／Glassdoor／PayScale（人力成本）。</span><span class="en-only">Benchmark sources include (not limited to): published rate cards from Hong Kong design/dev firms, industry pricing guides, platform quote statistics, developer labour-cost data. Current register: East Tech, PRO360, HelloToby, isualsense, J Marketing, UXlicious, eXpand, 2Easy, HooraySEO, Xell, GoDaddy HK, Truelogic HK, TechBehemoths, FunctionEight, Shopify HK, ERI/Glassdoor/PayScale (labour cost).</span></p>
+    <p class="clause"><span class="no">5.1A</span><span class="zh-only"><strong>已批核政府資助項目實例 Approved government-funded project reference</strong>：科技券計劃（TVP）已批核並完成之項目「SmartFlow: Automating Logistics and Inventory」（MatterUs Company Limited 委託，承辦商報價於 2024 年 12 月獲接納，項目經 TVP 審批程序批核，可於創新科技署 TVP 官方平台核實）。該獲批報價提供兩項公開參照：(a) 市場時薪 HK$480／小時；(b) 專業服務工時分配 140 小時（規劃 25／開發 70／部署及上線 15／持續支援 30）。此實例同時作為附錄 A 工時之校準錨點。</span><span class="en-only"><strong>Approved government-funded project reference</strong>: a completed project approved under the Technology Voucher Programme (TVP): "SmartFlow: Automating Logistics and Inventory" (commissioned by MatterUs Company Limited; vendor quotation accepted Dec 2024; approved through the TVP assessment process and verifiable via the ITC's official TVP platform). The approved quotation provides two public reference points: (a) a market rate of HK$480/hour; (b) a professional-services allocation of 140 hours (25 planning / 70 development / 15 deployment &amp; go-live / 30 ongoing support). It also anchors the estimated hours in Appendix A.</span></p>
+    <p class="clause"><span class="no">5.2</span><span class="zh-only"><strong>來源登記每週審視 Weekly register review</strong>：來源登記本身隨每週檢索一併審視；新增或剔除來源須於週報記錄理由。</span><span class="en-only"><strong>Weekly register review</strong>: the register itself is reviewed at every weekly refresh; additions/removals are logged with reasons.</span></p>
+    <p class="clause"><span class="no">5.3</span><span class="zh-only"><strong>實際數字全數公開 Exact figures disclosed</strong>：每週公開每一來源之實際擷取價格（來源名稱、連結、擷取日期、原始價格數字）— 見<a href="pricing-benchmark.html">定價基準儀表板</a>。</span><span class="en-only"><strong>Exact figures disclosed</strong>: every captured price is published weekly with source name, link, capture date, and the exact figure — see the <a href="pricing-benchmark.html">pricing benchmark dashboard</a>.</span></p>
+    <table>
+      <tr>
+        <th><span class="zh-only">擷取日</span><span class="en-only">Date</span></th>
+        <th><span class="zh-only">類別</span><span class="en-only">Category</span></th>
+        <th><span class="zh-only">來源</span><span class="en-only">Source</span></th>
+        <th><span class="zh-only">連結</span><span class="en-only">Link</span></th>
+        <th><span class="zh-only">擷取價格</span><span class="en-only">Captured (HKD)</span></th>
+        <th><span class="zh-only">納入／剔除 (§3.3)</span><span class="en-only">In/Out (§3.3)</span></th>
+      </tr>
+      <tr><td colspan="6" style="color:var(--ink-3)"><span class="zh-only">（每一數據點一行 — 載於每週儀表板）</span><span class="en-only">(one row per data point — published in the weekly dashboard)</span></td></tr>
+    </table>
+
+    <h2 id="s6"><span class="zh-only">§6 協作範圍及除外</span><span class="en-only">§6 Collaboration Scope &amp; Exclusions</span></h2>
+    <p class="clause"><span class="no">6.1</span><span class="zh-only">§2 定價目標及 §8 定價協作邀請適用於<strong>全部</strong>服務模組，包括訂閱及專業審視服務；唯一除外見 §6.2。</span><span class="en-only">The §2 pricing target and the §8 collaboration invitation apply to <strong>all</strong> service modules, including subscriptions and professional-review services; the sole exclusion is §6.2.</span></p>
+    <p class="clause"><span class="no">6.2</span><span class="zh-only"><strong>除外：AI 整合</strong>：採用專利申請中之專有技術（AI Logic Firewall），市場無同等服務可作比較，故不納入 §8 定價協作覆核；其價格仍按 §2 公式以參考基準計算並公開。</span><span class="en-only"><strong>Exclusion — AI integration</strong>: proprietary patent-pending IP with no market equivalent, hence outside the §8 collaborative review; its price still follows the §2 formula against a reference benchmark and is published.</span></p>
+    <p class="clause"><span class="no">6.3</span><span class="zh-only"><strong>免費同行審視 Free peer review</strong>：本公司不提供收費合規服務。每位客戶獲一次免費商業政策同行審視，由 HKCGI 認證人員以同行經驗交流形式進行——<strong>並非顧問或法律意見</strong>；此項不收費，故不屬 §2 公式及本程序之範圍。</span><span class="en-only"><strong>Free peer review</strong>: we sell no paid compliance services. Every client receives one complimentary business-policy peer review by an HKCGI-credentialed professional, shared as peer experience — <strong>not consultancy or legal advice</strong>; being free, it sits outside the §2 formula and this procedure.</span></p>
+
+    <h2 id="s7"><span class="zh-only">§7 紀錄及審計線索</span><span class="en-only">§7 Records &amp; Audit Trail</span></h2>
+    <p class="clause"><span class="no">7.1</span><span class="zh-only">每週基準週報保留以下欄位：檢索日期、服務類別、來源名稱及連結、擷取價格、推導下限、對上週變動、是否觸發調價。</span><span class="en-only">Each weekly report retains: date, category, source name &amp; link, captured price, derived floor, week-on-week change, reprice triggered (Y/N).</span></p>
+    <p class="clause"><span class="no">7.2</span><span class="zh-only">價格變更紀錄格式：</span><span class="en-only">Change-log format:</span></p>
+    <table>
+      <tr>
+        <th><span class="zh-only">日期</span><span class="en-only">Date</span></th>
+        <th><span class="zh-only">項目</span><span class="en-only">Item</span></th>
+        <th><span class="zh-only">舊下限</span><span class="en-only">Old floor</span></th>
+        <th><span class="zh-only">新下限</span><span class="en-only">New floor</span></th>
+        <th><span class="zh-only">變動</span><span class="en-only">Δ</span></th>
+        <th><span class="zh-only">新價</span><span class="en-only">New price</span></th>
+      </tr>
+      <tr><td colspan="6" style="color:var(--ink-3)"><span class="zh-only">（每次調價一行）</span><span class="en-only">(one row per reprice)</span></td></tr>
+    </table>
+    <p class="clause"><span class="no">7.3</span><span class="zh-only">週報及變更紀錄保存不少於 24 個月，可應要求提供。</span><span class="en-only">Reports and change logs are retained ≥24 months and available on request.</span></p>
+
+    <h2 id="s8"><span class="zh-only">§8 定價協作邀請</span><span class="en-only">§8 Pricing Collaboration Invitation</span></h2>
+    <p class="clause"><span class="no">8.1</span><span class="zh-only">定價唔係單方面聲明，而係一個開放程序：誠邀任何人（客戶、同行、公眾）提交同等範圍（§3.2）之香港市場價格資訊——不論高於或低於現行基準——連同來源出處。</span><span class="en-only">Pricing here is an open process, not a unilateral claim: anyone — clients, peers, the public — is invited to submit Hong Kong market pricing information for equivalent scope (§3.2), above or below the current benchmark, with its source.</span></p>
+    <p class="clause"><span class="no">8.2</span><span class="zh-only">所有提交均於下一個每週更新內覆核；如成立，相應下限隨即調整，並記入變更紀錄及週報。</span><span class="en-only">Every submission is reviewed at the next weekly refresh; if valid, the floor adjusts and the change is logged in the change-log and weekly report.</span></p>
+    <p class="clause"><span class="no">8.3</span><span class="zh-only">提交／聯絡：</span><span class="en-only">Submit / contact:</span> <a href="mailto:vita@gentertainment.ltd?subject=市場價格資訊%20Market%20pricing%20info">vita@gentertainment.ltd</a></p>
+
+    <h2 id="appendix-a"><span class="zh-only">附錄 A · 各模組公開預估工時</span><span class="en-only">Appendix A — Disclosed Estimated Hours per Module</span></h2>
+    <p><span class="zh-only">工資下限（§2.4）以下列工時計算。工時估算隨每週基準覆核，並按現代（AI 輔助）生產流程誠實校準。</span><span class="en-only">The wage floor (§2.4) uses these hours, reviewed with each weekly benchmark and honestly calibrated to modern (AI-assisted) production.</span></p>
+    <p><span class="zh-only"><strong>校準錨點（§5.1A）</strong>：TVP 已批核項目「SmartFlow: Automating Logistics and Inventory」（MatterUs Company Limited）獲批之專業服務工時 <strong>140 小時</strong>：規劃 25／開發 70／部署及上線 15／持續支援 30，市場時薪 HK$480。下表相應模組直接引用該分配。</span><span class="en-only"><strong>Calibration anchor (§5.1A)</strong>: the TVP-approved project "SmartFlow: Automating Logistics and Inventory" (MatterUs Company Limited) with an approved professional-services allocation of <strong>140 hours</strong> — 25 planning / 70 development / 15 deployment &amp; go-live / 30 ongoing support — at HK$480/hour. Matching modules below cite that allocation directly.</span></p>
+    <table>
+      <tr>
+        <th><span class="zh-only">模組</span><span class="en-only">Module</span></th>
+        <th style="text-align:right"><span class="zh-only">預估工時</span><span class="en-only">Est. hours</span></th>
+        <th><span class="zh-only">校準依據</span><span class="en-only">Basis</span></th>
+      </tr>
+      <tr><td><span class="zh-only">網站核心</span><span class="en-only">Website core</span></td><td class="num">70</td><td><span class="zh-only">規劃 15＋建置 40＋內容/SEO 8＋部署/QA 7（AI 輔助）</span><span class="en-only">15 plan + 40 build + 8 content/SEO + 7 deploy/QA (AI-assisted)</span></td></tr>
+      <tr><td><span class="zh-only">雙語</span><span class="en-only">Bilingual</span></td><td class="num">10</td><td><span class="zh-only">AI 輔助翻譯＋人手審校</span><span class="en-only">AI-assisted translation + human review</span></td></tr>
+      <tr><td><span class="zh-only">進階 SEO</span><span class="en-only">Advanced SEO</span></td><td class="num">8</td><td><span class="zh-only">維持</span><span class="en-only">Unchanged</span></td></tr>
+      <tr><td><span class="zh-only">加 5 頁</span><span class="en-only">Extra 5 pages</span></td><td class="num">10</td><td><span class="zh-only">每頁 ~2 小時（AI 輔助產製）</span><span class="en-only">~2 hrs/page (AI-assisted production)</span></td></tr>
+      <tr><td><span class="zh-only">網誌模組</span><span class="en-only">Blog module</span></td><td class="num">8</td><td><span class="zh-only">AI 輔助建置</span><span class="en-only">AI-assisted build</span></td></tr>
+      <tr><td><span class="zh-only">文案／翻譯（每頁）</span><span class="en-only">Copy per page</span></td><td class="num">3</td><td><span class="zh-only">AI 輔助起稿＋人手定稿</span><span class="en-only">AI-assisted draft + human finalization</span></td></tr>
+      <tr><td><span class="zh-only">預約／會員模組</span><span class="en-only">Booking module</span></td><td class="num">18</td><td><span class="zh-only">整合測試為主</span><span class="en-only">Mostly integration testing</span></td></tr>
+      <tr><td><span class="zh-only">舊網站接管</span><span class="en-only">Site takeover</span></td><td class="num">10</td><td><span class="zh-only">審計工作無法壓縮</span><span class="en-only">Audit work can't compress</span></td></tr>
+      <tr><td><span class="zh-only">系統配置</span><span class="en-only">System config</span></td><td class="num">50</td><td><span class="zh-only">TVP 錨點：規劃 25＋部署 15 級別＋設定/培訓</span><span class="en-only">TVP anchor: 25 plan + 15 deploy tier + setup/training</span></td></tr>
+      <tr><td><span class="zh-only">系統訂製</span><span class="en-only">System custom</span></td><td class="num">140+</td><td><span class="zh-only"><strong>TVP 獲批全程分配（25/70/15/30）直接引用</strong></span><span class="en-only"><strong>Direct citation of the TVP-approved full allocation (25/70/15/30)</strong></span></td></tr>
+      <tr><td><span class="zh-only">電商平台</span><span class="en-only">E-com platform</span></td><td class="num">40</td><td><span class="zh-only">平台方案（AI 輔助設定）</span><span class="en-only">Platform build (AI-assisted setup)</span></td></tr>
+      <tr><td><span class="zh-only">訂製購物車</span><span class="en-only">E-com custom</span></td><td class="num">90+</td><td><span class="zh-only">介乎配置與全訂製之間</span><span class="en-only">Between config and full custom</span></td></tr>
+      <tr><td><span class="zh-only">數據整合</span><span class="en-only">Data integration</span></td><td class="num">45</td><td><span class="zh-only">維持（多源清洗無法壓縮）</span><span class="en-only">Unchanged (multi-source cleaning can't compress)</span></td></tr>
+      <tr><td><span class="zh-only">AI 整合</span><span class="en-only">AI integration</span></td><td class="num">70</td><td><span class="zh-only"><strong>TVP 獲批開發階段分配（70 小時）直接引用</strong></span><span class="en-only"><strong>Direct citation of the TVP-approved development-phase allocation (70 hrs)</strong></span></td></tr>
+      <tr><td><span class="zh-only">WhatsApp 智能客服</span><span class="en-only">WhatsApp chatbot</span></td><td class="num">20</td><td><span class="zh-only">AI 輔助建置</span><span class="en-only">AI-assisted build</span></td></tr>
+      <tr><td><span class="zh-only">品牌視覺</span><span class="en-only">Brand &amp; visual</span></td><td class="num">20</td><td><span class="zh-only">AI 輔助產製＋人手審美</span><span class="en-only">AI-assisted production + human taste</span></td></tr>
+      <tr><td><span class="zh-only">SiteCare+（24 個月全期）</span><span class="en-only">SiteCare+ (full 24-mo term)</span></td><td class="num">30</td><td><span class="zh-only"><strong>TVP 獲批持續支援分配（30 小時）直接引用</strong></span><span class="en-only"><strong>Direct citation of the TVP-approved ongoing-support allocation (30 hrs)</strong></span></td></tr>
+      <tr><td><span class="zh-only">修改請求（每次）</span><span class="en-only">Change request</span></td><td class="num">3</td><td><span class="zh-only">維持（範圍定義）</span><span class="en-only">Unchanged (scope-defined)</span></td></tr>
+    </table>
+
+    <h2><span class="zh-only">修訂紀錄</span><span class="en-only">Revision History</span></h2>
+    <p class="revision"><span class="zh-only">本文件之重大修訂將更新版本號及生效日。</span><span class="en-only">Material revisions update the version number and effective date above.</span></p>
+    <p class="revision">
+      <span class="zh-only">
+      <b>v1.4 (2026-07-13)</b>：定價聲明重塑為開放協作程序：§2.2 改為「五折目標」、§6 改為協作範圍、§8 改為定價協作邀請（歡迎提交任何方向之行情資訊）；新增 §5.1A TVP 已批核項目參照（SmartFlow，MatterUs Company Limited，時薪 $480、140 工時）；附錄 A 工時按現代 AI 輔助生產誠實重估，並以 TVP 獲批分配作錨點；修正 §2.1 與 §2.7 之月費用詞矛盾。<br>
+      <b>v1.3 (2026-07-12)</b>：SiteCare+ 改為加購計劃：優先支援、不限次數修改請求（會員價 $140/小時）；新增 §2.8 計劃內承保服務費率條款。<br>
+      <b>v1.2 (2026-07-12)</b>：取消收費合規／ESG 服務及月費訂閱；新增 SiteCare+ 定期預繳計劃（§2.7）、最低收費一致性條款（§2.6）及免費同行審視（§6.3）；附錄 A 相應更新。<br>
+      <b>v1.1 (2026-07-12)</b>：公式改為 max(0.5×下限, $1,280, 最低工資×工時)；來源登記改為每週審視並公開實際擷取數字；新增附錄 A。<br>
+      <b>v1.0 (2026-07-12)</b>：首版。
+      </span>
+      <span class="en-only">
+      <b>v1.4 (2026-07-13)</b>: reframed as an open collaboration procedure — §2.2 becomes the "50% target," §6 becomes Collaboration Scope, §8 becomes the Pricing Collaboration Invitation (open to submissions in either direction); added §5.1A, a TVP-approved project reference (SmartFlow, MatterUs Company Limited, $480/hr, 140 hrs); Appendix A hours honestly re-estimated for modern AI-assisted production and anchored to the TVP-approved allocation; fixed a wording contradiction between §2.1 and §2.7 on monthly fees.<br>
+      <b>v1.3 (2026-07-12)</b>: SiteCare+ became a prepaid add-on plan: priority support, unlimited revision requests ($140/hr member rate); added §2.8 on covered-service rates under a plan.<br>
+      <b>v1.2 (2026-07-12)</b>: dropped paid compliance/ESG services and monthly subscriptions; added the SiteCare+ prepaid plan (§2.7), minimum-charge consistency (§2.6), and free peer review (§6.3); Appendix A updated accordingly.<br>
+      <b>v1.1 (2026-07-12)</b>: formula changed to max(0.5×floor, $1,280, min wage×hours); source register moved to weekly review with published captured figures; added Appendix A.<br>
+      <b>v1.0 (2026-07-12)</b>: first version.
+      </span>
+    </p>
+  </div>
+</article>
+
+<a class="wa-float" href="https://wa.me/85266033707" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Vita Lam · <a href="index.html">vitalam.org</a></span>
+    <span><a href="pricing.html"><span class="zh-only">收費</span><span class="en-only">Pricing</span></a> · <a href="pricing-benchmark.html"><span class="zh-only">基準儀表板</span><span class="en-only">Dashboard</span></a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('langBtn');
+  btn.addEventListener('click',function(){
+    var en=document.body.classList.toggle('lang-en');
+    document.documentElement.lang=en?'en':'zh-Hant-HK';
+    btn.textContent=en?'中文':'EN';
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>

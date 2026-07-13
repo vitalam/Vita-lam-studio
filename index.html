@@ -27,7 +27,7 @@
   "areaServed": ["Hong Kong", "Worldwide"],
   "description": "Fullstack web development and design: standard websites, integrated web apps with role-based logins and admin dashboards, and AI features built into customer websites.",
   "founder": {"@type": "Person", "name": "Vita Lam"},
-  "priceRange": "HK$12,800 - HK$150,000+"
+  "priceRange": "HK$1,280 - HK$101,000+"
 }
 </script>
 <style>
@@ -109,6 +109,7 @@ section:has(.sec-head) {counter-increment:sec}
 .ico-chip.amber{color:var(--amber)}
 .ico-chip.teal{color:var(--teal)}
 .ico-chip.sky{color:var(--sky)}
+.ico-chip.violet{color:var(--violet)}
 /* ---------- nav ---------- */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:50;
@@ -245,44 +246,30 @@ a.card h3{color:var(--ink)}
 .shot-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .shot-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:none}
 .shot-wrap.playing video{display:block}
-/* ---------- pricing ---------- */
-.anchor-line{max-width:640px;margin:0 auto 3.2rem;text-align:center;color:var(--ink-2);font-size:1.05rem}
-.anchor-line b{color:var(--ink)}
-.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch}
-@media(max-width:960px){.price-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
-.price-card{padding:34px 30px;display:flex;flex-direction:column;transition:transform .25s ease,border-color .25s ease}
-.price-card:hover{transform:translate(-3px,-3px);border-color:var(--accent);box-shadow:6px 6px 0 rgba(217,255,63,.16)}
-.price-card.featured{
-  border-color:var(--accent);
-  background:linear-gradient(160deg,rgba(217,255,63,.08),#101010 55%);
-}
-.badge{
-  align-self:flex-start;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
-  color:#0C0D04;background:var(--accent);
-  border-radius:3px;padding:6px 13px;margin-bottom:18px;
-}
-.badge.dim{background:transparent;color:var(--ink-3);border:1px solid var(--glass-line)}
-.price-name{font-size:1.5rem;font-weight:800;margin-bottom:6px}
-.price-for{font-size:.92rem;color:var(--ink-2);min-height:2.8em;margin-bottom:20px}
-.price-was{color:var(--ink-3);font-size:.95rem;text-decoration:line-through;min-height:1.5em}
-.price-now{font-size:2.3rem;font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1.05;margin:3px 0 2px}
-.price-now small{display:block;font-size:.8rem;color:var(--accent);margin-top:7px;font-weight:600;letter-spacing:.03em}
-.price-usd{font-size:.8rem;color:var(--ink-3);margin:10px 0 20px}
-.price-card ul{list-style:none;display:grid;gap:10px;font-size:.92rem;color:var(--ink-2);margin-bottom:26px}
-.price-card ul li{padding-left:22px;position:relative}
-.price-card ul li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
-.price-card .btn{margin-top:auto;text-align:center;justify-content:center}
-.promo-note{max-width:720px;margin:2.4rem auto 0;font-size:.92rem;color:var(--ink-2);padding:22px 28px;text-align:center;border-radius:22px}
-.promo-note b{color:var(--accent)}
-.mini-panel{padding:26px 26px 12px}
-.mini-panel h3{margin-bottom:.5rem;padding:0 12px}
-.mini-panel .sub{font-size:.85rem;color:var(--ink-3);padding:0 12px;margin-bottom:.4rem}
-.mini-table{width:100%;border-collapse:collapse;font-size:.92rem}
-.mini-table th{text-align:left;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);padding:10px 12px;border-bottom:1px solid rgba(255,255,255,.14)}
-.mini-table td{padding:13px 12px;border-bottom:1px solid rgba(255,255,255,.07);color:var(--ink-2);vertical-align:top}
-.mini-table tr:last-child td{border-bottom:none}
-.mini-table td:first-child{color:var(--ink);font-weight:600}
-.mini-table td.pr{color:var(--accent);font-weight:600;white-space:nowrap}
+/* ---------- pricing teaser ---------- */
+.price-tease{position:relative;overflow:hidden;padding:30px 26px;display:flex;flex-direction:column;gap:10px;border-radius:var(--r);border:1px solid var(--glass-line);background:var(--glass-bg);transition:transform .2s ease,border-color .2s ease}
+.price-tease::before{content:"";position:absolute;inset:0;opacity:.1;pointer-events:none;z-index:0}
+.price-tease>*{position:relative;z-index:1}
+.price-tease.c-lime{border-color:rgba(217,255,63,.35)}
+.price-tease.c-lime::before{background:repeating-linear-gradient(45deg,var(--accent) 0 1px,transparent 1px 14px)}
+.price-tease.c-lime:hover{border-color:var(--accent);transform:translate(-3px,-3px);box-shadow:6px 6px 0 rgba(217,255,63,.14)}
+.price-tease.c-violet{border-color:rgba(167,139,250,.35)}
+.price-tease.c-violet::before{background:radial-gradient(var(--violet) 1.4px,transparent 1.4px);background-size:16px 16px}
+.price-tease.c-violet:hover{border-color:var(--violet);transform:translate(-3px,-3px);box-shadow:6px 6px 0 rgba(167,139,250,.14)}
+.price-tease.c-sky{border-color:rgba(126,200,240,.35)}
+.price-tease.c-sky::before{background:repeating-linear-gradient(-45deg,var(--sky) 0 2px,transparent 2px 18px)}
+.price-tease.c-sky:hover{border-color:var(--sky);transform:translate(-3px,-3px);box-shadow:6px 6px 0 rgba(126,200,240,.14)}
+.price-tease.c-teal{border-color:rgba(77,217,192,.35)}
+.price-tease.c-teal::before{background:repeating-linear-gradient(45deg,var(--teal) 0 1px,transparent 1px 12px),repeating-linear-gradient(-45deg,var(--teal) 0 1px,transparent 1px 12px)}
+.price-tease.c-teal:hover{border-color:var(--teal);transform:translate(-3px,-3px);box-shadow:6px 6px 0 rgba(77,217,192,.14)}
+.price-tease .pt-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.price-tease.c-lime .pt-label{color:var(--accent)}
+.price-tease.c-violet .pt-label{color:var(--violet)}
+.price-tease.c-sky .pt-label{color:var(--sky)}
+.price-tease.c-teal .pt-label{color:var(--teal)}
+.price-tease .pt-price{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;color:var(--ink)}
+.price-tease .pt-price small{font-size:.5em;color:var(--ink-3);font-weight:600}
+.price-tease .pt-desc{font-size:.88rem;color:var(--ink-2)}
 /* ---------- about ---------- */
 .about-panel{padding:56px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start}
 @media(max-width:860px){.about-panel{grid-template-columns:1fr;padding:36px 28px}}
@@ -337,47 +324,6 @@ footer{padding:30px 0 56px;font-size:.87rem;color:var(--ink-3)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
 footer a{color:var(--ink-3)}
 footer a:hover{color:var(--accent)}
-/* ---------- DIY builder v2 ---------- */
-.builder-grid{display:grid;grid-template-columns:1.55fr 1fr;gap:18px;align-items:start}
-@media(max-width:960px){.builder-grid{grid-template-columns:1fr}}
-.bblock{background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:var(--r);margin-bottom:14px;overflow:hidden}
-.bb-head{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:baseline;padding:18px 22px}
-.bb-head input{width:18px;height:18px;accent-color:#D9FF3F;cursor:pointer;transform:translateY(2px)}
-.bb-head label{cursor:pointer}
-.bb-head b{color:var(--ink);font-size:1.02rem;display:block}
-.bb-head .bd{display:block;font-size:.84rem;color:var(--ink-3);margin-top:2px}
-.bb-head .bp{color:var(--accent);font-weight:700;white-space:nowrap;font-size:.95rem}
-.bb-head .bp i{font-style:normal;font-weight:400;color:var(--ink-3);font-size:.78rem}
-.bb-comps{display:none;border-top:1px solid rgba(242,242,238,.07);padding:8px 22px 14px 54px}
-.bblock.on .bb-comps{display:block}
-.bcomp{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:baseline;padding:9px 0;border-bottom:1px dashed rgba(242,242,238,.06)}
-.bcomp:last-child{border-bottom:none}
-.bcomp input{width:15px;height:15px;accent-color:#D9FF3F;cursor:pointer;transform:translateY(1px)}
-.bcomp label{cursor:pointer;font-size:.9rem;color:var(--ink-2)}
-.bcomp .bp{color:var(--accent);font-weight:600;font-size:.86rem;white-space:nowrap}
-.bcomp .bp i{font-style:normal;font-weight:400;color:var(--ink-3);font-size:.75rem}
-.bcomp.sub{padding-left:26px}
-.bgroup{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding:12px 0 4px}
-.breq{font-size:.76rem;color:var(--violet);font-weight:600}
-.blist{padding:22px;position:sticky;top:86px}
-.bl-head{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:700;margin-bottom:10px}
-#blines{min-height:50px;max-height:320px;overflow-y:auto}
-.bl-line{display:flex;justify-content:space-between;gap:12px;font-size:.86rem;color:var(--ink-2);padding:6px 0;border-bottom:1px dashed rgba(242,242,238,.06)}
-.bl-line span:last-child{color:var(--accent);font-weight:600;white-space:nowrap}
-.bl-empty{font-size:.86rem;color:var(--ink-3);padding:10px 0}
-.bl-total{display:flex;flex-direction:column;gap:4px;padding:14px 0;font-size:.95rem;color:var(--ink-2)}
-.bl-total b{color:var(--ink);font-size:1.3rem;font-weight:800;margin-left:8px}
-.bl-note{font-size:.78rem;color:var(--ink-3);margin-top:12px}
-/* ---------- DIY builder legacy ---------- */
-.blk{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(242,242,238,.07)}
-.blk input{width:18px;height:18px;accent-color:#D9FF3F;cursor:pointer;transform:translateY(2px)}
-.blk label{cursor:pointer}
-.blk label b{display:block;color:var(--ink);font-size:1rem}
-.blk .bd{display:block;font-size:.86rem;color:var(--ink-3);margin-top:2px}
-.blk .bp{color:var(--accent);font-weight:700;white-space:nowrap}
-.blk .bp i{font-style:normal;font-weight:400;color:var(--ink-3);font-size:.8rem}
-.btotal{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:20px 0 10px;font-size:1.02rem;color:var(--ink-2)}
-.btotal b{color:var(--ink);font-size:1.35rem;font-weight:800}
 /* ---------- REVIEW-NOTES-TOOL (delete this block before final launch) ---------- */
 #noteBar{position:fixed;left:20px;bottom:20px;z-index:70;display:flex;gap:8px;align-items:center;flex-wrap:wrap;max-width:70vw}
 #noteBar button{
@@ -465,7 +411,7 @@ html.js .reveal.in{opacity:1;transform:none}
           <a href="services/data-integration.html"><span class="zh-only">03 數據整合系統</span><span class="en-only">03 Data Integration</span></a>
           <a href="services/ai-integration.html"><span class="zh-only">04 AI 整合</span><span class="en-only">04 AI Integration</span></a>
           <a href="services/visual-editorial.html"><span class="zh-only">05 視覺・編采</span><span class="en-only">05 Visual &amp; Editorial</span></a>
-          <a href="services/subscription.html"><span class="zh-only">06 部署訂閱</span><span class="en-only">06 Deployment Subscription</span></a>
+          <a href="services/subscription.html"><span class="zh-only">06 SiteCare+ 保養計劃</span><span class="en-only">06 SiteCare+</span></a>
         </div>
       </div>
       <a href="#work"><span class="zh-only">作品</span><span class="en-only">Work</span></a>
@@ -632,8 +578,8 @@ html.js .reveal.in{opacity:1;transform:none}
       </a>
       <a class="card glass svc-mini" id="svc-care" href="services/subscription.html">
         <div class="ico-chip"><svg class="ico"><use href="#i-shield"/></svg></div>
-        <h3><span class="zh-only">06 部署訂閱</span><span class="en-only">06 Deployment Subscription</span></h3>
-        <p><span class="zh-only">一個價錢全包看守。保安係標準配備。</span><span class="en-only">One price, all-in care. Security is standard equipment.</span></p>
+        <h3><span class="zh-only">06 SiteCare+ 保養計劃</span><span class="en-only">06 SiteCare+</span></h3>
+        <p><span class="zh-only">24 個月一次過預繳，冇月費。保安係標準配備。</span><span class="en-only">Prepaid once for 24 months, no monthly fees. Security is standard equipment.</span></p>
         <span class="go"><span class="zh-only">了解更多 →</span><span class="en-only">Learn more →</span></span>
       </a>
     </div>
@@ -741,49 +687,43 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </section>
 
-<!-- ============ PRICING ============ -->
-<!-- BUILDER-V2: modular DIY configurator -->
+<!-- ============ PRICING (teaser — full builder lives on pricing.html) ============ -->
 <section id="pricing">
   <div class="wrap">
     <div class="sec-head">
       <div class="kicker"><span class="zh-only">收費</span><span class="en-only">Pricing</span></div>
       <h2><span class="zh-only">頂級規格。<br>經濟結構。</span><span class="en-only">Premium grade.<br>Economical by design.</span></h2>
-      <p class="lede"><span class="zh-only">冇套餐，冇 tiers — 逐件砌，只付你需要。<strong>慳嘅係浪費，唔係質素。</strong></span><span class="en-only">No bundles, no tiers — build block by block, pay only for what you need. <strong>What you save is waste, not quality.</strong></span></p>
+      <p class="lede"><span class="zh-only">開放定價，每週對齊香港市場：以公允下限 × 0.5 為定價目標，每模組最低 HK$1,280。完整組合去專屬頁面砌。</span><span class="en-only">Open pricing, benchmarked weekly: targeting 50% of the fair-value floor, HK$1,280 module minimum. Build your exact combination on the pricing page.</span></p>
     </div>
-    <noscript><p style="text-align:center;color:var(--ink-2)">01 網站 HK$28,000 · 02 商業系統 +HK$28,000 · 02B 電商 +HK$22,000 · 03 數據 +HK$16,800 · 04 AI +HK$19,800 · 05 視覺編采 +HK$8,800 · 06 訂閱 HK$1,880/月 — WhatsApp +852 6603 3707 索取詳細報價。</p></noscript>
-    <div class="grid grid-2 reveal" style="margin-bottom:18px">
-      <div class="card glass">
-        <div class="kicker" style="margin-bottom:.6rem"><span class="zh-only">經濟，因為</span><span class="en-only">Economical, because</span></div>
-        <p><span class="zh-only">你唔需要嘅，唔使買。冇代理式人頭開支，冇中環租金，冇「project management fee」— 報價單上每一行，都係真正做嘢嘅一行。</span><span class="en-only">You skip what you don&#8217;t need. No agency headcount, no Central rent, no &#8220;project management fee&#8221; — every line on the quote is a line of real work.</span></p>
+    <div class="grid grid-4 reveal">
+      <div class="price-tease c-lime">
+        <div class="ico-chip"><svg class="ico"><use href="#i-store"/></svg></div>
+        <div class="pt-label"><span class="zh-only">網站</span><span class="en-only">Website</span></div>
+        <div class="pt-price">HK$12,500 <small><span class="zh-only">起</span><span class="en-only">from</span></small></div>
+        <p class="pt-desc"><span class="zh-only">全訂製程式碼・CMS・SEO・SSL・原始碼交付。</span><span class="en-only">Fully custom code · CMS · SEO · SSL · source handover.</span></p>
       </div>
-      <div class="card glass" style="border-color:rgba(217,255,63,.45)">
-        <div class="kicker" style="margin-bottom:.6rem"><span class="zh-only">頂級，因為</span><span class="en-only">Premium, because</span></div>
-        <p><span class="zh-only">前 SFC 持牌嘅嚴謹、專利申請中嘅 AI Logic Firewall、畫家嘅審美、30 日保養、100% 擁有權 — 每一個模組都係代理級規格，唔係平價替代品。</span><span class="en-only">SFC-grade rigour, a patent-pending AI Logic Firewall, a painter&#8217;s eye, a 30-day warranty, 100% ownership — every block is agency-grade, not a budget substitute.</span></p>
+      <div class="price-tease c-violet">
+        <div class="ico-chip violet"><svg class="ico"><use href="#i-key"/></svg></div>
+        <div class="pt-label"><span class="zh-only">系統與電商</span><span class="en-only">Systems &amp; Commerce</span></div>
+        <div class="pt-price"><small style="font-size:.6em"><span class="zh-only">由</span><span class="en-only">from</span></small> HK$12,500</div>
+        <p class="pt-desc"><span class="zh-only">系統配置、訂製系統、電商平台、訂製購物車。</span><span class="en-only">System config, custom systems, e-com platforms, custom carts.</span></p>
+      </div>
+      <div class="price-tease c-sky">
+        <div class="ico-chip sky"><svg class="ico"><use href="#i-spark"/></svg></div>
+        <div class="pt-label"><span class="zh-only">數據與 AI</span><span class="en-only">Data &amp; AI</span></div>
+        <div class="pt-price"><small style="font-size:.6em"><span class="zh-only">由</span><span class="en-only">from</span></small> HK$12,500</div>
+        <p class="pt-desc"><span class="zh-only">數據整合儀表板；AI Logic Firewall（專利申請中）— 只答你批准嘅嘢。</span><span class="en-only">Data dashboards; AI Logic Firewall (patent pending) — it only says what you've approved.</span></p>
+      </div>
+      <div class="price-tease c-teal">
+        <div class="ico-chip teal"><svg class="ico"><use href="#i-brush"/></svg></div>
+        <div class="pt-label"><span class="zh-only">品牌視覺</span><span class="en-only">Brand &amp; Visual</span></div>
+        <div class="pt-price">HK$6,000</div>
+        <p class="pt-desc"><span class="zh-only">命名、標題、視覺語言 — 畫家之手，唔係倒模。</span><span class="en-only">Naming, headlines, visual language — a painter's hand, not a template.</span></p>
       </div>
     </div>
-    <div class="builder-grid">
-      <div id="bblocks"></div>
-      <aside class="blist glass">
-        <div class="bl-head"><span class="zh-only">購物清單</span><span class="en-only">Shopping list</span></div>
-        <div id="blines"></div>
-        <div class="bl-agency" id="blAgency" style="display:none">
-          <div style="font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);font-weight:700;padding-top:12px"><span class="zh-only">同等範圍・代理行情</span><span class="en-only">Same scope · agency market</span></div>
-          <div style="font-size:.95rem;color:var(--ink-3);text-decoration:line-through" id="agencyRange">—</div>
-        </div>
-        <div class="bl-total">
-          <div><span class="zh-only">你嘅價・一次性</span><span class="en-only">Your price · one-off</span> <b id="tOnce">HK$0</b></div>
-          <div id="tMoRow"><span class="zh-only">每月</span><span class="en-only">Monthly</span> <b id="tMo">HK$0</b></div>
-        </div>
-        <button class="btn btn-primary" id="quoteBtn" type="button" style="width:100%;justify-content:center"><span class="zh-only">⚡ 產生報價單</span><span class="en-only">⚡ Generate quotation</span></button>
-        <a class="btn btn-wa" id="buildCta" href="https://wa.me/85266033707" target="_blank" rel="noopener" style="width:100%;justify-content:center;margin-top:10px"><svg class="bico ico"><use href="#i-wa"/></svg> <span class="zh-only">WhatsApp 傾呢個組合</span><span class="en-only">Discuss on WhatsApp</span></a>
-        <p class="bl-note"><span class="zh-only">每個組合都包交付清單全套：源代碼・AI-ready 設計手冊・模組化架構・文檔交接。先報價，後動工。</span><span class="en-only">Every build includes the full handover: source code · AI-ready design playbook · modular architecture · docs. Quote first, work after.</span></p>
-      </aside>
+    <div style="text-align:center;margin-top:2.6rem">
+      <a class="btn btn-primary" href="pricing.html"><span class="zh-only">睇晒完整收費及組合 →</span><span class="en-only">See full pricing &amp; build your package →</span></a>
     </div>
-    <div class="promo-note glass">
-      <span class="zh-only"><b>創始客戶禮遇（每月 2 名）：</b>免首 6 個月部署訂閱（價值 HK$11,280）＋作品集及推薦語授權。免費期後自動以 HK$1,880/月續訂 — 冇綁約，隨時取消。</span>
-      <span class="en-only"><b>Founding-client offer (2 slots/month):</b> first 6 months of Deployment Subscription free (worth HK$11,280) + portfolio &amp; testimonial rights. Auto-renews at HK$1,880/mo after — no lock-in, cancel anytime.</span>
-    </div>
-    <p class="stack-line"><span class="zh-only">零散工作：網域+DNS HK$500/年・時薪 HK$650–850。所有 AI 整合均受 AI Logic Firewall（專利申請中）約束。</span><span class="en-only">Ad-hoc: domain+DNS HK$500/yr · hourly HK$650–850. Every AI build is constrained by the AI Logic Firewall (patent pending).</span></p>
   </div>
 </section>
 
@@ -855,23 +795,23 @@ html.js .reveal.in{opacity:1;transform:none}
       </details>
       <details>
         <summary><span class="zh-only">一個項目需要多久？</span><span class="en-only">How long does a project take?</span></summary>
-        <p><span class="zh-only">Launch：2–3 週。Business：4–6 週。Platform：先定範圍，後書面鎖定。全程每週在真實連結上看到進度。</span><span class="en-only">Launch: 2–3 weeks. Business: 4–6 weeks. Platform: scoped, then fixed in writing. Weekly progress on a live link throughout.</span></p>
+        <p><span class="zh-only">網站：2–3 週。系統及電商：4–6 週。訂製系統：先定範圍，後書面鎖定。全程每週在真實連結上看到進度。</span><span class="en-only">Websites: 2–3 weeks. Systems &amp; commerce: 4–6 weeks. Custom systems: scoped, then fixed in writing. Weekly progress on a live link throughout.</span></p>
       </details>
       <details>
         <summary><span class="zh-only">AI 功能點收費？用量點計？</span><span class="en-only">How does AI pricing and usage work?</span></summary>
-        <p><span class="zh-only">兩條路：受管 API — 我透過 OpenRouter 提供，月費連用量額度，超額按成本加固定手續費，設支出上限；或者自備 API key — 一次過設定費，用量直接找供應商。明碼實價，冇隱藏。</span><span class="en-only">Two routes: a managed API — I provide it via OpenRouter, monthly fee with a usage allowance, overage at cost plus a fixed margin, hard spend cap; or bring your own key — one-off setup, you pay the provider directly. Priced in the open, nothing hidden.</span></p>
+        <p><span class="zh-only">一次性 HK$20,000（WhatsApp 智能客服 +HK$6,000），冇月費。用量成本行你自己名下嘅 API 帳戶，按實際用量直接找供應商 — 我唔賺你嘅 token 錢。明碼實價，冇隱藏。</span><span class="en-only">One-off HK$20,000 (WhatsApp chatbot +HK$6,000), no monthly fees. Usage runs on an API account in your own name, paid to the provider at cost — I don't mark up your tokens. Priced in the open, nothing hidden.</span></p>
       </details>
       <details>
         <summary><span class="zh-only">植入 AI，會唔會亂講嘢？</span><span class="en-only">If I add AI, will it say something wrong?</span></summary>
         <p><span class="zh-only">唔會由得佢。我設計咗 <strong>AI Logic Firewall（專利申請中）</strong>，喺 ICCC® 實戰驗證：一層邏輯防火牆，令 AI 只能引用你批准嘅資料、只能答你允許嘅範圍 — 超出範圍，就靜靜交返畀真人。你嘅 AI 唔會亂報價、亂承諾、亂爆料。</span><span class="en-only">Not on my watch. I designed the <strong>AI Logic Firewall (patent pending)</strong>, proven in production on ICCC®: a logic layer that lets the AI cite only material you approved and answer only within scopes you allow — anything beyond gets handed quietly to a human. Your AI will not misquote prices, invent promises, or leak.</span></p>
       </details>
       <details>
-        <summary><span class="zh-only">為什麼你的價格高於市場平均？</span><span class="en-only">Why are your prices above the market average?</span></summary>
-        <p><span class="zh-only">因為價格包含了大多數報價悄悄略去的東西：部署、保安、SSL、備份、30 日保養 — 以及一個前 SFC 持牌、經營過真實生意的建造者。以完整範圍比完整範圍，溢價其實不大。想更低入場？創始客戶價正為此而設。</span><span class="en-only">Because the price includes what most quotes quietly leave out: deployment, security, SSL, backups, a 30-day warranty — and a builder who held an SFC licence and has run real businesses. Compare full scope with full scope, and the premium shrinks. Want in cheaper? That's the founding-client rate.</span></p>
+        <summary><span class="zh-only">點解可以係行情一半？</span><span class="en-only">How can your prices be half the market?</span></summary>
+        <p><span class="zh-only">開放定價：以市場公允下限 × 0.5 為定價目標，每模組最低 HK$1,280。基準來源、工時同每週擷取嘅實際價格數字全數公開，仲誠邀你提交行情資訊一齊校準 — <a href="pricing-methodology.html">定價方法</a>。冇代理式人頭開支，慳嘅係浪費，唔係質素。</span><span class="en-only">Open pricing: we target 50% of the benchmarked fair-value floor, HK$1,280 minimum per module. Every source, hour estimate and captured figure is published weekly — and you're invited to submit market info to help calibrate it (<a href="pricing-methodology.html">methodology</a>). No agency overhead; what you save is waste, not quality.</span></p>
       </details>
       <details>
-        <summary><span class="zh-only">創始客戶折扣是噱頭嗎？</span><span class="en-only">Is the founding-client discount a gimmick?</span></summary>
-        <p><span class="zh-only">不是 — 是交易。你提早投入（預付 50%）並借出你的故事（作品集 + 推薦語）；我以低於市場的價格交付高階範圍。每月兩個名額，確保誠實。</span><span class="en-only">No — a trade. You commit early (50% upfront) and lend me your story (portfolio + testimonial); I deliver premium scope below market. Two slots a month keeps it honest.</span></p>
+        <summary><span class="zh-only">價格點解每週可能變？</span><span class="en-only">Why can prices change weekly?</span></summary>
+        <p><span class="zh-only">價格由公開演算法按市場下限計出，逢星期一更新；變動少於 5% 不調價。報價鎖定 14 日，以報價日與簽約日兩者中對你較優者為準。</span><span class="en-only">Prices come from a public algorithm tracking the market floor, refreshed every Monday; moves under 5% don't reprice. Quotes lock for 14 days at whichever price favours you.</span></p>
       </details>
       <details>
         <summary><span class="zh-only">我不能自己用 AI 做嗎？</span><span class="en-only">Can't I just build it myself with AI?</span></summary>
@@ -879,7 +819,7 @@ html.js .reveal.in{opacity:1;transform:none}
       </details>
       <details>
         <summary><span class="zh-only">上線後壞掉怎麼辦？</span><span class="en-only">What if something breaks after launch?</span></summary>
-        <p><span class="zh-only">每個項目 30 日保養 — 缺陷免費修復。之後可選 HK$1,880/月的全包看守 — 保安、備份、修改、真人回應，一個價錢全包，隨時取消。</span><span class="en-only">30-day warranty on every build — defects fixed free. Then all-in care at HK$1,880/month — security, backups, changes and a human reply, one price, cancel anytime.</span></p>
+        <p><span class="zh-only">每個項目 30 日保養 — 缺陷免費修復。之後可加購 <strong>SiteCare+</strong>（HK$5,000／24 個月，一次過預繳，冇月費）：寄存、SSL、備份、監測、修補、緊急復原，加優先支援同不限次數修改（會員價 $140/小時）。冇 SiteCare+ 嘅修改請求 HK$1,280／次（至 3 小時）。</span><span class="en-only">30-day warranty on every build — defects fixed free. After that, add <strong>SiteCare+</strong> (HK$5,000/24 months, prepaid once, no monthly billing): hosting, SSL, backups, monitoring, patching, emergency restore, plus priority support and unlimited revisions at the $140/hour member rate. Without it, change requests are HK$1,280 each (up to 3 hours).</span></p>
       </details>
       <details>
         <summary><span class="zh-only">你接香港以外的客戶嗎？</span><span class="en-only">Do you work with clients outside Hong Kong?</span></summary>
@@ -956,184 +896,6 @@ html.js .reveal.in{opacity:1;transform:none}
   </div>
 </footer>
 
-<script>
-(function(){
-  /* ============ BUILDER-V2 config ============ */
-  function L(zh,en){return {zh:zh,en:en};}
-  var CFG=[
-    {id:'01',ico:'i-store',once:28000,name:L('01 專業網站設計','01 Professional Website Design'),desc:L('骨幹基建就緒・含 CMS・SEO・部署・SSL','Backbone-ready · CMS · SEO · deployment · SSL'),on:true,comps:[
-      {id:'01a',once:3800,name:L('中英雙語內容架構','Bilingual (ZH/EN) structure')},
-      {id:'01b',once:2800,name:L('進階 SEO・結構化資料','Advanced SEO & structured data')},
-      {id:'01c',once:4800,name:L('額外頁面組（+5 版）','Extra page set (+5 pages)')},
-      {id:'01d',once:3200,name:L('Blog／新聞模組','Blog / news module')}]},
-    {id:'02',ico:'i-key',once:28000,name:L('02 商業系統（現成/訂製）','02 Business Systems'),desc:L('製造業、零售、任何 ERP 系統 — 現成或訂製','Manufacturing, retail, any ERM — off-shelf or custom'),comps:[
-      {id:'02a',once:4800,name:L('會員分級・權限層','Member tiers & permission layers')},
-      {id:'02b',once:2800,name:L('2FA 雙重驗證','Two-factor authentication')},
-      {id:'02c',once:3800,name:L('通知系統（Email／WhatsApp）','Notifications (Email / WhatsApp)')},
-      {id:'02d',once:5800,name:L('預約系統','Booking system')}]},
-    {id:'2B',ico:'i-coin',once:22000,name:L('02B 付款・電商','02B Payments & E-commerce'),desc:L('購物車、結帳、訂單郵件・含 Stripe 整合','Cart, checkout, order emails · Stripe included'),comps:[
-      {id:'2Ba',once:3800,name:L('額外支付方式（Alipay／FPS／PayMe）','Extra gateways (Alipay / FPS / PayMe)')},
-      {id:'2Bb',once:6800,name:L('庫存系統','Inventory system')},
-      {id:'2Bc',once:5800,name:L('物流・運費整合','Shipping & logistics integration')},
-      {id:'2Bd',once:8800,name:L('製造商中樞','Manufacturers hub')},
-      {id:'2Be',once:7800,name:L('供應商管理','Supplier management')},
-      {id:'2Bf',once:2800,name:L('折扣碼・優惠券','Coupons & discount codes')}]},
-    {id:'03',ico:'i-stack',once:16800,name:L('03 數據整合系統','03 Data Integration'),desc:L('多源合一・一個儀表板・AI-ready 資料底座','Many sources, one dashboard — AI-ready backbone'),comps:[
-      {id:'03a',once:2400,name:L('額外數據來源（每個）','Extra data source (each)')},
-      {id:'03b',once:3600,name:L('自動報表（週／月）','Scheduled reports (weekly/monthly)')},
-      {id:'03c',once:4800,name:L('歷史數據遷移','Historical data migration')}]},
-    {id:'04',ico:'i-spark',once:19800,req:'03',name:L('04 AI 整合','04 AI Integration'),desc:L('AI Logic Firewall（專利申請中）・需要 03 數據底座','AI Logic Firewall (patent pending) · requires 03'),comps:[
-      {id:'04a',once:4800,name:L('表格／預約 AI 助手','AI form / booking assistant')},
-      {id:'04b',once:5800,name:L('內容生成模組','Content generation module')},
-      {id:'04c',once:4800,name:L('多語言客服 AI','Multilingual support AI')}],
-     groups:[
-      {label:L('API KEY（二選一）','API KEY (choose one)'),radio:'api',opts:[
-        {id:'apiB',month:0,def:true,name:L('自備 API key（BYOK）— 免費','Bring your own key (BYOK) — free')},
-        {id:'apiM',month:null,name:L('由我提供受管 API（經 OpenRouter）','Managed API by me (via OpenRouter)')}]},
-      {label:L('AI 模型（受管 API 適用）','AI model (for managed API)'),radio:'model',needs:'apiM',opts:[
-        {id:'mStd',month:780,def:true,name:L('標準模型（日常客服級）','Standard model (everyday support)')},
-        {id:'mPro',month:1480,name:L('進階模型（旗艦級理解力）','Advanced model (flagship reasoning)')},
-        {id:'mMax',month:2280,name:L('頂配模型（最新旗艦＋深度推理）','Top model (latest flagship + deep reasoning)')}]}]},
-    {id:'05',ico:'i-brush',once:8800,name:L('05 視覺・編采','05 Visual Arts & Editorial'),desc:L('品牌語調、視覺方向・含協作註記介面','Brand voice, visual direction · annotation interface included'),comps:[
-      {id:'05a',once:4800,name:L('品牌命名','Brand naming')},
-      {id:'05b',once:2800,name:L('金句標題套組（3 句）','Signature headline set (3)')},
-      {id:'05c',once:4200,name:L('社交貼文模板（10 款）','Social post templates (10)')}]},
-    {id:'06',ico:'i-shield',month:1880,on:true,name:L('06 部署訂閱','06 Deployment Subscription'),desc:L('寄存・SSL・備份・監測・保安修補・每月 4 小時修改・月報・最新 AI 模型升級（訂閱戶專享）・隨時取消','Hosting · SSL · backups · monitoring · patching · 4 hrs changes/mo · report · latest AI model upgrades included · cancel anytime'),comps:[]}
-  ];
-  var host=document.getElementById('bblocks'); if(!host) return;
-  function lang(){ return document.body.classList.contains('lang-en')?'en':'zh'; }
-  function bi(l){ return '<span class="zh-only">'+l.zh+'</span><span class="en-only">'+l.en+'</span>'; }
-  function fmt(n){ return 'HK$'+n.toLocaleString('en-US'); }
-  function priceTag(o){ if(o.month!=null&&o.month!==undefined&&o.month!==null) {} }
-  /* render */
-  CFG.forEach(function(b){
-    var div=document.createElement('div'); div.className='bblock'; div.id='bb'+b.id;
-    var pr = b.month!=null ? fmt(b.month)+'<i>/月 mo</i>' : (b.id==='01'?fmt(b.once):'+'+fmt(b.once));
-    var req = b.req ? ' <span class="breq">'+bi(L('（需要 '+b.req+'）','(requires '+b.req+')'))+'</span>' : '';
-    var h='<div class="bb-head"><input type="checkbox" id="c'+b.id+'"'+(b.on?' checked':'')+'>'+
-      '<label for="c'+b.id+'"><b>'+bi(b.name)+req+'</b><span class="bd">'+bi(b.desc)+'</span></label>'+
-      '<span class="bp">'+pr+'</span></div>';
-    var inner='';
-    (b.comps||[]).forEach(function(c){
-      inner+='<div class="bcomp"><input type="checkbox" id="c'+c.id+'"><label for="c'+c.id+'">'+bi(c.name)+'</label><span class="bp">'+(c.month!=null?'+'+fmt(c.month)+'<i>/月 mo</i>':'+'+fmt(c.once))+'</span></div>';
-    });
-    (b.groups||[]).forEach(function(g){
-      inner+='<div class="bgroup">'+bi(g.label)+'</div>';
-      g.opts.forEach(function(o){
-        var p = o.month==null ? bi(L('按模型計','per model')) : (o.month===0 ? '+HK$0' : '+'+fmt(o.month)+'<i>/月 mo</i>');
-        inner+='<div class="bcomp sub" data-radio="'+g.radio+'"'+(g.needs?' data-needs="'+g.needs+'"':'')+'><input type="checkbox" id="c'+o.id+'"'+(o.def?' checked':'')+' data-radio="'+g.radio+'"><label for="c'+o.id+'">'+bi(o.name)+'</label><span class="bp">'+p+'</span></div>';
-      });
-    });
-    div.innerHTML=h+(inner?'<div class="bb-comps">'+inner+'</div>':'');
-    if(b.on) div.classList.add('on');
-    host.appendChild(div);
-  });
-  function q(id){ return document.getElementById('c'+id); }
-  /* interactions */
-  CFG.forEach(function(b){
-    var box=q(b.id), block=document.getElementById('bb'+b.id);
-    box.addEventListener('change',function(){
-      if(box.checked && b.req && !q(b.req).checked){
-        q(b.req).checked=true;
-        document.getElementById('bb'+b.req).classList.add('on');
-        var el=document.getElementById('bb'+b.req); el.classList.remove('pulse'); void el.offsetWidth; el.classList.add('pulse');
-      }
-      if(!box.checked){
-        block.querySelectorAll('.bb-comps input').forEach(function(i){ if(!i.hasAttribute('data-radio')) i.checked=false; });
-        /* unchecking 03 kills 04 */
-        CFG.forEach(function(x){ if(x.req===b.id && q(x.id).checked){ q(x.id).checked=false; document.getElementById('bb'+x.id).classList.remove('on'); document.getElementById('bb'+x.id).querySelectorAll('.bb-comps input').forEach(function(i){ if(!i.hasAttribute('data-radio')) i.checked=false; }); } });
-      }
-      block.classList.toggle('on',box.checked);
-      calc();
-    });
-  });
-  /* radio-like checkbox groups */
-  document.querySelectorAll('#bblocks input[data-radio]').forEach(function(i){
-    i.addEventListener('change',function(){
-      if(i.checked){
-        document.querySelectorAll('#bblocks input[data-radio="'+i.getAttribute('data-radio')+'"]').forEach(function(o){ if(o!==i) o.checked=false; });
-      } else { i.checked=true; } /* one must stay selected */
-      calc();
-    });
-  });
-  document.querySelectorAll('#bblocks .bb-comps input:not([data-radio])').forEach(function(i){
-    i.addEventListener('change',calc);
-  });
-  /* totals + shopping list */
-  var lines=[];
-  function calc(){
-    lines=[]; var once=0,mo=0;
-    var managed=q('apiM')&&q('apiM').checked;
-    /* model rows visible logic: grey when BYOK */
-    document.querySelectorAll('[data-needs="apiM"]').forEach(function(r){ r.style.opacity=managed?'1':'.35'; });
-    CFG.forEach(function(b){
-      if(!q(b.id).checked) return;
-      if(b.month!=null){ mo+=b.month; lines.push({n:b.name,amt:b.month,m:true}); }
-      else { once+=b.once; lines.push({n:b.name,amt:b.once,m:false}); }
-      (b.comps||[]).forEach(function(c){ if(q(c.id).checked){ once+=(c.once||0); mo+=(c.month||0); lines.push({n:c.name,amt:c.once||c.month,m:!!c.month,sub:true}); } });
-      (b.groups||[]).forEach(function(g){
-        g.opts.forEach(function(o){
-          if(!q(o.id).checked) return;
-          if(g.needs && !q(g.needs).checked) return;
-          if(o.month===0){ lines.push({n:o.name,amt:0,m:true,sub:true}); }
-          else if(o.month!=null){ mo+=o.month; lines.push({n:o.name,amt:o.month,m:true,sub:true}); }
-          else if(o.id==='apiM'){ lines.push({n:o.name,amt:0,m:true,sub:true,label:'—'}); }
-        });
-      });
-    });
-    var lg=lang();
-    var html=lines.length?lines.map(function(l){
-      return '<div class="bl-line"><span>'+(l.sub?'└ ':'')+l.n[lg]+'</span><span>'+(l.label||( (l.amt===0?'HK$0':fmt(l.amt))+(l.m?'/'+(lg==='zh'?'月':'mo'):'') ))+'</span></div>';
-    }).join(''):'<div class="bl-empty">'+(lg==='zh'?'未揀任何模組':'Nothing selected yet')+'</div>';
-    document.getElementById('blines').innerHTML=html;
-    document.getElementById('tOnce').textContent=fmt(once);
-    document.getElementById('tMo').textContent=fmt(mo);
-    document.getElementById('tMoRow').style.display=mo?'block':'none';
-    var ag=document.getElementById('blAgency');
-    if(once>0){ ag.style.display='block';
-      document.getElementById('agencyRange').textContent='≈ '+fmt(Math.round(once*2.5/1000)*1000)+' – '+fmt(Math.round(once*5/1000)*1000);
-    } else ag.style.display='none';
-    var msg=(lg==='zh'?'你好 Vita，我砌咗呢個組合：\n':'Hi Vita, here is my build:\n')+
-      lines.map(function(l){return '- '+l.n[lg]+'：'+fmt(l.amt)+(l.m?(lg==='zh'?'/月':'/mo'):'');}).join('\n')+
-      (lg==='zh'?('\n合共：一次性 '+fmt(once)+(mo?' + 每月 '+fmt(mo):'')+'。想約 20 分鐘傾傾。'):('\nTotal: '+fmt(once)+' one-off'+(mo?' + '+fmt(mo)+'/mo':'')+'. I would like a 20-minute call.'));
-    document.getElementById('buildCta').href='https://wa.me/85266033707?text='+encodeURIComponent(msg);
-    window.__vlQuote={lines:lines,once:once,mo:mo};
-  }
-  /* quotation generator */
-  document.getElementById('quoteBtn').addEventListener('click',function(){
-    var d=window.__vlQuote||{lines:[],once:0,mo:0}, lg=lang();
-    var now=new Date();
-    var no='VL-'+now.getFullYear()+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(now.getHours()).padStart(2,'0')+String(now.getMinutes()).padStart(2,'0');
-    var rows=d.lines.map(function(l,i){
-      return '<tr><td>'+(i+1)+'</td><td>'+(l.sub?'&nbsp;&nbsp;└ ':'')+l.n[lg]+'</td><td style="text-align:right">'+(l.amt===0?'HK$0':fmt(l.amt))+(l.m?('/'+(lg==='zh'?'月':'mo')):'')+'</td></tr>';
-    }).join('');
-    var T=lg==='zh'
-      ?{t:'報價單 QUOTATION',date:'日期',no:'編號',item:'項目',amt:'金額',once:'一次性合計',mo:'每月合計',valid:'本報價有效期 14 日。範圍以書面確認為準，先報價，後動工。',inc:'已包含：全部源代碼・AI-ready 設計手冊・模組化架構・文檔交接・30 日保養。保安係標準配備。',promo:'創始客戶禮遇（每月 2 名）：免首 6 個月部署訂閱（價值 HK$11,280）。',print:'列印 / 儲存 PDF'}
-      :{t:'QUOTATION',date:'Date',no:'Quote No.',item:'Item',amt:'Amount',once:'One-off total',mo:'Monthly total',valid:'Valid for 14 days. Scope is fixed in writing; quote first, work after.',inc:'Included: all source code · AI-ready design playbook · modular architecture · docs handover · 30-day warranty. Security is standard.',promo:'Founding-client offer (2/month): first 6 months of Deployment Subscription free (worth HK$11,280).',print:'Print / Save as PDF'};
-    var w=window.open('','_blank');
-    if(!w){ alert(lg==='zh'?'請允許彈出視窗以產生報價單':'Please allow pop-ups to generate the quotation'); return; }
-    w.document.write('<!DOCTYPE html><html><head><meta charset="UTF-8"><title>'+T.t+' '+no+'</title><style>'+
-      'body{font-family:Inter,"Noto Sans TC",sans-serif;color:#111;margin:48px;max-width:720px}'+
-      'h1{font-size:22px;letter-spacing:.06em} .lime{color:#93b31a} .meta{color:#666;font-size:13px;margin:6px 0 26px}'+
-      'table{width:100%;border-collapse:collapse;font-size:14px} th,td{padding:9px 8px;border-bottom:1px solid #ddd;text-align:left}'+
-      'th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#888}'+
-      '.tot{margin-top:18px;font-size:15px} .tot b{font-size:19px}'+
-      '.note{margin-top:26px;font-size:12px;color:#666;line-height:1.6;border-top:1px solid #ddd;padding-top:14px}'+
-      '.btnp{margin-top:26px;padding:10px 18px;background:#111;color:#fff;border:none;cursor:pointer;font-size:14px}'+
-      '@media print{.btnp{display:none}}</style></head><body>'+
-      '<h1>【VITA<span class="lime"> LAM</span>】 '+T.t+'</h1>'+
-      '<div class="meta">'+T.no+' '+no+' · '+T.date+' '+now.toLocaleDateString()+' · vitalam.org · vita.lam@icloud.com · +852 6603 3707</div>'+
-      '<table><tr><th>#</th><th>'+T.item+'</th><th style="text-align:right">'+T.amt+'</th></tr>'+rows+'</table>'+
-      '<div class="tot">'+T.once+'：<b>'+fmt(d.once)+'</b>'+(d.mo?('　·　'+T.mo+'：<b>'+fmt(d.mo)+'</b>'):'')+'</div>'+
-      '<div class="note">'+(d.once>0?((lg==='zh'?'同等範圍・香港代理行情約 ':'Equivalent scope at HK agency market rates: ≈ ')+fmt(Math.round(d.once*2.5/1000)*1000)+' – '+fmt(Math.round(d.once*5/1000)*1000)+(lg==='zh'?'（本報價為直接交付價：冇代理開支，規格不減。）':' (this quote is a direct-delivery price: agency grade, without agency overhead.)')+'<br>'):'')+T.inc+'<br>'+T.promo+'<br>'+T.valid+'</div>'+
-      '<button class="btnp" onclick="window.print()">'+T.print+'</button>'+
-      '</body></html>');
-    w.document.close();
-  });
-  document.getElementById('langBtn').addEventListener('click',function(){ setTimeout(calc,0); });
-  calc();
-})();
-</script>
 
 
 <!-- ========== REVIEW-NOTES-TOOL START (delete from here to the END marker before final launch) ========== -->
