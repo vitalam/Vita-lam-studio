@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>初創導師計劃｜Vita Lam — Start-up Mentor Programme</title>
+<meta name="description" content="Vita Lam 初創導師計劃：專為獨立創業者及小型團隊而設嘅引導式計劃，1對1陪你行 business 及 IT/AI 應用嘅每一步。全端核心網站低至 HK$1,250。每月限 2 個名額。A guided 1-on-1 programme for solopreneurs and small teams — full-stack core website from HK$1,250.">
+<link rel="canonical" href="https://vitalam.org/startup-mentor.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0A0A09;
+  --ink:#F2F2EE;
+  --ink-2:#B9B9B2;
+  --ink-3:#83837C;
+  --accent:#D9FF3F;
+  --accent-2:#C4EC2D;
+  --amber:#F2B84B;
+  --glass-bg:#101010;
+  --glass-line:#282826;
+  --r:6px;
+  --max:1120px;
+  --sans:"Inter","Noto Sans TC",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16.5px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+.ambient{position:fixed;inset:0;z-index:-1;overflow:hidden;background:
+  radial-gradient(ellipse 40% 30% at 18% 12%,rgba(217,255,63,.06),transparent 65%),
+  radial-gradient(ellipse 35% 30% at 85% 75%,rgba(242,184,75,.05),transparent 65%),
+  repeating-linear-gradient(0deg,transparent,transparent 71px,rgba(242,242,238,.045) 71px,rgba(242,242,238,.045) 72px),
+  repeating-linear-gradient(90deg,transparent,transparent 71px,rgba(242,242,238,.045) 71px,rgba(242,242,238,.045) 72px),
+  var(--bg)}
+body:not(.lang-en) .en-only{display:none !important}
+body.lang-en .zh-only{display:none !important}
+h1{font-size:clamp(1.9rem,4.6vw,3rem);font-weight:900;letter-spacing:.01em;line-height:1.15}
+body.lang-en h1{font-weight:800;letter-spacing:-.02em}
+p{color:var(--ink-2)}
+strong,b{color:var(--ink);font-weight:700}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.kicker{font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:1rem}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.glass{background:var(--glass-bg);border:1px solid var(--glass-line);border-radius:var(--r)}
+.ico{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.ico-chip{width:54px;height:54px;border-radius:4px;padding:13px;color:var(--amber);background:#141412;border:1px solid var(--glass-line)}
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(10,10,9,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--glass-line);
+}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px}
+.logo{font-size:1.05rem;color:var(--ink);font-weight:800}
+.logo em{color:var(--accent);font-style:normal}
+.logo::before{content:"【";color:var(--accent)}
+.logo::after{content:"】";color:var(--accent)}
+.nav-links{display:flex;gap:20px;margin-left:auto;align-items:center}
+.nav-links a{color:var(--ink-2);font-size:.9rem;font-weight:500}
+.nav-links a:hover{color:var(--ink);text-decoration:none}
+#langBtn{
+  border:1px solid var(--glass-line);background:transparent;color:var(--ink);
+  font:inherit;font-size:.82rem;font-weight:600;padding:7px 13px;border-radius:3px;cursor:pointer;
+}
+#langBtn:hover{border-color:var(--accent);color:var(--accent)}
+.nav-cta{background:var(--accent);color:#0C0D04 !important;font-weight:700;padding:9px 17px;border-radius:3px;font-size:.88rem !important}
+.nav-cta:hover{text-decoration:none !important;background:var(--accent-2)}
+@media(max-width:860px){.nav-links a:not(.nav-cta){display:none}}
+article{padding:160px 0 60px}
+.meta{font-size:.88rem;color:var(--ink-3);margin-top:1rem}
+.meta b{color:var(--ink-2)}
+.lede{font-size:1.08rem;margin-top:1.2rem;max-width:640px}
+.price-box{margin:34px 0;padding:30px 32px;text-align:center}
+.price-box .headline{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:var(--accent)}
+.price-box .sub{font-size:.92rem;color:var(--ink-3);margin-top:10px;max-width:520px;margin-left:auto;margin-right:auto}
+h2.sect{font-size:1.5rem;font-weight:900;margin:44px 0 18px}
+.card{padding:28px 30px}
+.rule ul{list-style:none;display:grid;gap:11px}
+.rule li{padding-left:24px;position:relative;font-size:.95rem;color:var(--ink-2)}
+.rule li::before{content:"✳";position:absolute;left:0;color:var(--accent);font-size:.85em;top:2px}
+.crit{list-style:none;display:grid;gap:16px;counter-reset:crit}
+.crit li{position:relative;padding-left:42px;font-size:.95rem;color:var(--ink-2);counter-increment:crit}
+.crit li::before{content:counter(crit);position:absolute;left:0;top:-2px;width:28px;height:28px;border-radius:4px;background:rgba(217,255,63,.1);border:1px solid rgba(217,255,63,.35);color:var(--accent);font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+.crit li b{display:block;color:var(--ink);font-weight:700;margin-bottom:2px}
+.apply-panel{padding:36px 34px;margin-top:20px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 30px;border-radius:3px;font-weight:700;font-size:1rem;transition:.18s;background:var(--accent);color:#0C0D04}
+.btn:hover{text-decoration:none;background:var(--accent-2);transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(217,255,63,.28)}
+.note{font-size:.85rem;color:var(--ink-3);margin-top:10px}
+.foot{margin-top:34px;font-size:.83rem;color:var(--ink-3);border-top:1px solid var(--glass-line);padding-top:16px;line-height:1.7}
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:60;
+  width:56px;height:56px;border-radius:6px;padding:14px;color:#0C0D04;
+  background:var(--accent);box-shadow:0 10px 26px -8px rgba(217,255,63,.5);
+  display:flex;align-items:center;justify-content:center;transition:.18s;
+}
+.wa-float:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 rgba(217,255,63,.3);text-decoration:none}
+footer{padding:30px 0 56px;font-size:.87rem;color:var(--ink-3)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+footer a{color:var(--ink-3)}
+footer a:hover{color:var(--accent)}
+@media(max-width:640px){.apply-panel{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+  <symbol id="i-wa" viewBox="0 0 48 48"><path d="M24 6a17 17 0 00-14.6 25.6L7 42l10.8-2.3A17 17 0 1024 6z"/><path d="M17 18c0 8 6 13 13 14 2 0 4-1 4-3l-1-3-4 1c-3-1-6-4-7-7l2-3-2-4c-2 0-5 2-5 5z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 48 48"><path d="M24 5c6 4 9 11 9 19l-9 9-9-9c0-8 3-15 9-19z"/><circle cx="24" cy="18" r="4"/><path d="M15 31l-5 9 9-4M33 31l5 9-9-4"/></symbol>
+</defs>
+</svg>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">VITA<em>&nbsp;LAM</em></a>
+    <div class="nav-links">
+      <a href="index.html">← <span class="zh-only">主頁</span><span class="en-only">Home</span></a>
+      <a href="pricing.html"><span class="zh-only">收費</span><span class="en-only">Pricing</span></a>
+      <button id="langBtn" type="button" aria-label="Switch language">EN</button>
+      <a class="nav-cta" href="index.html#contact"><span class="zh-only">免費 20 分鐘健檢</span><span class="en-only">Free 20-min review</span></a>
+    </div>
+  </div>
+</nav>
+
+<article>
+  <div class="wrap">
+    <div class="ico-chip"><svg class="ico"><use href="#i-rocket"/></svg></div>
+    <div class="kicker" style="margin-top:18px">VITA LAM · <span class="zh-only">初創支援計劃</span><span class="en-only">Start-up Support Program</span></div>
+    <h1><span class="zh-only">初創導師計劃</span><span class="en-only">Start-up Mentor Programme</span></h1>
+    <p class="lede">
+      <span class="zh-only">專為獨立創業者及小型團隊而設嘅引導式計劃 — 1 對 1 陪你行 business 及 IT/AI 應用嘅每一步。歡迎應屆畢業生申請。每月名額限 2 個，可能涉及甄選。</span>
+      <span class="en-only">A guided programme for solopreneurs and small teams — 1-on-1 through every step of business and IT/AI adoption. Fresh graduates welcome. Limited to 2 cases a month; selection may apply.</span>
+    </p>
+    <p class="meta"><span class="zh-only">名額有限 · 一切以條款及細則為準</span><span class="en-only">Limited places · subject to terms and conditions</span></p>
+
+    <div class="glass price-box">
+      <div class="headline"><span class="zh-only">全端核心網站，低至 HK$1,250</span><span class="en-only">Full-stack core website, from HK$1,250</span></div>
+      <p class="sub"><span class="zh-only">相當於 HK$12,500 原價之一折（最高減 90%），視乎審批結果，受條款及細則約束。</span><span class="en-only">Up to 90% off the HK$12,500 list price — one-tenth of standard — subject to approval and our terms &amp; conditions.</span></p>
+    </div>
+
+    <h2 class="sect"><span class="zh-only">計劃內容</span><span class="en-only">What's included</span></h2>
+    <div class="card glass rule">
+      <ul>
+        <li><span class="zh-only">逐步 1 對 1 指導，涵蓋 business 同 IT/AI 應用嘅每一步。</span><span class="en-only">Step-by-step 1-on-1 guidance across every stage of business and IT/AI adoption.</span></li>
+        <li><span class="zh-only">歡迎應屆畢業生申請。</span><span class="en-only">Fresh graduates welcome.</span></li>
+        <li><span class="zh-only">每月名額限 2 個。</span><span class="en-only">Limited to 2 cases per month.</span></li>
+        <li><span class="zh-only">可能涉及甄選程序，唔保證每次申請都會獲批。</span><span class="en-only">May involve a selection process; approval isn't guaranteed.</span></li>
+        <li><span class="zh-only">一切安排以條款及細則為準。</span><span class="en-only">Subject to our terms and conditions.</span></li>
+      </ul>
+    </div>
+
+    <h2 class="sect"><span class="zh-only">申請資格</span><span class="en-only">Eligibility</span></h2>
+    <ol class="crit">
+      <li><b><span class="zh-only">真正創新</span><span class="en-only">Genuine innovation</span></b><span class="zh-only">商業模式需涉及真正創新，並非純粹套利式賺價。</span><span class="en-only">Your business model must involve genuine innovation — not pure arbitrage-style earning.</span></li>
+      <li><b><span class="zh-only">自資營運</span><span class="en-only">Bootstrapped</span></b><span class="zh-only">自資營運（Bootstrapped）：未接受外部大額融資。</span><span class="en-only">Bootstrapped: no significant external funding.</span></li>
+      <li><b><span class="zh-only">地區</span><span class="en-only">Region</span></b><span class="zh-only">現階段暫只接受香港及台灣嘅創辦人／團隊申請。</span><span class="en-only">Currently open to founders/teams based in Hong Kong and Taiwan only, for the time being.</span></li>
+      <li><b><span class="zh-only">合作見證</span><span class="en-only">Collaboration testimonial</span></b><span class="zh-only">計劃完成後，需要提供一份合作見證（testimonial），供本工作室日後展示之用。</span><span class="en-only">A collaboration testimonial will be required on completion, for the studio's future portfolio use.</span></li>
+      <li><b><span class="zh-only">製作人員名銜</span><span class="en-only">Maker credit</span></b><span class="zh-only">成品內將加入標準「Made by Vita Lam」製作人員名銜（例如網站頁尾）。</span><span class="en-only">A standard "Made by Vita Lam" credit will appear in the deliverable (e.g. the site footer).</span></li>
+    </ol>
+
+    <h2 class="sect"><span class="zh-only">點樣申請</span><span class="en-only">How to apply</span></h2>
+    <div class="glass apply-panel">
+      <div>
+        <p style="font-size:.98rem"><span class="zh-only">填寫查詢表格時，喺「你需要什麼？」揀選「初創導師計劃申請」，並喺訊息簡述你嘅生意同創新之處。</span><span class="en-only">In the enquiry form, choose "Mentor Programme application" under "What do you need?" and briefly describe your business and what makes it innovative.</span></p>
+        <p class="note"><span class="zh-only">我會在一個工作天內回覆 — 廣東話、英文或普通話皆可。</span><span class="en-only">I reply within one working day — in 廣東話, English or 普通話.</span></p>
+      </div>
+      <a class="btn" href="index.html#contact"><span class="zh-only">立即申請 →</span><span class="en-only">Apply now →</span></a>
+    </div>
+
+    <div class="foot">
+      <span class="zh-only">初創導師計劃名額有限，恕不保證接受所有申請；一切以最終確認為準，Vita Lam 保留最終決定權。計劃內容、優惠及資格條件如有更改，恕不另行通知。</span>
+      <span class="en-only">Places on the Start-up Mentor Programme are limited and applications are not guaranteed; all decisions are final and at Vita Lam's discretion. Programme content, offers and eligibility are subject to change without notice.</span>
+    </div>
+  </div>
+</article>
+
+<a class="wa-float" href="https://wa.me/85266033707" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> G Entertainment Limited · <a href="index.html">vitalam.org</a></span>
+    <span><a href="pricing.html"><span class="zh-only">收費</span><span class="en-only">Pricing</span></a> · <a href="privacy.html"><span class="zh-only">隱私</span><span class="en-only">Privacy</span></a> · <a href="terms.html"><span class="zh-only">條款</span><span class="en-only">Terms</span></a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('langBtn');
+  btn.addEventListener('click',function(){
+    var en=document.body.classList.toggle('lang-en');
+    document.documentElement.lang=en?'en':'zh-Hant-HK';
+    btn.textContent=en?'中文':'EN';
+  });
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
