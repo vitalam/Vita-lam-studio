@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>服務收費｜Vita Lam — 標準價，初創・NGO 減 70%</title>
-<meta name="description" content="Vita Lam 明碼實價：標準價一目了然，初創公司・低利潤・NGO・支持社會權益企業一律減 70%。剔選項目即時計出報價，一鍵 WhatsApp 或列印。每個計劃免費包商業策略顧問、法律／商業文件協助；SiteCare+ 會員更享免費簿記及初步會計。">
-<link rel="canonical" href="https://vitalam.org/pricing.html">
+<title>服務收費｜G Studio — 標準價，初創・NGO 減 70%</title>
+<meta name="description" content="G Studio 明碼實價：標準價一目了然，初創公司・低利潤・NGO・支持社會權益企業一律減 70%。剔選項目即時計出報價，一鍵 WhatsApp 或列印。每個計劃免費包商業策略顧問、法律／商業文件協助；SiteCare+ 會員更享免費簿記及初步會計。">
+<link rel="canonical" href="https://1069.com.hk/pricing.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -144,6 +144,7 @@ article{padding:150px 0 120px}
 .btn-wa:hover{text-decoration:none;background:var(--accent);color:#0C0D04;transform:translate(-2px,-2px)}
 .btn .bico{width:20px;height:20px;flex-shrink:0}
 /* ---------- floating quote bar ---------- */
+.qbar[hidden]{display:none !important}
 .qbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;justify-content:center;padding:0 16px 16px;pointer-events:none}
 .qbar-inner{pointer-events:auto;display:flex;align-items:center;gap:16px;padding:12px 14px 12px 22px;border-radius:8px;box-shadow:0 14px 44px -12px rgba(0,0,0,.7);max-width:680px;width:100%;justify-content:space-between;flex-wrap:wrap}
 .qbar-sum{font-size:.9rem;color:var(--ink-2)}
@@ -162,8 +163,42 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-bet
 footer a{color:var(--ink-3)}
 footer a:hover{color:var(--accent)}
 </style>
+<style>
+.announce{position:fixed;top:0;left:0;right:0;z-index:70;display:block;text-align:center;background:linear-gradient(90deg,#D9FF3F,#C4EC2D);color:#0C0D04;font-weight:800;font-size:.82rem;height:36px;line-height:36px;padding:0 12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-decoration:none}
+.announce:hover{text-decoration:none;filter:brightness(1.06)}
+nav{top:36px !important}
+@media(max-width:640px){.announce{font-size:.7rem}.nav-cta{font-size:.78rem !important;padding:8px 12px !important;white-space:nowrap}}
+</style>
+<style>
+/* ---------- eligibility quick-check ---------- */
+.elc{margin:22px 0 8px;padding:30px 32px;border-color:rgba(217,255,63,.45);scroll-margin-top:120px}
+.elc h2{font-size:1.35rem}
+.elc .sub{font-size:.9rem;color:var(--ink-3);margin-top:4px}
+.elc-q{margin-top:18px}
+.elc-q .qt{font-weight:700;color:var(--ink);font-size:.96rem;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative;cursor:pointer}
+.chip input{position:absolute;opacity:0;pointer-events:none}
+.chip span{display:inline-block;padding:8px 14px;border:1px solid var(--glass-line);border-radius:20px;font-size:.86rem;font-weight:600;color:var(--ink-2);background:#0E0E0D;transition:.15s}
+.chip:hover span{border-color:var(--accent);color:var(--ink)}
+.chip input:checked+span{background:var(--accent);border-color:var(--accent);color:#0C0D04;font-weight:800}
+#elcBtn{margin-top:20px}
+#elcBtn:disabled{opacity:.4;cursor:not-allowed;transform:none;box-shadow:none}
+.elc-res{margin-top:20px;padding:20px 22px;border-radius:var(--r)}
+.elc-res.yes{background:rgba(217,255,63,.1);border:1px solid rgba(217,255,63,.5)}
+.elc-res.no{background:rgba(126,200,240,.08);border:1px solid rgba(126,200,240,.35)}
+.elc-res h3{font-size:1.05rem;color:var(--ink);margin-bottom:6px}
+.elc-res p{font-size:.9rem}
+.elc-form{display:grid;gap:12px;margin-top:14px}
+.elc-form label{font-size:.82rem;font-weight:700;color:var(--ink-2)}
+.elc-form input,.elc-form textarea{width:100%;background:#0E0E0D;border:1px solid var(--glass-line);border-radius:4px;color:var(--ink);font:inherit;font-size:.9rem;padding:10px 12px}
+.elc-form input:focus,.elc-form textarea:focus{outline:none;border-color:var(--accent)}
+</style>
 </head>
 <body>
+
+<a class="announce" href="#eligcheck"><span class="zh-only">📢 本月 −70% 合資格名額有限・即將額滿 — 30 秒快測資格，即刻預留 →</span><span class="en-only">📢 −70% eligibility slots for this month are nearly full — 30-second check, reserve now →</span></a>
+
 
 <div class="ambient" aria-hidden="true"></div>
 
@@ -181,7 +216,7 @@ footer a:hover{color:var(--accent)}
 
 <nav>
   <div class="nav-inner">
-    <a class="logo" href="index.html">VITA<em>&nbsp;LAM</em></a>
+    <a class="logo" href="index.html">G<em>&nbsp;STUDIO</em></a>
     <div class="nav-links">
       <a href="index.html"><span class="zh-only">← 主頁</span><span class="en-only">← Home</span></a>
       <a href="handover-promise.html"><span class="zh-only">交收承諾</span><span class="en-only">Handover</span></a>
@@ -208,6 +243,57 @@ footer a:hover{color:var(--accent)}
         <span>NGO</span>
         <span><span class="zh-only">支持社會權益嘅企業</span><span class="en-only">Social-rights businesses</span></span>
       </div>
+    </div>
+
+
+    <!-- ============ 30s eligibility quick-check ============ -->
+    <div class="glass elc" id="eligcheck">
+      <h2>⚡ <span class="zh-only">30 秒資格快測</span><span class="en-only">30-second eligibility check</span></h2>
+      <p class="sub"><span class="zh-only">答 4 條問題，即刻知你係咪合資格 −70%。名額有限，合資格即可預留。</span><span class="en-only">Answer 4 questions to see if you qualify for −70%. Slots are limited — reserve as soon as you qualify.</span></p>
+      <div class="elc-q"><div class="qt"><span class="zh-only">1 · 公司成立咗幾耐？</span><span class="en-only">1 · How old is the company?</span></div>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="q-age" value="y" data-zh="成立少於 1 年" data-en="under 1 year old"><span><span class="zh-only">未夠 1 年</span><span class="en-only">Under 1 year</span></span></label>
+          <label class="chip"><input type="radio" name="q-age" value="y" data-zh="成立 1–3 年" data-en="1–3 years old"><span><span class="zh-only">1–3 年</span><span class="en-only">1–3 years</span></span></label>
+          <label class="chip"><input type="radio" name="q-age" value="n" data-zh="成立 3 年以上" data-en="over 3 years old"><span><span class="zh-only">3 年以上</span><span class="en-only">Over 3 years</span></span></label>
+        </div></div>
+      <div class="elc-q"><div class="qt"><span class="zh-only">2 · 最近一個財政年度嘅盈利狀況？</span><span class="en-only">2 · Last financial year's profit?</span></div>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="q-profit" value="y" data-zh="虧損或接近打和" data-en="loss-making or near break-even"><span><span class="zh-only">虧損／接近打和</span><span class="en-only">Loss / near break-even</span></span></label>
+          <label class="chip"><input type="radio" name="q-profit" value="n" data-zh="有明顯盈利" data-en="clearly profitable"><span><span class="zh-only">有明顯盈利</span><span class="en-only">Clearly profitable</span></span></label>
+        </div></div>
+      <div class="elc-q"><div class="qt"><span class="zh-only">3 · 係咪註冊 NGO／慈善機構？</span><span class="en-only">3 · Registered NGO / charity?</span></div>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="q-ngo" value="y" data-zh="註冊 NGO／慈善機構" data-en="registered NGO/charity"><span><span class="zh-only">係</span><span class="en-only">Yes</span></span></label>
+          <label class="chip"><input type="radio" name="q-ngo" value="n" data-zh="非 NGO" data-en="not an NGO"><span><span class="zh-only">唔係</span><span class="en-only">No</span></span></label>
+        </div></div>
+      <div class="elc-q"><div class="qt"><span class="zh-only">4 · 業務有冇推動社會權益？</span><span class="en-only">4 · Does the business advance social rights?</span></div>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="q-social" value="y" data-zh="推動社會權益" data-en="advances social rights"><span><span class="zh-only">有</span><span class="en-only">Yes</span></span></label>
+          <label class="chip"><input type="radio" name="q-social" value="n" data-zh="唔涉及" data-en="not applicable"><span><span class="zh-only">冇</span><span class="en-only">No</span></span></label>
+        </div></div>
+      <button id="elcBtn" class="btn btn-primary" type="button" disabled><span class="zh-only">檢查資格 →</span><span class="en-only">Check eligibility →</span></button>
+      <div class="elc-res yes" id="elcYes" hidden>
+        <h3>🎉 <span class="zh-only">恭喜！你好大機會合資格 −70%。</span><span class="en-only">Congratulations — you very likely qualify for −70%.</span></h3>
+        <p><span class="zh-only">最終以證明文件確認為準（商業登記／報稅／NGO 文件／使命簡述其中一款）。本月名額有限 — 而家預留，鎖定資格價。</span><span class="en-only">Final confirmation needs one proof document (BR / tax filing / NGO document / mission note). Slots this month are limited — reserve now to lock the eligible price.</span></p>
+        <div class="btn-row" style="justify-content:flex-start;margin-top:14px">
+          <button id="elcReserve" class="btn btn-primary" type="button"><svg class="bico ico"><use href="#i-wa"/></svg> <span class="zh-only">立即 WhatsApp 預留名額 →</span><span class="en-only">Reserve my slot on WhatsApp →</span></button>
+        </div>
+      </div>
+      <div class="elc-res no" id="elcNo" hidden>
+        <h3>🔍 <span class="zh-only">需要人工覆核</span><span class="en-only">Needs a manual review</span></h3>
+        <p><span class="zh-only">快測未能即時確認你嘅資格 — 但唔代表冇機會。留低資料，我哋人工覆核，一個工作天內覆你。</span><span class="en-only">The quick check couldn't confirm eligibility instantly — that doesn't mean no. Leave your details and we'll review manually within one working day.</span></p>
+        <form class="elc-form" name="eligibility-review" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="eligibility-review">
+          <p style="display:none"><input name="bot-field"></p>
+          <input type="hidden" name="quick-check-answers" id="elcAnswers">
+          <div><label for="er-company"><span class="zh-only">公司／機構名稱</span><span class="en-only">Company / organisation</span></label><input id="er-company" name="company" type="text" required></div>
+          <div><label for="er-name"><span class="zh-only">聯絡人</span><span class="en-only">Contact name</span></label><input id="er-name" name="name" type="text" required></div>
+          <div><label for="er-email"><span class="zh-only">電郵</span><span class="en-only">Email</span></label><input id="er-email" name="email" type="email" required></div>
+          <div><label for="er-details"><span class="zh-only">簡述你嘅情況（成立年期、業務、點解覺得應該合資格）</span><span class="en-only">Briefly: company age, what you do, and why you think you should qualify</span></label><textarea id="er-details" name="details" rows="4" required></textarea></div>
+          <button class="btn btn-primary" type="submit"><span class="zh-only">提交人工覆核</span><span class="en-only">Submit for manual review</span></button>
+        </form>
+      </div>
+      <noscript><p style="margin-top:14px;font-size:.85rem;color:var(--ink-3)"><span class="zh-only">你嘅瀏覽器已停用 JavaScript — 直接 WhatsApp 我哋查資格：+852 6979 8969。</span><span class="en-only">JavaScript is off — WhatsApp us directly to check eligibility: +852 6979 8969.</span></p></noscript>
     </div>
 
     <!-- ============ Free with every plan ============ -->
@@ -319,7 +405,7 @@ footer a:hover{color:var(--accent)}
       <p><span class="zh-only">唔想逐項揀？傾 20 分鐘，我幫你砌返啱你嘅組合。</span><span class="en-only">Rather not tick line by line? A 20-minute chat and I'll shape the right package with you.</span></p>
       <div class="btn-row">
         <a class="btn btn-primary" href="index.html#contact"><span class="zh-only">免費 20 分鐘健檢 →</span><span class="en-only">Free 20-min review →</span></a>
-        <a class="btn btn-wa" href="https://wa.me/85266033707" target="_blank" rel="noopener"><svg class="bico ico"><use href="#i-wa"/></svg> WhatsApp</a>
+        <a class="btn btn-wa" href="https://wa.me/85269798969" target="_blank" rel="noopener"><svg class="bico ico"><use href="#i-wa"/></svg> WhatsApp</a>
       </div>
     </div>
 
@@ -338,11 +424,11 @@ footer a:hover{color:var(--accent)}
   </div>
 </div>
 
-<a class="wa-float" href="https://wa.me/85266033707" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
+<a class="wa-float" href="https://wa.me/85269798969" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ico"><use href="#i-wa"/></svg></a>
 
 <footer>
   <div class="wrap">
-    <span>© <span id="yr">2026</span> G Entertainment Limited · <a href="index.html">vitalam.org</a></span>
+    <span>© <span id="yr">2026</span> G Entertainment Limited · <a href="index.html">1069.com.hk</a></span>
     <span><a href="handover-promise.html"><span class="zh-only">交收承諾</span><span class="en-only">Handover</span></a> · <a href="privacy.html"><span class="zh-only">隱私</span><span class="en-only">Privacy</span></a> · <a href="terms.html"><span class="zh-only">條款</span><span class="en-only">Terms</span></a></span>
     <span class="zh-only">保安係標準配備。一切屬於你，永遠。</span>
     <span class="en-only">Security is standard. Everything is yours, forever.</span>
@@ -418,7 +504,7 @@ footer a:hover{color:var(--accent)}
     ls.forEach(function(l){ var x=lineText(l,lg); msg+='• '+x.name+'：'+x.txt+'\n'; });
     msg+=(lg==='zh'?'合共：標準 ':'Total: standard ')+fmt(t.std)+(lg==='zh'?'，資格價（−70%）約 ':', eligible (−70%) approx. ')+fmt(t.cut)+'。';
     msg+=(lg==='zh'?'\n（−70% 適用於初創／低利潤／NGO／社會權益企業，需提交證明。另免費包商業策略顧問及法律／商業文件協助。）':'\n(−70% applies to start-ups / low-profit / NGOs / social-rights businesses with proof. Plus free business-strategy advisory and legal/business document help.)');
-    window.open('https://wa.me/85266033707?text='+encodeURIComponent(msg),'_blank');
+    window.open('https://wa.me/85269798969?text='+encodeURIComponent(msg),'_blank');
   });
 
   document.getElementById('qprint').addEventListener('click',function(){
@@ -453,8 +539,8 @@ footer a:hover{color:var(--accent)}
       '.note{margin-top:24px;font-size:12px;color:#666;line-height:1.7;border-top:1px solid #ddd;padding-top:14px}'+
       '.btnp{margin-top:24px;padding:10px 18px;background:#111;color:#fff;border:none;cursor:pointer;font-size:14px}'+
       '@media print{.btnp{display:none}}</style></head><body>'+
-      '<h1>【VITA<span class="lime"> LAM</span>】 '+T.t+'</h1>'+
-      '<div class="meta">'+T.no+' '+no+' · '+T.date+' '+now.toLocaleDateString()+' · vitalam.org · vita.lam@icloud.com · +852 6603 3707</div>'+
+      '<h1>【G<span class="lime"> STUDIO</span>】 '+T.t+'</h1>'+
+      '<div class="meta">'+T.no+' '+no+' · '+T.date+' '+now.toLocaleDateString()+' · 1069.com.hk · vita.lam@icloud.com · +852 6979 8969</div>'+
       '<table><tr><th>#</th><th>'+T.item+'</th><th style="text-align:right">'+T.std+'</th><th style="text-align:right">'+T.elig+'</th></tr>'+rows+'</table>'+
       '<div class="tot">'+T.tot+'：'+(lg==='zh'?'標準 ':'standard ')+fmt(t.std)+' · <b>'+(t.approx?(lg==='zh'?'約 ':'~'):'')+fmt(t.cut)+'</b> '+(lg==='zh'?'（資格價 −70%）':'(eligible −70%)')+'</div>'+
       '<div class="note">'+T.free+'<br>'+T.note+'</div>'+
@@ -464,6 +550,31 @@ footer a:hover{color:var(--accent)}
   });
 
   update();
+})();
+</script>
+<script>
+/* ---------- eligibility quick-check ---------- */
+(function(){
+  var qs=['q-age','q-profit','q-ngo','q-social'];
+  var btn=document.getElementById('elcBtn'); if(!btn) return;
+  var yes=document.getElementById('elcYes'), no=document.getElementById('elcNo');
+  function picked(n){ return document.querySelector('input[name="'+n+'"]:checked'); }
+  function refresh(){ btn.disabled=!qs.every(function(n){return picked(n);}); }
+  qs.forEach(function(n){ document.querySelectorAll('input[name="'+n+'"]').forEach(function(r){ r.addEventListener('change',function(){ refresh(); yes.hidden=true; no.hidden=true; }); }); });
+  function lg(){ return document.body.classList.contains('lang-en')?'en':'zh'; }
+  function answers(l){ return qs.map(function(n){ var p=picked(n); return l==='zh'?p.dataset.zh:p.dataset.en; }).join(l==='zh'?'；':'; '); }
+  btn.addEventListener('click',function(){
+    var ok=qs.some(function(n){ return picked(n).value==='y'; });
+    yes.hidden=!ok; no.hidden=ok;
+    var f=document.getElementById('elcAnswers'); if(f) f.value=answers('zh')+' / '+answers('en');
+    (ok?yes:no).scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  var rs=document.getElementById('elcReserve');
+  rs.addEventListener('click',function(){
+    var l=lg();
+    var msg=(l==='zh'?'你好 Vita，我啱啱完成 30 秒資格快測（':'Hi Vita, I just did the 30-second eligibility check (')+answers(l)+(l==='zh'?'），結果顯示合資格 −70%。我想預留今個月嘅名額！':'), and it shows I qualify for −70%. I want to reserve a slot for this month!');
+    window.open('https://wa.me/85269798969?text='+encodeURIComponent(msg),'_blank');
+  });
 })();
 </script>
 </body>

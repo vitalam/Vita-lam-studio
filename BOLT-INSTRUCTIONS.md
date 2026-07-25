@@ -1,6 +1,6 @@
 # BOLT-INSTRUCTIONS — read me first, before touching any file
 
-You are working on a FINISHED production website (vitalam.org). Your job is to host,
+You are working on a FINISHED production website — G Studio (1069.com.hk; brand renamed from Vita Lam, though 林瀚海/Vita Lam remains the designer's personal name). Your job is to host,
 preview, and apply small requested changes — NOT to rebuild, refactor, reformat,
 "clean up", or redesign anything.
 
@@ -33,6 +33,14 @@ preview, and apply small requested changes — NOT to rebuild, refactor, reforma
    substitute"). Free with EVERY plan: 商業策略顧問 · 法律/商業文件協助 · 商業政策同行審視
    (peer/standard-doc help, "not formal legal/financial/investment advice"). NO monthly
    fees anywhere. Change a price by editing the `data-p` / displayed number directly.
+   DISPLAY RULE: the −70% eligible price is the MAIN (lime) number everywhere
+   (teaser, pricing rows, service price bars); the standard price appears small,
+   struck through, labelled 標準. pricing.html also carries: a 30-second
+   eligibility quick-check (#eligcheck — 4 questions; eligible → WhatsApp reserve;
+   otherwise → Netlify form `eligibility-review`), and every live page carries a
+   fixed announcement bar (quota scarcity, links to #eligcheck; keep an actual
+   monthly quota so the claim stays true). The Start-up Mentor Programme is
+   REMOVED — do not reintroduce it.
 4. The blocks between `REVIEW-NOTES-TOOL START/END` markers (and the matching
    CSS block) are a temporary review scaffold. Leave them intact until told to
    remove them for launch — then delete both fenced blocks completely.
@@ -51,8 +59,8 @@ preview, and apply small requested changes — NOT to rebuild, refactor, reforma
    No new colours, no soft shadows, no rounded pills, no icon fonts.
 7. Screenshots use a 3-step fallback (local file → s0.wordpress.com/mshots →
    hide). Keep the exact `onerror` chain.
-8. Contact facts: WhatsApp wa.me/85266033707 · vita.lam@icloud.com ·
-   Netlify form `name="enquiry"` with honeypot. Never change these.
+8. Contact facts: WhatsApp wa.me/85269798969 (+852 6979 8969) · vita.lam@icloud.com ·
+   Netlify forms `name="enquiry"` and `name="eligibility-review"`, both with honeypot. Never change these.
 9. Content must be visible without JavaScript. (The pricing page is now a
    static price list, so this holds there too — no builder to degrade.)
 10. Keep every file self-contained. No frameworks, no build step, no new

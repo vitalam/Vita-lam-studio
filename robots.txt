@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /pricing-methodology.html
+Disallow: /pricing-benchmark.html
+
+Sitemap: https://1069.com.hk/sitemap.xml
