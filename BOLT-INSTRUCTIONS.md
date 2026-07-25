@@ -15,27 +15,37 @@ preview, and apply small requested changes — NOT to rebuild, refactor, reforma
 2. The bilingual system is sacred: every string exists as
    `<span class="zh-only">…</span><span class="en-only">…</span>`; `zh-Hant-HK`
    is default; `#langBtn` toggles `body.lang-en`. Never remove either language.
-3. The pricing builder now lives on `pricing.html`, driven by the `CFG` array
-   in its inline script (v5 algorithmic model — see docs/pricing-methodology-audit.md).
-   Change prices/floors/components ONLY by editing `CFG`. Keep the invariants:
-   every price = 0.5 × its `floor` (min HK$1,280/module); NO monthly fees
-   anywhere (SiteCare+ is a 24-month prepaid one-off); the fair-value-floor
-   meter (sum of selected modules' floors), 14-day quote lock, bundle
-   quick-picks (bundle price must equal the sum of its modules), quotation
-   window, and WhatsApp handoff must keep working.
+3. `pricing.html` is a FIXED, static, TWO-TIER price list — no builder-algorithm,
+   no CFG, no formula. Every service shows a STANDARD price (struck) and the
+   ELIGIBLE −70% price (pay 30%, `cut(n)=round(n*0.3/10)*10`). `data-p` on each
+   `.qbox` is the STANDARD number; the quote sums both tiers. −70% applies to A/B/C
+   for four proof-gated groups: 初創(BR/statements) · 低利潤或零利潤(last tax filing)
+   · NGO(official doc) · 支持社會權益企業(mission note). Standard prices:
+   A 網站核心 $12,800 (+進階SEO $2,200, 網域包 $2,200, 加頁 $1,680/頁 via qty stepper,
+   線上AI $4,280, 登入/預約/會員 $9,300, 舊網站接管 = 以上7折); B 後台系統 我哋整$12,800／
+   非$19,300, 全訂製 $29,000起, 電商 我哋整$17,600／非$24,000, 訂製購物車+Stripe scoped,
+   數據儀表板 $26,000, AI整合+防火牆 $40,000, Stripe default + payment marks; C 品牌視覺
+   $12,800–28,800, 文案 $9,300–22,600 (deploy incl. if our site). SiteCare+ is a FLAT
+   prepaid add-on for ALL clients (NOT discounted): 1yr $3,000 / 2yr $5,000, member
+   revision $140/hr, attach at launch or ≤60 days — and includes free bookkeeping /
+   preliminary accounting for young cos WITHOUT audited accounts (framed "experienced
+   finance pro, not a licensed accountant/auditor, not a statutory-audit/tax-advice
+   substitute"). Free with EVERY plan: 商業策略顧問 · 法律/商業文件協助 · 商業政策同行審視
+   (peer/standard-doc help, "not formal legal/financial/investment advice"). NO monthly
+   fees anywhere. Change a price by editing the `data-p` / displayed number directly.
 4. The blocks between `REVIEW-NOTES-TOOL START/END` markers (and the matching
    CSS block) are a temporary review scaffold. Leave them intact until told to
    remove them for launch — then delete both fenced blocks completely.
 5. Wording locks: 「AI Logic Firewall（專利申請中）」 on the landing page appears
    in exactly 4 places — do not add it elsewhere or explain its mechanism.
    No security add-on, no care tiers (SiteCare+ is ONE plan with security
-   included). No founding offer, no monthly fees — both are retired. All
-   comparative price claims must match docs/pricing-methodology-audit.md:
-   pricing is framed as an OPEN COLLABORATION (0.5×floor is a TARGET, never
-   an absolute warranty — no 承諾/promise/guarantee/永不高於 wording); the
-   public is invited to submit market pricing info; est. hours are anchored
-   to the TVP-approved SmartFlow project (MatterUs Company Limited); AI
-   integration stays excluded from the collaborative review.
+   included). No founding offer, no monthly fees. The OLD algorithmic /
+   open-pricing model is RETIRED: do NOT reintroduce 開放定價 / 公允下限 /
+   行情 / 0.5×floor / weekly-benchmark / TVP-hours-anchor framing anywhere.
+   `pricing-methodology.html` and `pricing-benchmark.html` still exist in the
+   repo but are UNLINKED (kept for reference only) — never link to them.
+   Prices are FIXED and stated directly; every price claim across index /
+   services / pricing must match the numbers on `pricing.html`.
 6. Design tokens (lime #D9FF3F on #0A0A09, grid background, sharp corners,
    hairline borders, hard-offset hover) come from vitalam-design-playbook.md.
    No new colours, no soft shadows, no rounded pills, no icon fonts.
@@ -43,8 +53,8 @@ preview, and apply small requested changes — NOT to rebuild, refactor, reforma
    hide). Keep the exact `onerror` chain.
 8. Contact facts: WhatsApp wa.me/85266033707 · vita.lam@icloud.com ·
    Netlify form `name="enquiry"` with honeypot. Never change these.
-9. Content must be visible without JavaScript (except the pricing builder,
-   which has a `<noscript>` price summary — keep it).
+9. Content must be visible without JavaScript. (The pricing page is now a
+   static price list, so this holds there too — no builder to degrade.)
 10. Keep every file self-contained. No frameworks, no build step, no new
     dependencies, no separate .css/.js files.
 
