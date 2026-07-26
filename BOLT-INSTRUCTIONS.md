@@ -57,6 +57,12 @@ preview, and apply small requested changes — NOT to rebuild, refactor, reforma
 6. Design tokens (lime #D9FF3F on #0A0A09, grid background, sharp corners,
    hairline borders, hard-offset hover) come from vitalam-design-playbook.md.
    No new colours, no soft shadows, no rounded pills, no icon fonts.
+   LOGO: the nav mark is the owner's artwork at `assets/logo.png` (519×128,
+   alpha-trimmed from a 2931² Canva export), shown via
+   `<a class="logo"><img src="assets/logo.png" alt="G Studio" width="519" height="128">`
+   at `height:26px` (21px ≤640px). Do NOT revert to the old text logo or the
+   【】 bracket CSS. Favicon `assets/favicon.png` (32²) and
+   `assets/apple-touch-icon.png` (180², G badge on #0A0A09) come from the same file.
 7. Screenshots use a 3-step fallback (local file → s0.wordpress.com/mshots →
    hide). Keep the exact `onerror` chain.
 8. Contact facts: WhatsApp wa.me/85269798969 (+852 6979 8969) · vita.lam@icloud.com ·
